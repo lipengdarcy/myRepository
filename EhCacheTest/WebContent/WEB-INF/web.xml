@@ -8,37 +8,23 @@
 	<!-- 缓存、gzip压缩核心过滤器 -->
 
 	<filter>
-
 		<filter-name>PageEhCacheFilter</filter-name>
-
 		<filter-class>com.hoo.ehcache.filter.PageEhCacheFilter</filter-class>
-
 		<init-param>
-
 			<param-name>patterns</param-name>
-
 			<!-- 配置你需要缓存的url -->
-
 			<param-value>/cache.jsp, product.action, market.action </param-value>
-
 		</init-param>
-
 	</filter>
 
 	<filter-mapping>
-
 		<filter-name>PageEhCacheFilter</filter-name>
-
 		<url-pattern>*.action</url-pattern>
-
 	</filter-mapping>
 
 	<filter-mapping>
-
 		<filter-name>PageEhCacheFilter</filter-name>
-
 		<url-pattern>*.jsp</url-pattern>
-
 	</filter-mapping>
 
 	<welcome-file-list>
