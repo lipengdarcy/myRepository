@@ -9,9 +9,23 @@
 		如果该值是 0 就意味着元素可以停顿无穷长的时间。 timeToLiveSeconds：缓存数据的生存时间，也就是一个元素从构建到消亡的最大时间间隔值， 
 		这只能在元素不是永久驻留时有效，如果该值是0就意味着元素可以停顿无穷长的时间。 overflowToDisk：内存不足时，是否启用磁盘缓存。 memoryStoreEvictionPolicy：缓存满了之后的淘汰算法。 -->
 
+	<cache name="mobileCache" maxElementsInMemory="10000" eternal="false"
+		overflowToDisk="false" timeToIdleSeconds="900" timeToLiveSeconds="1800"
+		memoryStoreEvictionPolicy="LFU" />
+
+	<cache name="webPageCache" maxElementsInMemory="10000" eternal="false"
+		overflowToDisk="false" timeToIdleSeconds="900" timeToLiveSeconds="1800"
+		memoryStoreEvictionPolicy="LFU" />
+
 	<cache name="SimplePageCachingFilter" maxElementsInMemory="10000"
-		eternal="false" overflowToDisk="false" timeToIdleSeconds="900"
-		timeToLiveSeconds="1800" memoryStoreEvictionPolicy="LFU" />
+		maxElementsOnDisk="1000" eternal="false" overflowToDisk="true"
+		timeToIdleSeconds="5" timeToLiveSeconds="10"
+		memoryStoreEvictionPolicy="LFU" />
+
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true"
+		maxElementsOnDisk="10000000" diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU" />
 
 
 

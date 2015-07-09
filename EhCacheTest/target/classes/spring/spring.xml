@@ -1,34 +1,145 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans    
-http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/cache 
+        http://www.springframework.org/schema/cache/spring-cache-3.2.xsd">
 
 	<context:component-scan base-package="com.hoo.common.interceptor" />
 
 
+	<!-- 数据库连接配置信息 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="fileEncoding" value="utf-8" />
+		<property name="locations">
+			<list>
+				<value>classpath:db/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!--后台系统的数据源 阿里 druid数据库连接池 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<!-- 数据库基本信息配置 -->
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="driverClassName" value="${driverClassName}" />
+		<property name="filters" value="${filters}" />
+		<!-- 最大并发连接数 -->
+		<property name="maxActive" value="${maxActive}" />
+		<!-- 初始化连接数量 -->
+		<property name="initialSize" value="${initialSize}" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="${maxWait}" />
+		<!-- 最小空闲连接数 -->
+		<property name="minIdle" value="${minIdle}" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}" />
+		<property name="validationQuery" value="${validationQuery}" />
+		<property name="testWhileIdle" value="${testWhileIdle}" />
+		<property name="testOnBorrow" value="${testOnBorrow}" />
+		<property name="testOnReturn" value="${testOnReturn}" />
+		<property name="maxOpenPreparedStatements" value="${maxOpenPreparedStatements}" />
+		<!-- 打开removeAbandoned功能 -->
+		<property name="removeAbandoned" value="${removeAbandoned}" />
+		<!-- 1800秒，也就是30分钟 -->
+		<property name="removeAbandonedTimeout" value="${removeAbandonedTimeout}" />
+		<!-- 关闭abanded连接时输出错误日志 -->
+		<property name="logAbandoned" value="${logAbandoned}" />
+	</bean>
 
-	<!-- 配置eh缓存管理器 -->
+	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
-	<bean id="cacheManager"
-		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+	<!-- 创建SqlSessionFactory，同时指定数据源 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml" />
+		<!-- mapper xml location -->
+		<property name="mapperLocations"
+			value="classpath*:mapper/com/runlion/shop/**/*Mapper.xml"></property>
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- 可通过注解控制事务 -->
+	<tx:annotation-driven transaction-manager="sys_transactionManager" />
 
 
+	<!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
+	<bean id="MapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.runlion.shop.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
 
-	<!-- 配置一个简单的缓存工厂bean对象 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView"></property>
+		<property name="prefix" value="/WEB-INF/views/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<!-- 配置动态代理, 使用cglib代理所有的缓存方法. -->
+	<bean id="autoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="proxyTargetClass" value="true" />
+		<property name="beanNames">
+			<list>
+				<value>*DAO</value>
+				<value>*Dao</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>methodCachePointCut</value>
+				<value>flushCachePointCut</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- 缓存配置 -->
+	<!-- 启用缓存注解功能(请将其配置在Spring主配置文件中) -->
+	<cache:annotation-driven cache-manager="cacheManager" />
+
+	<!-- 配置一个简单的EhCacheManager工厂对象 -->
+	<bean id="cacheManagerFactory"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:ehcache/ehcache.xml" />
+	</bean>
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+		<property name="cacheManager" ref="cacheManagerFactory" />
+	</bean>
+
+	<!-- 配置一个简单的缓存对象 -->
 
 	<bean id="simpleCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
-
-		<property name="cacheManager" ref="cacheManager" />
-
+		<property name="cacheManager" ref="cacheManagerFactory" />
 		<!-- 使用缓存 关联ehcache.xml中的缓存配置 -->
 		<property name="cacheName" value="mobileCache" />
 	</bean>
 
 	<!-- 配置一个缓存拦截器对象，处理具体的缓存业务 -->
-	<bean id="methodCacheInterceptor" class="com. hoo.common.interceptor.MethodCacheInterceptor">
+	<bean id="methodCacheInterceptor" class="com.hoo.common.ehcache.MethodCacheInterceptor">
 		<property name="cache" ref="simpleCache" />
 	</bean>
 
@@ -38,14 +149,9 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
 		<!-- 配置缓存aop切面 -->
 		<property name="advice" ref="methodCacheInterceptor" />
-
 		<!-- 配置哪些方法参与缓存策略 -->
-
-		<!-- 	.表示符合任何单一字元 ### 
-				+表示符合前一个字元一次或多次 ### 
-				*表示符合前一个字元零次或多次 ### 
-				\Escape任何Regular expression使用到的符号 -->
-
+		<!-- .表示符合任何单一字元 ### +表示符合前一个字元一次或多次 ### *表示符合前一个字元零次或多次 ### \Escape任何Regular 
+			expression使用到的符号 -->
 		<!-- .*表示前面的前缀(包括包名) 表示print方法 -->
 		<property name="patterns">
 			<list>
