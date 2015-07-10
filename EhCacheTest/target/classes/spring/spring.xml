@@ -150,11 +150,11 @@
 	<bean id="simpleCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
 		<property name="cacheManager" ref="cacheManagerFactory" />
 		<!-- 使用缓存 关联ehcache.xml中的缓存配置 -->
-		<property name="cacheName" value="mobileCache" />
+		<property name="cacheName" value="myCache" />
 	</bean>
 
 	<!-- 配置一个缓存拦截器对象，处理具体的缓存业务 -->
-	<bean id="methodCacheInterceptor" class="com.hoo.common.ehcache.MethodCacheInterceptor">
+	<bean id="methodCacheInterceptor" class="org.darcy.common.ehcache.MethodCacheInterceptor">
 		<property name="cache" ref="simpleCache" />
 	</bean>
 
@@ -170,8 +170,8 @@
 		<!-- .*表示前面的前缀(包括包名) 表示print方法 -->
 		<property name="patterns">
 			<list>
-				<value>com.hoo.rest.*RestService*\.*get.*</value>
-				<value>com.hoo.rest.*RestService*\.*search.*</value>
+				<value>org.darcy.service.*Service*\.*get*</value>
+				<value>org.darcy.service.*Service*\.*select*</value>
 			</list>
 		</property>
 	</bean>

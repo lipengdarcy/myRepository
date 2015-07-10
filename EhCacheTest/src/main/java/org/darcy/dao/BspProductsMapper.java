@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.darcy.entity.BspProducts;
 import org.darcy.entity.BspProductsExample;
+import org.springframework.cache.annotation.Cacheable;
 
 public interface BspProductsMapper {
 
@@ -62,6 +63,7 @@ public interface BspProductsMapper {
 	 *
 	 * @mbggenerated Fri Jun 26 14:56:27 CST 2015
 	 */
+	@Cacheable(value = "myCache")
 	List<BspProducts> selectByExample(BspProductsExample example);
 
 	/**

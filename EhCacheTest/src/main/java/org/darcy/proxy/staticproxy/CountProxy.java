@@ -1,4 +1,4 @@
-package darcy.proxy.staticproxy;
+package org.darcy.proxy.staticproxy;
 
 /**
  * 这是一个代理类（增强CountImpl实现类）

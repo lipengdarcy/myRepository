@@ -1,4 +1,4 @@
-package darcy.proxy.staticproxy;
+package org.darcy.proxy.staticproxy;
 
 /**
  * 测试Count类

@@ -1,4 +1,4 @@
-package darcy.cglibtest;
+package org.darcy.test.cglibtest;
 
 import net.sf.cglib.proxy.Callback;
 import net.sf.cglib.proxy.Enhancer;

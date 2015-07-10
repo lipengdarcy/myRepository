@@ -1,4 +1,4 @@
-package darcy.cglibtest;
+package org.darcy.test.cglibtest;
 
 public class Client {
 

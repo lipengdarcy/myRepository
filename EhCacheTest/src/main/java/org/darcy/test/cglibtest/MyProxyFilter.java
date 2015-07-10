@@ -1,4 +1,4 @@
-package darcy.cglibtest;
+package org.darcy.test.cglibtest;
 
 import java.lang.reflect.Method;
 import net.sf.cglib.proxy.CallbackFilter;

@@ -7,11 +7,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * cookie处理相关工具 第一步，登陆的时候一旦选择了[自动登录]的选项，则需要在登陆成功后，附加下面的代码
- * 
- * @author songjinsheng
- * */
 public class CookieHanler {
 	public final static String SESSION_LOGIN_USERNAME = "SESSION_LOGIN_USERNAME";
 	public final static String SESSION_LOGIN_PASSWORD = "SESSION_LOGIN_PASSWORD";

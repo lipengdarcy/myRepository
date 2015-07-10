@@ -1,4 +1,4 @@
-package darcy.proxy.dynamicproxy;
+package org.darcy.proxy.dynamicproxy;
 
 public class TestProxy {
 

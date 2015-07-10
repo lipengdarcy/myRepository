@@ -4,7 +4,7 @@
 对象缓存一般是针对方法、类而来的，结合Spring的Aop对象、方法缓存就很简单。这里需要用到切面编程，用到了Spring的MethodInterceptor或是用@Aspect。
  * */
 
-package com.hoo.common.ehcache;
+package org.darcy.common.ehcache;
 
 import java.io.Serializable;
 

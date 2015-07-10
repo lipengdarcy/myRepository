@@ -1,4 +1,4 @@
-package darcy.proxy.staticproxy;
+package org.darcy.proxy.staticproxy;
 
 /**
  * 委托类(包含业务逻辑)
