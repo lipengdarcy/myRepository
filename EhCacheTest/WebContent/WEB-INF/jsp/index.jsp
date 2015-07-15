@@ -20,7 +20,7 @@
 <script type="text/javascript">
 	jQuery(document).ready(function() {
 		jQuery("#list2").jqGrid({
-			url : 'list.do',
+			url : 'jqgrid.do',
 			datatype : "json",
 			colNames : [ 'psn', 'pid', '产品名称', '图片' ],
 			colModel : [ {

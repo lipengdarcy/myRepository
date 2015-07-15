@@ -1,4 +1,4 @@
-package com.hoo.ehcache.filter;
+package org.darcy.common.ehcache;
 
 import java.util.Enumeration;
 

@@ -1,4 +1,4 @@
-package com.test.encache;
+package org.darcy.EhCacheTest;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
