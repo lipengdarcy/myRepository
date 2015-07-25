@@ -1,0 +1,45 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<script type="text/javascript" src="../../js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="../../js/jquery.toastmessage.js"></script>
+<link href="../../css/jquery.toastmessage.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	//$().toastmessage('showNoticeToast', 'some message here');
+	
+	$().toastmessage('showToast',{
+	    text     : '你所选择的区域价格改变，请知晓！',
+	    position : 'top-right',
+	    type     : 'notice',
+	    close    : function () {console.log("toast is closed ...");}
+	});
+	
+	$().toastmessage('showToast', {
+	    text     : 'Some information for you ...',
+	    sticky   : true,
+	    type     : 'notice'
+	});
+	
+
+	//test
+	alert("$(document).ready(function()");
+});
+	
+
+
+
+</script>
+
+<title>jquery-toastmessage-plugin</title>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
