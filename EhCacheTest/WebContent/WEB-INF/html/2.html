@@ -1,0 +1,57 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<script type="text/javascript" src="jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").css("background-color","red");
+  });
+  
+
+});
+
+//1. 最笨的办法....... [我就怎么干的.........]
+
+function get()
+{
+    var s = 22.127456 + "";
+    var str = s.substring(0,s.indexOf(".") + 3);
+    alert(str);
+}
+
+//2. 正则表达式效果不错
+
+onload = function(){
+    var a = "23.456322";
+    var aNew;
+    var re = /([0-9]+\.[0-9]{2})[0-9]*/;
+    aNew = a.replace(re,"$1");
+    alert("2. 正则表达式效果不错");
+	alert(aNew);
+}
+
+
+//3. 他就比较聪明了.....
+var num=22.127456;
+alert("Math.round(num*100)/100");
+alert( Math.round(num*100)/100);
+
+
+//4.会用新鲜东西的朋友....... 但是需要 IE5.5+才支持。
+
+var num=22.127456;
+alert("num.toFixed(2)");
+alert( num.toFixed(2));
+
+</script>
+
+<title>JS 保留小数点后面2位小数</title>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
