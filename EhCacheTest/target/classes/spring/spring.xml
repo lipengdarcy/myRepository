@@ -90,7 +90,7 @@
 	</bean>
 
 	<!-- Jackson转换器 -->
-	
+
 	<!-- fastjson转换器 -->
 	<bean id="fastJsonHttpMessageConverter"
 		class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter" />
@@ -110,8 +110,8 @@
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	
-	
+
+
 
 
 
@@ -177,5 +177,39 @@
 			</list>
 		</property>
 	</bean>
+
+
+
+
+
+
+	<!-- 1、Scheduler的配置 -->
+	<bean id="startQuertz" lazy-init="false" autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="testTrigger" />
+			</list>
+		</property>
+		<property name="autoStartup" value="true" />
+	</bean>
+
+	<!-- 2、Trigger的配置,定义触发时间 -->
+	<bean id="testTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="testJobDetail" />
+		<property name="cronExpression" value="*/1 * * * * ?" /><!-- 每隔1秒钟触发一次 -->
+	</bean>
+
+	<!-- 3、JobDetail的配置 -->
+	<bean id="testJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="effectPriceJob" />
+		<property name="targetMethod" value="execute" />
+		<property name="concurrent" value="false" />
+		<!-- 是否允许任务并发执行。当值为false时，表示必须等到前一个线程处理完毕后才再启一个新的线程 -->
+	</bean>
+	<!-- 4、业务类的配置(要调用的 调度工作) -->
+
+	<bean id="effectPriceJob" class="org.darcy.quartz.EffectPriceJob"></bean>
 
 </beans>   

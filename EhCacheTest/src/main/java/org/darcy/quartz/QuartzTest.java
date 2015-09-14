@@ -2,8 +2,8 @@
 //QuartzTest.java
 package org.darcy.quartz;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class QuartzTest {
 
@@ -12,30 +12,13 @@ public class QuartzTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		SimpleDateFormat DateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-		Date d = new Date();
-		String returnstr = DateFormat.format(d);
 
-		TestJob job = new TestJob();
-		String job_name = "11";
-		try {
-			System.out.println(returnstr + "【系统启动】");
-			QuartzManager.addJob(job_name, job, "0/2 * * * * ?"); // 每2秒钟执行一次
+		System.out.println("Test start.");
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"spring/spring.xml");
+		// 如果配置文件中将startQuertz bean的lazy-init设置为false 则不用实例化
+		// context.getBean("startQuertz");
+		System.out.print("Test end..");
 
-			// Thread.sleep(10000);
-			// System.out.println("【修改时间】");
-			// QuartzManager.modifyJobTime(job_name,"0/10 * * * * ?");
-			// Thread.sleep(20000);
-			// System.out.println("【移除定时】");
-			// QuartzManager.removeJob(job_name);
-			// Thread.sleep(10000);
-			//
-			// System.out.println("/n【添加定时任务】");
-			// QuartzManager.addJob(job_name,job,"0/5 * * * * ?");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 }
