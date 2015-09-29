@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 搜索, 应该作为动作按钮展示-->
+    <item android:id="@+id/action_search"
+          android:icon="@drawable/ic_action_search"
+          android:title="@string/action_search"
+          android:showAsAction="ifRoom" />
+    <!-- 设置, 在溢出菜单中展示 -->
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          android:showAsAction="never" />
+    <!-- 分享 -->
+      <item android:id="@+id/action_share"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_Share"
+        android:actionProviderClass="android.widget.ShareActionProvider" />
+    
+    <!-- 当 action bar 有可用空间时，检索操作将作为一个操作按钮来显示，但设置操作将一直只在 action overflow 中显示。
+    （默认情况下，所有的操作都显示在 action overflow 中，但为每一个操作指明设计意图是很好的做法。） -->
+</menu>
+

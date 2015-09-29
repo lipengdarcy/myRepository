@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FirstApp</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="another_message">我的宽度很宽</string>
+    <string name="button_send">发送信息</string>
+    <string name="button_openmap">打开地图</string>
+    <string name="button_openpic">查看图片</string>
+    <string name="button_opengl">OpenGL</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">搜索</string>
+    <string name="action_Share">分享给朋友们</string>
+    <string name="title_activity_main">MainActivity</string>
+    
+    <string name="preference_file_key">我的配置文件</string>
+    <string name="chooser_title">请选择要打开的app</string>
+    <string name="picDescription">就是个图片，没啥</string>
+
+    <!-- activity 标题 -->
+    <string name="activity_main">我的桌面</string>
+    <string name="activity_displayMessage">My Message</string>
+    <string name="activity_FileSelector">请选择文件</string>
+    <string name="activity_ImageDetail">图片查看器</string>
+    <string name="activity_OpenGLES20">OpenGL</string>
+
+</resources>
