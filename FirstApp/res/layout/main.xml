@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+  
+
+        <!--
+	LinearLayout是ViewGroup的一个子类，用于放置水平或者垂直放置子视图的部件，由属性android:orientation来设定方向。
+	LinearLayout里的子布局按照XML里定义的顺序向显示在屏幕上。
+ 	另外的两个属性android:layout_width和android:layout_height，对于所有的Views都需要对这两个属性进行设置来指定尺寸。
+	在这里因为LinearLayout是整个视图的根布局，所以对于宽和高都应该是充满整个屏幕的，通过指定width 和 height属性为"match_parent"。
+	该值表示子View扩张自己width和height来匹配父控件的width和height。
+        -->
+ 
+ 
+        <EditText
+            android:id="@+id/edit_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/edit_message" />
+        <!--
+	android:id
+	这里定义的是View的唯一标示符，你可以在程序的代码里进行引用，你可以对这个类进行读和修改的操作(在下一课里将会用到)
+	当你想从XML里使用资源类的时候必须使用@符号，紧随@之后的是资源的类型(这里是id)，然后是资源的名字(这里使用的是edit_message)。
+	(其他的资源可以使用相同的名字只要他们不是相同的资源类型，例如：字符串资源可以使用相同的名字)。
+
+	+号只是当你第一次定义一个资源ID的时候需要。这里是告诉SDK此资源ID需要被创建出来。在应用程序被编译之后，SDK就可以直接使用ID值，
+	edit_message是在项目gen/R.java文件中创建一个新的标示符，这个标示符就和EditText关联起来了。一旦资源ID被创建了，其他
+	资源如果引用这个ID就不再需要+号了。这里是唯一一个需要+号的属性。
+	android:layout_width 和android:layout_height
+
+	对于宽和高不建议指定具体的大小，使用wrap_content指定之后，这个视图只是占据内容大小的空间。如果你使用了match_parent，
+	这时EditText将会布满整个屏幕，因为它将适应父布局的大小。想要看到更多信息，请参考 布局向导。
+	
+	android:hint
+	当文本框为空的时候,会默认显示这个字符串。对于字符串@string/edit_message的值所引用的资源应该是定义在单独的文件里，
+	而不是直接使用字符串。因为使用的是值是存在的资源，所以不需要使用+号。然而，由于你还没有定义字符串的值，所以在添加
+	@string/edit_message时候会出现编译错误。下边你可以定义字符串资源值来去除这个错误。 
+	
+	对于所有的View默认的权重是0，如果你只设置了一个View的权重大于0，那么这个View将占据除去别的View本身占据的空间的的所有剩余
+	空间。因此这里设置EditText的权重为1，使其能够占据除了按钮之外的所有空间。
+        -->
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendMessage"
+            android:text="@string/button_send" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="openMap"
+            android:text="@string/button_openmap" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="openPic"
+            android:text="@string/button_openpic" />
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OpenGL"
+            android:text="@string/button_opengl" />
+
+
+
+
+</LinearLayout>
