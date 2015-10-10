@@ -1,0 +1,72 @@
+/*banner*/
+#full-screen-slider { width:100%; height:400px; float:left; position:relative; }
+#slides { display:block; width:100%; height:400px; list-style:none;  position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { position:absolute; left:50%; z-index:10;  padding:5px 15px 5px 0; bottom:10px; width:150px; margin-left:-75px;}
+#pagination li { width:12px; height:12px; float:left; margin-left:20px; border-radius:50%; border-radius:50%; border:1px solid #fff;}
+#pagination li a {display:block; width:100%; height:100%; text-indent:-9999px;}
+#pagination li.current { background:#ff3c3c;border:1px solid #ff3c3c;}
+#full-screen-slider>a{ display:block; width:60px; height:60px; background:url(../images/sprite.png) 0 0 no-repeat #000; position:absolute; top:168px; filter:alpha(opacity=30);   -moz-opacity:0.3;
+-khtml-opacity:0.3; opacity: 0.3; z-index:20; }
+#full-screen-slider>a:hover{ background-color:#ff3c3c; filter:alpha(opacity=100);   -moz-opacity:1;-khtml-opacity:1; opacity: 1;}
+#full-screen-slider>a.prev{ left:0; background-position: 22px -384px;}
+#full-screen-slider>a.next{ right:34px; background-position: -42px -384px;}
+/*main*/
+.main{ background:#e9e9e9;padding:40px 0 30px 0;}
+.recommend{ width:806px; }
+.tab{ height:40px; line-height:40px; margin-bottom:15px; position:relative;}
+.tab:after{width:100%; height:1px;content:''; position:absolute; display:block; top:20px; right:0px; background:#ddd; z-index:5;}
+.tab h1{font-size:18px; font-weight:bolder; position:absolute; top:0; left:0; height:40px;background:#e9e9e9; z-index:6; line-height:40px; padding-right:20px;} 
+.tab .arrow{ position:absolute; right:0; top:12px; z-index:6; background:#e9e9e9; padding-left:12px; width:45px; display:none;}
+.tab .arrow a{ display:block; width:17px; height:17px; border:2px solid #27282c; background:url(../images/sprite.png) -2px -345px no-repeat;}
+.tab .arrow a:hover{ border-color:#ff3c3c;}
+.tab .arrow .next{ background-position:-28px -345px;}
+.tab .arrow .prev:hover{background-position:-2px -367px;}
+.tab .arrow .next:hover{background-position:-28px -367px;}
+.recommend ul{ width:816px; margin-right:-12px;}
+.recommend ul li{ width:262px; float:left; height:370px; background:#fff; text-align:center; margin-right:10px; margin-bottom:25px;}
+.recommend ul li .imghloder{ width:100%; height:238px; background:#fff; position:relative; overflow:hidden;}
+.recommend ul li .imghloder img{ width:100%;}
+.cart-line{ position:absolute; left:0; bottom:0; height:34px;width:100%; display:none;}
+.cart-line .list-cart{ color:#fff; display: block;  background:url(../images/sprite.png) -170px -109px no-repeat; position:absolute; left:5px; top:10px; padding-left:15px; height:24px; width:40%;}
+.recommend .cart-line .list-cart-one{left:80px;}
+.cart-line .list-collect{ color:#fff; display: block;background:url(../images/sprite.png) -40px -334px no-repeat; position:absolute; right:5px; top:10px; padding-right:16px; width:40%; text-align:right;}
+.cart-line .list-collect:hover{ background-position:-40px -372px;}
+.cart-line:before{width:100%; height:100%;content:''; position:absolute; display:block; top:0px; right:00; background:#000; filter:alpha(opacity=50);   -moz-opacity:0.5;-khtml-opacity:0.5; opacity: 0.5; }
+.recommend ul li:hover .imghloder .cart-line{ display:block;}
+.recommend ul li .info{ width:75%; text-align:center; margin:0 auto; padding-top:15px;}
+.recommend ul li .info em{ line-height:24px; color:#999; font-style:normal;}
+.recommend ul li .info .price{ font-size:18px; font-weight:bolder; color:#ff3c3c;}
+.recommend ul li .info .price del{ color:#999; padding-right:10px;}
+.recommend ul li .info p{ line-height:18px; padding:5px 0;}
+.recommend ul li:hover{ background:#ff3c3c;-webkit-box-shadow: -1px 4px 13px rgba(6,0,1,.2);	-moz-box-shadow: -1px 4px 13px rgba(6,0,1,.2);box-shadow: -1px 4px 13px rgba(6,0,1,.2);}
+.recommend ul li:hover .info em{ color:#ffc9c9;}
+.recommend ul li:hover .info .price del{ color:#ff8686;}
+.recommend ul li:hover .info .price,.recommend ul li:hover .info p a{ color:#fff;}
+.hot-news{ width:340px;}
+.hot-news ul{ padding:25px; height:715px; overflow:hidden;background:#fff;}
+.news-tab{ height:40px; line-height:40px; margin-bottom:15px; position:relative;}
+.news-tab:after{width:100%; height:1px;content:''; position:absolute; display:block; top:20px; right:0px; background:#ddd; z-index:5;}
+.news-tab h2{font-size:18px; font-weight:bolder; position:absolute; top:0; left:0; height:40px;background:#e9e9e9; z-index:6; line-height:40px; padding-right:20px;} 
+.news-tab .arrow{ position:absolute; right:0; top:0px; z-index:6; width:45px; background: url(../images/sprite.png) -145px -42px no-repeat #e9e9e9; display:block; height:40px; padding-left:15px;}
+.news-tab .arrow:hover{color:#ff3c3c;}
+.hot-news li{ font-size:14px;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 290px; height:34px; line-height:34px;}
+.hot-news li strong{ color:#000; padding-right:6px;}
+.hot-news li strong.red{color:#ff3c3c;}
+.hot-news li a:hover{color:#ff3c3c; text-decoration:underline;}
+/*link*/
+.link{background:#e9e9e9; }
+.link h3{font-size:18px; font-weight:bolder;}
+.link-list{ height:145px; background:#fff; margin-top:20px;}
+.link-list .wrap{ position:relative;padding:32px 0; }
+.link-list .wrap>a{position:absolute;  top:60px; width:25px; height:28px; background:url(../images/sprite.png) -90px -170px no-repeat; display:block; z-index:10;}
+.link-list .wrap>a.prev{ left:-30px ;}
+.link-list .wrap>a.next{  right:-30px; background-position:-90px -213px;}
+.link-ul{height:80px; overflow:hidden; width:100%; position:absolute;}
+.link-list ul{width:100000px;left:0; position:absolute;}
+.link-list ul li{ width:168px; height:78px; overflow:hidden; border:1px solid #e5e5e5; margin:0 18px 0 8px; float:left;}
+.link-list ul li img{ width:100%; height:100%;}
+.link-list ul li:hover{ -webkit-box-shadow: -1px 4px 13px rgba(6,0,1,.2);	-moz-box-shadow: -1px 4px 13px rgba(6,0,1,.2);box-shadow: -1px 4px 13px rgba(6,0,1,.2);}
+
+

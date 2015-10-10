@@ -1,0 +1,300 @@
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/includes/commons/taglibs.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>区域运费-修改</title>
+        <%@ include file="/WEB-INF/includes/home/header.jsp"%>
+        <script type="text/javascript">
+        //页面加载完毕后执行
+            $(document).ready(function (e) {
+                        laydate({
+                            elem: '#planeffecttime',
+                            istime: true,
+                            format: 'YYYYMMDDhhmmss', // 分隔符可以任意定义，该例子表示只显示年月
+                            //max: laydate.now(),
+                            min: '1900-01-01 00:00:00', //最小日期
+                            max: '2099-12-31 23:59:59', //最大日期
+                            festival: true //显示节日
+                        });
+						//删除行
+                        $(".del-row-btn").bind("click", function (e) {
+                            var src = e.target;
+                            var srcRow = $(src).closest("tr");
+                            srcRow.remove();
+                        });
+						//添加行
+                        $(".add-price-table-row").bind("click", function (e) {
+                            var tmpClone = $("#price-table-row-tmp tr").clone(true);
+                            var priceTable = $(".price-table");
+                            priceTable.append(tmpClone);
+                        });
+						//
+                        var defUnits = $("#def_units").val();
+                        var defUnitArr = defUnits.split(",");
+                        for (var di = 0; di < defUnitArr.length; di++) {
+                            var defUnitid = defUnitArr[di];
+                            defUnitid = $.trim(defUnitid);
+                            var ckbox = $(".def-unit-list-td").find("[type='checkbox'][value='" + defUnitid + "']");
+                            if (ckbox.length > 0) {
+                                ckbox[0].checked = "checked";
+                            }
+                        }
+            });
+        //自定义函数
+            var saveEditForm = function () {
+                var $form = $("#area_form");
+                $("#def-uint-names").empty();
+                var defUnits = $(".def-unit-list-td").find("[type='checkbox']");
+                for (var di = 0; di < defUnits.length; di++) {
+                    var defUnit = defUnits[di];
+                    var unitName = $(defUnit).closest("label").find(".def-unit-name")
+                            .html();
+                    $("#def-uint-names")
+                            .append(
+                                    "<input type='hidden' name='defUnitList[" + di + "].unitname' value='" + unitName + "'/>")
+                }
+
+                var regionId = $("#area1").find("#lastName").val();//获取区域id
+                $form.find("#region_id").val(regionId);
+                var regionsName = $("#area1").find(".pshow-name-ele").text();//获取区域名称
+                $form.find("#region_name").val(regionsName);
+
+                var priceTrs = $form.find(".price-table .price-table-row");
+                for (var pi = 0; pi < priceTrs.length; pi++) {
+                    var priceTr = priceTrs[pi];
+                    var nameEles = $(priceTr).find("input[name]");
+                    for (var ni = 0; ni < nameEles.length; ni++) {
+                        var nameEle = nameEles[ni];
+                        if (pi == 0) {
+                            if ($.trim(nameEle.value) == "") {
+                                alert("你必须添加最起运最小值及其起运价格");
+                                return;
+                            }
+                        } else {
+                            if ($.trim(nameEle.value) == "") {
+                                $(nameEle).closest("tr").remove();
+                                continue;
+                            }
+                        }
+
+                        var name = nameEle.name;
+                        name = name.replace("[n]", "[" + pi + "]");
+                        nameEle.name = name;
+                    }
+                }
+
+                var postData = $form.serialize();
+                $.ajax({
+                    url: url + 'regionprice/shipEdit.do',
+                    data: postData,
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.state == 'success') {
+                            $("#area_form_ctx").hide();
+                            $("#area_form_success_ctx").show();
+                        } else {
+                            alert("异常！请重新尝试或者联系管理员！");
+                        }
+                    },
+                    error: function () {
+                        alert("异常！请重新尝试或者联系管理员！");
+                    }
+                });
+
+            }, reloadForm = function () {
+                location.reload();
+            };
+        </script>
+    </head>
+    <body>
+        <h2 class="contentTitle">区域运费-修改</h2>
+        <div id="area_form_ctx" class="pageContent">
+            <form id="area_form" method="post" action=""
+                  class="pageForm required-validate">
+                <input type="hidden" id="priid" name="priid" value="${proRegion.id }" />
+                <input type="hidden" id="product_id" name="pid"
+                       value="${proRegion.productid }" /> <input type="hidden" id="region_id"
+                       name="regionId" value="${proRegion.regionsid }" /> <input
+                       type="hidden" id="region_name" name="regionName" value="" /> <input
+                       type="hidden" id="def_units"
+                       value="<c:forEach var="defUnit" items="${defUnitList }">${defUnit.unitid },</c:forEach>" />
+                    <div style="" id="def-uint-names"></div>
+                    <div class="pageFormContent nowrap" layoutH="97">
+                        <table>
+                            <c:if test="${proRegion.productid >0}">
+                                <tr>
+                                    <th>商品名称：</th>
+                                    <td>${product.name }</td>
+                                </tr>
+                            </c:if>
+                            <tr>
+                                <th>区域：</th>
+                                <td> <!-- 区域选择 --> <div id="area1" class="cellCon">
+                                        <div seled-name-show=".pshow-name-ele" cid="${cid }" min-layer="2"
+                                             max-layer="5" input-sel="[hidden-inputs-div]" role="hs-area-sel"
+                                             style="position: relative;">
+                                            <div>
+                                                <div show-hs-area-sel="" class="btn btn-success">请选择</div>
+                                                <span class="pshow-name-ele"></span>
+                                            </div>
+                                            <div class="area-float-panel float-panel">
+                                                <div class="panel-close-btn">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </div>
+                                                <div role="tabpanel" class="area-tabs">
+                                                    <ul class="nav nav-tabs" role="tablist"></ul>
+                                                    <div class="tab-content"></div>
+                                                </div>
+                                                <div hidden-inputs-div=""></div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- 区域选择end -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>默认计量单位:&nbsp;</th>
+                                <td class="def-unit-list-td"> <c:forEach var="unitItems"
+                                                                         items="${unitlist }" varStatus="status">
+                                        &nbsp;&nbsp;<label><input type="checkbox"
+                                                                  name="defUnitList[${status.index }].unitid"
+                                                                  value="${unitItems.unitid }" /><span class="def-unit-name">${unitItems.unitname }</span></label>
+                                    </c:forEach>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>起步价:&nbsp;</th>
+                                <td> <input type="text" name="startship"
+                                            value="${proRegion.startship }" />
+                                </td>
+                            </tr>
+                            <c:if test="${not empty extPrice }">
+	                            <c:forEach var="extitem" items="${extPrice }" varStatus="status">
+	                             	<tr>
+										<th>${extitem.name }</th>
+										<td>
+											<input type='text' name="extPriceList[${status.index }].value" value="${extitem.value }">
+											<input type='hidden' name="extPriceList[${status.index }].type" value="${extitem.type }">
+										</td>
+									</tr>
+	                            </c:forEach> 
+                            </c:if>
+                            <c:if test="${empty extPrice }">
+	                            <tr>
+									<th>门店自提</th>
+									<td>
+										<input type='text' name="extPriceList[0].value" value="">
+										<input type='hidden' name="extPriceList[0].type" value="1">
+			
+									</td>
+								</tr>
+								<tr>
+									<th>工厂自提</th>
+									<td>
+										<input type='text' name="extPriceList[1].value" value="">
+										<input type='hidden' name="extPriceList[1].type" value="2">
+			
+									</td>
+								</tr>
+								<tr>
+									<th>送货上门</th>
+									<td>
+										<input type='text' name="extPriceList[2].value" value="">
+										<input type='hidden' name="extPriceList[2].type" value="3">
+			
+									</td>
+								</tr>
+                            </c:if>           
+                            <tr>
+                                <th>价格区间:</th>
+                                <td> <table class="price-table">
+                                        <tr class="price-table-head">
+                                            <td>&nbsp;</td>
+                                            <td>购买数量</td>
+                                            <td>&nbsp;</td>
+                                            <td>运输费用</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <c:forEach var="priceItem" items="${priceList }" varStatus="status">
+                                            <c:if test="${status.index==0 }">
+                                                <tr class="price-table-row">
+                                                    <td class="right-td">最小够买量:</td>
+                                                    <td><input type='text' name="priceList[n].buyminquan"
+                                                               value="${priceItem.buyminquan }"></td>
+                                                    <td>${prounit.unitname }及以上</td>
+                                                    <td><input type='text' name="priceList[n].price"
+                                                               value="${priceItem.price }"></td>
+                                                    <td>元/${prounit.unitname}</td>
+                                                    <td><span class="space-span">&nbsp;</span></td>
+                                                </tr>
+                                            </c:if>
+                                            <c:if test="${status.index!=0 }">
+                                                <tr class="price-table-row">
+                                                    <td class="right-td">购买:</td>
+                                                    <td><input type='text' name="priceList[n].buyminquan"
+                                                               value="${priceItem.buyminquan }"></td>
+                                                    <td>${prounit.unitname}及以上</td>
+                                                    <td><input type='text' name="priceList[n].price"
+                                                               value="${priceItem.price }"></td>
+                                                    <td>元/${prounit.unitname}</td>
+                                                    <td class="center-td"><span
+                                                            class="table-button space-span del-row-btn">删除</span></td>
+                                                </tr>
+                                            </c:if>
+                                        </c:forEach>
+
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><span class="table-button add-price-table-row">+增加价格区间</span></td>
+                            </tr>
+                                                                     
+
+                            <tr style="display: none;">
+                                <td colspan="2">
+                                	<input type="radio" name="effectnow" value="1" checked="checked"/>立即生效
+                                </td>
+                            </tr>
+
+                            <tr style="display: none;">
+                                <td colspan="2" ><span> <input type="radio"
+                                                               name="effectnow" value="0" />将来生效
+                                    </span><span> 生效时间：<input type="text" id="planeffecttime" name="planeffecttime" /></span> </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" class="right-td"><span class="btn btn-default"
+                                                                       onclick="saveEditForm();">提交</span></td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+            </form>
+
+        </div>
+        <table id="price-table-row-tmp" style="display: none;">
+            <tr class="price-table-row">
+                <td class="right-td">购买:</td>
+                <td><input type='text' name="priceList[n].buyminquan" value=""></td>
+                <td>${prounit.unitname}及以上</td>
+                <td><input type='text' name="priceList[n].price" value=""></td>
+                <td>元/${prounit.unitname}</td>
+                <td class="center-td"><span
+                        class="table-button space-span del-row-btn">删除</span></td>
+            </tr>
+        </table>
+        <div id="area_form_success_ctx" class="pageContent"
+             style="display: none; padding-left: 20px;">
+            <div style="color: green; margin: 20px 0;">
+                <h3>修改成功！</h3>
+            </div>
+        </div>
+
+    </body>
+</html>

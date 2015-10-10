@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"  
+  version="2.0">  
+       
+  <tlib-version>1.0</tlib-version>  
+  <short-name>my</short-name>  
+  <uri>http://www.runlion.com/jstl/functions</uri>
+  
+  <!-- JSTL自定义函数   获取区域类型描述 -->  
+  <function>  
+    <name>getAreaPriceType</name>  
+    <function-class>com.runlion.shop.common.util.JstlFunction</function-class>  
+    <function-signature>java.lang.String getAreaPriceType(java.lang.Object)</function-signature>  
+  </function>
+  
+  <!-- JSTL自定义函数   获取工厂/门店类型描述 -->  
+  <function>  
+    <name>getSaleaddressType</name>  
+    <function-class>com.runlion.shop.common.util.JstlFunction</function-class>  
+    <function-signature>java.lang.String getSaleaddressType(java.lang.Object)</function-signature>  
+  </function>
+  
+  <!-- JSTL自定义函数   0：是，1：否描述 -->  
+  <function>  
+    <name>getYesOrNoDesc</name>  
+    <function-class>com.runlion.shop.common.util.JstlFunction</function-class>  
+    <function-signature>java.lang.String getYesOrNoDesc(java.lang.Object)</function-signature>  
+  </function>
+  
+</taglib>  

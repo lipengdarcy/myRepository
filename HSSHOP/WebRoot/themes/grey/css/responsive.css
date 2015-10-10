@@ -1,0 +1,84 @@
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+	.fixed-menu{ display:none;}
+	.wrap{ width:960px;}
+	.header .search{margin-right:30px;}
+	.header .search form{width: 353px;}
+	.header .search .s-input{width:240px;}
+	.nav .categorys .title{width:190px;background-position:205px -157px;}
+	.nav .categorys .title:hover{background-position:205px -203px;}
+	.nav .categorys>ul{width:240px;}
+	.nav-detail ul{ left:240px;}
+	.nav>.wrap>ul>li{ width:100px;background:url(../images/sprite.png)  80px -255px no-repeat; margin-right:5px;}
+	.service li .imghloder{margin-right:5px; margin-left:6px;}
+	.service li{ width:187px;}
+    .service li dt{ font-size:14px;}
+    .service li dd{ font-size:12px;}
+	.recommend{ width:656px; }
+	.recommend ul{ width:666px; margin-right:-12px;}
+    .recommend ul li{ width:211px; height:320px;}
+	.recommend ul li .imghloder{  height:188px;}
+	.hot-news{ width:290px;}
+	.hot-news ul{ height:615px; overflow:hidden;}
+	.hot-news li{  width: 240px; height:30px; line-height:30px;}
+	.link-ul{width:900px; margin:0 40px 0 20px;}
+	.link-list ul li{ width:148px;}
+	.link-list .wrap>a.prev{ left:-10px;}
+    .link-list .wrap>a.next{  right:20px;}
+	.user-menu-list{ width:143px;}
+	.user-menu{ width:145px;}
+	.user-content{ width:800px; float:left; margin-left:15px;}
+	.user-menu-list>ul { padding:15px 0 15px 15px;}
+	.order-delivery-box.factory-delivery-box form fieldset.clearfix{ width:365px;}
+	.order-delivery-box.factory-delivery-box  form fieldset.txtarea textarea{width:335px;}
+	.order-delivery-box.factory-delivery-box form fieldset.cencel-btn{ padding-left:200px; width:100%;}
+	.order-list04 .delivery-info{width:245px}
+	.user-search input{ width:142px; }
+	.order-cencel-box form fieldset{ width:330px;}
+	.order-cencel-box select{ width:260px;}
+	.order-cencel-box form fieldset.upload-img{ right:-50px; width:400px; top:-2px;}
+	.order-cencel-box form fieldset.cencel-btn{ padding-left:200px; width:100%;}
+	.order-cencel-box.order-collection-box form fieldset{ width:355px;}
+    .order-cencel-box.order-collection-box form fieldset select{ width:230px}
+	.order-cencel-box.order-collection-box form fieldset input[type="text"]{ width:230px;}
+	.order-cencel-box.order-collection-box  fieldset.cencel-btn{ padding-left:200px;}
+	.order-delivery-box form fieldset.clearfix{ width:240px;}
+	.order-delivery-box form fieldset.upload-img{ top:315px;}
+	.order-delivery-box form fieldset.cencel-btn{ width:100%; padding-left:200px;}
+    .evaluation-detial-user,.evaluation-detial-seller{ width:370px;}
+	.evaluation-explain textarea{ width:745px;}
+	.evaluation-box textarea{ width:725px;}
+	.evaluation-box fieldset.evaluation-btn{ padding-left:172px;}
+	.sales-data input,.sales-data textarea{ width:200px;}
+	.sales-data textarea{ width:635px; }
+	.sales-data input,.sales-data textarea{ margin-right:8px; font-size:12px; padding-left:5px;}
+	.sales-data input.data-put01{ width:40px;}
+    .sales-data input.data-put02{ width:90px;}
+    .sales-data input.data-put03{ width:120px;}
+	.coords-map{ width:410px; }
+	.product-user ul{ width:820px;}
+	.product-user ul li{ width:185px;}
+	.product-user ul li .imghloder img{ width:185px;}
+	.cart-line .list-collect:hover{ background-position:-75px -371px;}
+	.productshow-img .img-big{ height:370px;}
+	.product-intro{ width:690px;}
+	.product-info{ width:300px;}
+	.table-wd01{ width:80px;}
+    .table-wd02 { width:110px;}
+    .table-wd03 { width:150px;}
+    .table-wd04{ width:60px;}
+	.product-info-long{ width:340px;}
+	.user-search .search-date input{ width:120px;}
+	.user-search .search-select select{width:145px;}
+	.user-table-li .product-info-long{padding-left:15px;}
+    .user-table-head .product-info-long{padding-left:15px;}
+   .user-head-icon li{ width:140px;}
+   .evaluation-list .star{ margin-left:8px;}
+   #full-screen-slider>a.next{ right:0px;}
+   .recommend .cart-line .list-cart-one{left:60px;}
+   .cart-line .list-cart{ width:50%;}
+ .cart-line .list-collect{ width:50%;}
+   .user-table-li tr.table-sline td.order-operate a.goshop{width:70px;}
+   .product-user ul li .info{ width:85%; }
+   .product-user ul li .imghloder{ height:170px; }
+   .product-user ul li{ height:300px; }
+	}

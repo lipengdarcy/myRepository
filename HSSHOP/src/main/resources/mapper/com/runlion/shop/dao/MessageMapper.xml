@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.runlion.shop.dao.MessageMapper" >
+	
+	<!-- 添加短信  -->
+	<insert id="insertMessage" parameterType="com.runlion.shop.entity.BspMessage" >
+		<selectKey resultType="int" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into bsp_message (mobile,message,valid,state,sendingTime,code)
+		values (#{mobile}, #{message }, #{valid}, #{state},now(),#{code})
+	</insert>
+	
+	<!-- 添加短信  -->
+	<insert id="insertMessageAll" parameterType="com.runlion.shop.entity.BspMessage" >
+		<selectKey resultType="int" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into bsp_message (mobile,message,valid,state,sendingTime,code,orderNumber)
+		values (#{mobile}, #{message }, #{valid}, #{state},now(),#{code},#{orderNumber})
+	</insert>
+  
+  	<!-- 查询所有短信 -->
+  	<select id="getMessageList"  parameterType="map" resultType="com.runlion.shop.entity.BspMessage">
+  		SELECT * from bsp_message c order by c.sendingTime desc limit ${START_NUM},${LIMIT_NUM}
+  	</select>
+  	
+  	<!-- 查询所有短信 -->
+  	<select id="countMessage"  parameterType="int" resultType="int">
+  		SELECT count(*) from bsp_message c 
+  	</select>
+  	
+  	<!-- 查询短信有效期 -->
+  	<select id="getMessageValidity" parameterType="java.lang.String" resultType="com.runlion.shop.entity.BspMessage">
+  		SELECT * from bsp_message where code = #{VerificationCode} 
+  	</select>
+  	
+  	<!--某个用户的某个验证码的短信数据 -->
+  	<select id="getUserMessageValidity" parameterType="map" resultType="com.runlion.shop.entity.BspMessage">
+  		SELECT * from bsp_message where  code = #{VERIF_CODE} 
+  		<if test="TEL_NUM != null">
+			and mobile=#{TEL_NUM} 
+		</if>
+		and state=0 		
+  		and orderNumber=#{orderNumber} order by valid desc limit 0,1
+  	</select>
+  	
+  	
+	<update id="updateMessageValidity" parameterType="map" >
+		update bsp_message set state = 1 where code = #{VerificationCode}
+	</update>
+	
+	<update id="updateMessageState" parameterType="map" >
+		update bsp_message set state = 1 where id = #{id}
+	</update>
+	
+	<select id="countMessagebyphone"  parameterType="map" resultType="java.util.HashMap">
+  		SELECT
+			count(*) num,message
+			
+		FROM
+			bsp_message c
+		WHERE
+			c.message LIKE '%${key}%'
+		AND c.mobile=#{mobile}
+		AND c.sendingTime between #{start} and #{end}
+		GROUP BY
+			c.mobile,
+			c.message
+		ORDER BY num DESC
+		LIMIT 0,1
+  	</select>
+  	
+  	<select id="countMessagebyphone1"  parameterType="map" resultType="java.util.HashMap">
+  		SELECT
+			count(*) num
+			
+		FROM
+			bsp_message c
+		WHERE
+			c.message LIKE '%${key}%'
+		AND c.mobile=#{mobile}
+		AND c.sendingTime between #{start} and #{end}
+		GROUP BY
+			c.mobile
+		ORDER BY num DESC
+		LIMIT 0,1
+  	</select>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.runlion.shop.dao.BsporderVerificationMapper" >
+	
+	<!-- 添加订单验证表  -->
+	<insert id="insertOrderVerification" parameterType="com.runlion.shop.entity.BsporderVerification" >
+		<selectKey resultType="int" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into bsp_orderVerification (orderNumber,verificationCode,state,valid)
+		values (#{orderNumber }, #{verificationCode}, #{state},#{valid})
+	</insert>
+  
+  	<!-- 查询订单有效期 -->
+  	<select id="getOrderVerification" parameterType="java.lang.String" resultType="com.runlion.shop.entity.BsporderVerification">
+  		SELECT * from bsp_orderVerification where orderNumber = #{orderNumber} and verificationCode = #{VerificationCode} 
+  	</select>
+  	
+  	<update id="updateOrderVerification" parameterType="map" >
+		update bsp_orderVerification set state = 1 where verificationCode = #{VerificationCode}
+	</update>
+	
+	<update id="updateOrderVerificationByOrder" parameterType="map" >
+		update bsp_orderVerification set verificationCode = #{VerificationCode} where orderNumber = #{orderNumber}
+	</update>
+</mapper>

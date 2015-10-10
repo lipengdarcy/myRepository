@@ -1,0 +1,72 @@
+/*@webSir Css*/
+
+/*index第一部分*/
+#index1{ padding:8px 0 0 0px; height:300px; overflow:hidden; width:1000px;}
+.indexPic{ width:700px; height:300px; }
+#bannerBox{position:relative;}
+#bannerContentID li{position:relative;}
+#bannerNumID{ position:absolute; bottom:15px; right:15px;}
+#bannerNumID li{list-style:none;float:left;background:#999999; color:#FFF;-moz-border-radius: 22px;-webkit-border-radius:22px;border-radius: 22px; width:22px; height:22px; line-height:22px; text-align:center; margin-left:5px;}
+#bannerNumID li:hover,#bannerNumID li.active{background:#e4393c;}
+
+
+/*公告*/
+.gonggao{ width:282px; height:298px; border:1px solid #b3b1b1;}
+.gonggao h2{ font-size:14px; position:relative; height:35px; line-height:35px; padding-left:35px; background:url(./themes/default/images/gonggao.jpg) no-repeat 10px 10px; margin-top:5px;}
+.gonggao h2 .more{ position:absolute; display:block; width:80px; text-align:center; color:#FFF; background:#d1caca; font-weight:normal; height:20px; line-height:20px; right:10px; top:6px; font-size:12px;}
+.gonggao h2 .more:hover{ background:#cd292b;}
+.gonggao .textList{ padding:5px 10px 10px 15px;}
+.gonggao .textList li{background:url(../images/san_icon.png) no-repeat left  center; padding-left:15px; height:27px; line-height:27px; font-size:13px;}
+.gonggao .textList li a {
+    display: block;
+    height: 27px;
+    overflow: hidden;
+    width: 230px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#index2{padding:14px 0 0 0px; height:216px; overflow:hidden; width:1000px;}
+
+#index2 .category{width:680px; height:220px; position:relative; background:#e0e0e0; padding:10px; font-size:14px;}
+#index2 .category h2{ font-size:14px; color:#da251d; height:15px; font-weight:normal;}
+#index2 .category h2 span{ color:#999; padding-left:10px;}
+#index2 .category h2 a{ float:right; color:#999;}
+#index2 .category h2 a:hover{ color:#da251d;}
+#index2 .category>ul{ margin-top:10px; background:#fff; height:150px; overflow:hidden; padding:10px 15px;}
+#index2 .category>ul>li{ height:40px; width:630px; line-height:40px;}
+#index2 .category>ul>li>strong{ display:block; float:left; width:70px;}
+#index2 .category>ul>li>ul{ float:left; border-bottom:1px solid #f1f1f1; width:555px;}
+#index2 .category>ul>li>ul>li{ float:left; padding:0 15px;}
+#index2 .gonggao.shop-guide{height:214px;}
+#index2 .gonggao.shop-guide h2{ background:url(./themes/default/images/guide.jpg) no-repeat 10px 10px;}
+.index-ad{ margin:15px auto;width: 1000px;}
+
+/*product*/
+.floor{ margin-top:20px;}
+.floorT{ height:26px; font-size:18px; position:relative;line-height:26px; background:#da251d; color:#fff; margin-bottom:20px; padding:5px 0 5px 10px;}
+.floorBt{ position:absolute; right:10px; top:5px;}
+.floorBt a{ color:#fff; background:url(/themes/default/images/i.gif) no-repeat right center; font-size:14px; font-weight:normal; padding:0 15px; padding-left:20px;}
+.floorBt a:hover{ text-decoration:underline;}
+.floorBox{ width:999px;height:364px;overflow:hidden; border-right:1px solid #b3b1b1;}
+.floorBox ul{ width:120%;}
+.floorBox li{ float:left;width:219px; margin-bottom:30px;border-left:1px solid #b3b1b1;border-bottom:1px solid #b3b1b1; border-top:1px solid #b3b1b1; height:342px; padding:10px; }
+.floorBox li .imghloder{ width:218px; height:218px;overflow:hidden;}
+.floorBox li .imghloder img{ width:218px;}
+.floorBox li .product-info{ padding:20px 15px; height:78px; overflow:hidden;}
+.floorBox li .product-info>a{ display:block; color:#fff; width:150px; height:35px; background:#fd2b22; text-align:center; margin:0 auto; font-size:16px;line-height: 35px;}
+.floorBox li .product-info>a:hover{ background:#da251d;}
+.floorBox li .product-intro>a{ display:block; font-size:14px; padding:15px 0 0 0; color:#000; text-align:center;}
+.floorBox li:hover .product-intro a{ color:#da251d;}
+.floorBox li:hover{-webkit-box-shadow: 0 -1px 12px rgba(0,0,0,.2);	-moz-box-shadow: 0 -1px 12px rgba(0,0,0,.2);box-shadow: 0 -1px 12px rgba(0,0,0,.2);}
+.floorBox .proBig{ width:246px; height:332px; overflow:hidden; border:1px solid #b3b1b1; padding:15px 10px; margin-right:11px;background-color:#fff;}
+.floorBox .proBig:hover{-webkit-box-shadow: 0 -1px 12px rgba(0,0,0,.2);	-moz-box-shadow: 0 -1px 12px rgba(0,0,0,.2);box-shadow: 0 -1px 12px rgba(0,0,0,.2);}
+.floorBox .proBig .imghloder{ width:245px; height:330px; overflow:hidden;}
+.floorBox .proBig .imghloder img{ width:245px;}
+
+
+.cus-intro-class{
+	font-size:18px;
+	font-weight:bold;
+	color:green;
+}

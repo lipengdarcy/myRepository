@@ -1,0 +1,243 @@
+.float-panel {
+    position: absolute;
+    width: 750px;
+    height: 330px;
+    background-color: white;
+    border: 1px solid rgb(162, 162, 162);
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    display: none;
+    overflow: auto;
+    opacity: 0;
+    z-index: 999;
+}
+
+.panel-close-btn{
+    position: absolute;
+    right:16px;
+    top:16px;
+    cursor: pointer;
+	background:url(../images/close.jpg) 0 0 no-repeat;
+	width:15px; height:15px;
+	
+}
+li.area-item-list {
+    list-style: none;
+    float: left;
+    padding: 6px;
+    cursor: pointer;
+    width: 9em;
+}
+
+li.area-item-list:hover{
+    color:blue;
+}
+
+.float-mask{
+	position:absolute;
+	z-index:100;
+	top: 0;
+ 	bottom: 0;
+ 	filter:alpha(opacity=10);       /* IE */
+	opacity: 0.1;  
+	background-color:black; 
+}
+
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  line-height: 1;
+  width:15px; 
+  height:15px;
+  }
+.glyphicon-menu-down:before {
+display:block;
+  content: "";
+  width:15px;
+  height:15px;  
+  background:url(../images/location-icon.png) 0 -30px no-repeat;
+}  
+.area-tabs .nav{
+	background-color: white;
+  	height: 40px;
+}
+.area-tabs .nav a {
+  color: black;
+  background-color: white;
+}
+.area-tabs .nav > li {
+  position: relative;
+  display: block;
+}
+.area-tabs li a {
+  display: block;
+  float: left;
+  color: #fff;
+  text-align: center;
+  background: #ff3c3c;
+  width: auto;
+}
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px 9px 15px;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > li.disabled > a {
+  color: #777;
+}
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: #eee;
+  border-color: #337ab7;
+}
+.nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.nav > li > a > img {
+  max-width: none;
+}
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 1px 1px 0 0;
+}
+.nav-tabs > li > a:hover {
+  border-color: #eee #eee #ddd;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  padding-bottom: 10px;
+}
+.nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.nav-tabs.nav-justified > li {
+  float: none;
+}
+.nav-tabs.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+
+.tab-content > .tab-pane {
+  display: none;
+  overflow: auto;
+  height: 280px;
+}
+.tab-content > .active {
+  display: block;
+}
+.weekday{
+	width:30px !important;
+}
+#show-address-sel{ display:block; height:25px; background-color:#327ab7; color:#fff; line-height:25px; width:100px; text-align:center; font-size:14px; font-weight:bold; padding:2px 15px; border-radius:3px; cursor:pointer;}
+#post-address-name{ font-weight:bolder; padding:5px 0; font-size:14px;}
+/*
+.clearfix:after, .dl-horizontal dd:after, .container:after, .container-fluid:after, .row:after, .form-horizontal .form-group:after, .btn-toolbar:after, .btn-group-vertical > .btn-group:after, .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-footer:after {
+clear: both;
+}
+*/
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+display: table;
+content: " ";
+}
+/*覆盖或添加一些样式以便适应插件*/
+.fleft-label{
+	float:left;
+}
+.xheTool span a{
+    background: transparent !important;
+  	width: 25px !important;
+}
+/**
+修改jqueryui的样式
+*/
+.ui-timepicker-div .ui-widget-header {margin-bottom: 8px;}
+.ui-timepicker-div dl {text-align: left;}
+.ui-timepicker-div dl dt {height: 25px;margin-bottom: -25px;}
+.ui-timepicker-div dl dd {margin: 0 10px 10px 65px;}
+.ui-timepicker-div td {font-size: 90%;}
+.ui-tpicker-grid-label {background: none;border: none;margin: 0;padding: 0;}
+.ui_tpicker_hour_label, .ui_tpicker_minute_label,
+.ui_tpicker_second_label, .ui_tpicker_millisec_label,
+.ui_tpicker_time_label {padding-left: 20px}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  border-bottom-right-radius: 0px;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+  border-bottom-left-radius: 0px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+  border-top-right-radius: 0px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+  border-top-left-radius: 0px;
+}
+fieldset .ui-state-default,
+fieldset .ui-widget-content .ui-state-default, 
+fieldset .ui-widget-header .ui-state-default {
+  width: 15px;
+}
+fieldset .ui-spinner{
+  float:left; 
+}
+fieldset .ui-spinner input{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+}
+.pshow-name-ele{
+  width: 207px;
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid #e3e3e3;
+  padding-left: 10px;
+  font-size: 14px;
+  float: left;
+  margin-right: 12px;
+  color: #999;
+}
+.ui-widget-header {
+  border: 1px solid #e78f08;
+  background: red;
+  color: #ffffff;
+  font-weight: bold;
+}
