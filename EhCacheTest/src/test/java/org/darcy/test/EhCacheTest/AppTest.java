@@ -1,4 +1,4 @@
-package org.darcy.EhCacheTest;
+package org.darcy.test.EhCacheTest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
