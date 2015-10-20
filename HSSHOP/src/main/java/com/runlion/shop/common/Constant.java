@@ -1,5 +1,5 @@
 package com.runlion.shop.common;
-
+//分支测试dev 2015.10.20
 /**
  * 红狮水泥商城的常量列表
  */
