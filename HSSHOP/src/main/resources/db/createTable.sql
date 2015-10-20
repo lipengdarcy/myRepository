@@ -1,6 +1,6 @@
 
 -- 属性表 
-CREATE TABLE `hsshop_dev`.`bsp_attributes` (
+CREATE TABLE `bsp_attributes` (
   `attrid` INT NOT NULL COMMENT '',
   `name` VARCHAR(200) NULL COMMENT '',
   `cateid` INT NULL COMMENT '',
