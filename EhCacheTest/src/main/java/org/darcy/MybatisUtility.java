@@ -3,14 +3,19 @@ package org.darcy;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.darcy.entity.BspProducts;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -26,7 +31,13 @@ import org.dom4j.io.XMLWriter;
 
 public class MybatisUtility {
 
-	public void addTable(File inputXml) {
+	/**
+	 * generatorConfiguration文件中增加table节点
+	 * 
+	 * @return 表名的列表
+	 * 
+	 * */
+	public void addTableToMybatisConfigFile(File inputXml) {
 		try {
 			SAXReader saxReader = new SAXReader();
 			Document doc = saxReader.read(inputXml);
@@ -67,6 +78,12 @@ public class MybatisUtility {
 
 	}
 
+	/**
+	 * 获取数据库的所有表
+	 * 
+	 * @return 表名的列表
+	 * 
+	 * */
 	@SuppressWarnings("unchecked")
 	public List<String> getTableList() {
 
@@ -117,11 +134,136 @@ public class MybatisUtility {
 		return list;
 	}
 
+	/**
+	 * 根据对象生成create table sql语句
+	 * 
+	 * @param entity
+	 *            对象
+	 * */
+	@SuppressWarnings("unchecked")
+	public String createTable(Object entity) {
+
+		StringBuffer sql = new StringBuffer();
+		sql.append("CREATE TABLE ");
+		List<Map<String, Object>> list = getFiledsInfo(entity);
+		sql.append(list.get(0).get("obj_name").toString() + "(\n");
+		for (int i = 0; i < list.size(); i++) {
+			sql.append(list.get(i).get("f_name").toString() + " ");
+			sql.append(list.get(i).get("f_type").toString() + " ");
+			sql.append("NULL COMMENT '',\n");
+
+		}
+		sql.append("PRIMARY KEY (id)  COMMENT '')");
+		sql.append("ENGINE = MyISAM DEFAULT CHARACTER SET = UTF8;");
+
+		return sql.toString();
+	}
+
+	/**
+	 * 根据对象生成insert sql语句
+	 * 
+	 * @param entity
+	 *            对象
+	 * */
+	public String createInsert(Object entity) {
+
+		String sql = "Insert into ";
+		String column = ""; // 列
+		String c_values = ""; // 列值
+		List<Map<String, Object>> list = getFiledsInfo(entity);
+		sql += list.get(0).get("obj_name").toString() + " ";
+		for (int i = 0; i < list.size(); i++) {
+
+			if (list.get(i).get("f_name").toString() == "id")
+				i++;
+			if (list.get(i).get("f_value") != null) {
+
+				// System.out.println("属性数据类型：" + list.get(i).get("f_type"));
+				column += list.get(i).get("f_name") + ",";
+				c_values += "'" + list.get(i).get("f_value") + "',";
+			}
+
+		}
+		sql += "(" + column.substring(0, column.length() - 1) + ") values ("
+				+ c_values.substring(0, c_values.length() - 1) + ");";
+
+		return sql;
+	}
+
+	/**
+	 * 根据属性名获取属性值
+	 * 
+	 * @param fieldName
+	 *            属性名
+	 * @param o
+	 *            对象
+	 * */
+	protected Object getFieldValueByName(String fieldName, Object o) {
+		try {
+			String firstLetter = fieldName.substring(0, 1).toUpperCase();
+			String getter = "get" + firstLetter + fieldName.substring(1);
+			Method method = o.getClass().getMethod(getter, new Class[] {});
+			Object value = method.invoke(o, new Object[] {});
+			return value;
+		} catch (Exception e) {
+			// log.error(e.getMessage(), e);
+			return null;
+		}
+	}
+
+	/**
+	 * 类名(obj_name) 获取属性类型(f_type)， 属性名(f_name)， 属性值(f_value)的map组成的list
+	 * */
+	@SuppressWarnings("unused")
+	protected List getFiledsInfo(Object o) {
+
+		String obj_name = o.getClass().getSimpleName().toString();
+		Field[] fields = o.getClass().getDeclaredFields();
+		String[] fieldNames = new String[fields.length];
+		List<Map> list = new ArrayList();
+		Map<String, Object> infoMap;
+
+		for (int i = 0; i < fields.length; i++) {
+			infoMap = new HashMap<String, Object>();
+
+			infoMap.put("obj_name", obj_name);
+			infoMap.put("f_type", getMysqlType(fields[i]));
+
+			infoMap.put("f_name", fields[i].getName());
+			infoMap.put("f_value", getFieldValueByName(fields[i].getName(), o));
+			list.add(infoMap);
+		}
+		return list;
+	}
+
+	// java属性类型转换为mysql类型
+	protected String getMysqlType(Field f) {
+		String fieldName = f.getType().getName();
+		if (fieldName.equals("java.lang.Integer"))
+			return "INT";
+		if (fieldName.equals("java.lang.Short"))
+			return "INT";
+		if (fieldName.equals("java.math.BigDecimal"))
+			return "DECIMAL";
+		if (fieldName.equals("java.lang.Byte"))
+			return "TINYINT";
+		if (fieldName.equals("java.util.Date"))
+			return "DATE";
+		if (fieldName.equals("java.lang.String"))
+			return "VARCHAR";
+
+		return "error";
+	}
+
+
 	public static void main(String[] argv) {
 		MybatisUtility dom4jParser = new MybatisUtility();
-		File f = new File("src/main/resources/generatorConfig.xml");
-		System.out.println(f.getName() + ":" + f.getAbsolutePath());
-		dom4jParser.addTable(f);
+		// File f = new File("src/main/resources/generatorConfig.xml");
+		// System.out.println(f.getName() + ":" + f.getAbsolutePath());
+		// dom4jParser.addTableToMybatisConfigFile(f);
+
+		String sql = dom4jParser.createTable(new BspProducts());
+		System.out.println(sql);
 	}
 
 }
