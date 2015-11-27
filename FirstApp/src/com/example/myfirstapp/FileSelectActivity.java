@@ -6,14 +6,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.support.v4.content.FileProvider;
 
-//ÎÄ¼şÑ¡Ôñ ÔÚ´úÂëÖĞ¶¨ÒåÎÄ¼şÑ¡ÔñActivity
+//æ–‡ä»¶é€‰æ‹© åœ¨ä»£ç ä¸­å®šä¹‰æ–‡ä»¶é€‰æ‹©Activity
 public class FileSelectActivity extends Activity {
 
 	// The path to the root of this app's internal storage
@@ -50,7 +49,7 @@ public class FileSelectActivity extends Activity {
 		 * each File
 		 */
 
-		// Ò»µ©Ò»¸öÓÃ»§Ñ¡ÔñÁËÒ»¸ö¹²ÏíµÄÎÄ¼ş£¬ÄãµÄÓ¦ÓÃ±ØĞëÃ÷È·ÄÄ¸öÎÄ¼ş±»Ñ¡ÔñÁË£¬È»ºóÎªÕâ¸öÎÄ¼şÉú³ÉÒ»¸ö¶ÔÓ¦µÄURI¡£
+		// ä¸€æ—¦ä¸€ä¸ªç”¨æˆ·é€‰æ‹©äº†ä¸€ä¸ªå…±äº«çš„æ–‡ä»¶ï¼Œä½ çš„åº”ç”¨å¿…é¡»æ˜ç¡®å“ªä¸ªæ–‡ä»¶è¢«é€‰æ‹©äº†ï¼Œç„¶åä¸ºè¿™ä¸ªæ–‡ä»¶ç”Ÿæˆä¸€ä¸ªå¯¹åº”çš„URIã€‚
 		// Define a listener that responds to clicks on a file in the ListView
 		mFileListView
 				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -84,7 +83,7 @@ public class FileSelectActivity extends Activity {
 						}
 
 						if (fileUri != null) {
-							// ÎªÎÄ¼şÊÚÈ¨
+							// ä¸ºæ–‡ä»¶æˆæƒ
 							// Grant temporary read permission to the content
 							// URI
 							mResultIntent
@@ -108,8 +107,8 @@ public class FileSelectActivity extends Activity {
 
 	/**
 	 * 
-	 * ÏòÓÃ»§Ìá¹©Ò»¸öÒ»µ©ËûÃÇÑ¡ÔñÁËÎÄ¼ş¾ÍÄÜÁ¢¼´»Øµ½¿Í»§¶ËÓ¦ÓÃµÄ·½·¨¡£Ò»ÖÖÊµÏÖµÄ·½·¨ÊÇÌá¹©Ò»¸ö¹´Ñ¡¿ò»òÕßÒ»¸öÍê³É°´Å¥¡£
-	 * Ê¹ÓÃ°´Å¥µÄandroid:onClickÊôĞÔ×Ö¶ÎÎªËü¹ØÁªÒ»¸ö·½·¨¡£ÔÚ¸Ã·½·¨ÖĞ£¬µ÷ÓÃfinish())
+	 * å‘ç”¨æˆ·æä¾›ä¸€ä¸ªä¸€æ—¦ä»–ä»¬é€‰æ‹©äº†æ–‡ä»¶å°±èƒ½ç«‹å³å›åˆ°å®¢æˆ·ç«¯åº”ç”¨çš„æ–¹æ³•ã€‚ä¸€ç§å®ç°çš„æ–¹æ³•æ˜¯æä¾›ä¸€ä¸ªå‹¾é€‰æ¡†æˆ–è€…ä¸€ä¸ªå®ŒæˆæŒ‰é’®ã€‚
+	 * ä½¿ç”¨æŒ‰é’®çš„android:onClickå±æ€§å­—æ®µä¸ºå®ƒå…³è”ä¸€ä¸ªæ–¹æ³•ã€‚åœ¨è¯¥æ–¹æ³•ä¸­ï¼Œè°ƒç”¨finish())
 	 * */
 	public void onDoneClick(View v) {
 		// Associate a method with the Done button

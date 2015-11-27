@@ -19,7 +19,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 	
 
 	//调用一次，用来配置视图的OpenGL ES环境。
-	@Override
+	//@Override
     public void onSurfaceCreated(GL10 unused, EGLConfig config) {
         // Set the background frame color
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);

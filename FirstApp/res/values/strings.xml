@@ -18,10 +18,11 @@
     <string name="picDescription">就是个图片，没啥</string>
 
     <!-- activity 标题 -->
-    <string name="activity_main">我的桌面</string>
+    <string name="activity_main">first activity</string>
     <string name="activity_displayMessage">My Message</string>
     <string name="activity_FileSelector">请选择文件</string>
     <string name="activity_ImageDetail">图片查看器</string>
     <string name="activity_OpenGLES20">OpenGL</string>
+    <string name="activity_Gesture">手势描绘</string>
 
 </resources>

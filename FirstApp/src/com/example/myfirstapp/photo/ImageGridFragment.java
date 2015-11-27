@@ -21,7 +21,7 @@ import android.widget.ImageView;
 
 import com.example.myfirstapp.R;
 
-//实现加载图片到GridView(Load Bitmaps into a GridView Implementation)
+//瀹炵幇鍔犺浇鍥剧墖鍒癎ridView(Load Bitmaps into a GridView Implementation)
 public class ImageGridFragment extends Fragment implements
 		AdapterView.OnItemClickListener {
 
@@ -55,7 +55,7 @@ public class ImageGridFragment extends Fragment implements
 		return v;
 	}
 
-	@Override
+	//@Override
 	public void onItemClick(AdapterView parent, View v, int position, long id) {
 		final Intent i = new Intent(getActivity(), ImageDetailActivity.class);
 		i.putExtra(ImageDetailActivity.EXTRA_IMAGE, position);
@@ -70,22 +70,21 @@ public class ImageGridFragment extends Fragment implements
 			mContext = context;
 		}
 
-		@Override
 		public int getCount() {
 			return imageResIds.length;
 		}
 
-		@Override
+		//@Override
 		public Object getItem(int position) {
 			return imageResIds[position];
 		}
 
-		@Override
+		//@Override
 		public long getItemId(int position) {
 			return position;
 		}
 
-		@Override
+		//@Override
 		public View getView(int position, View convertView, ViewGroup container) {
 			ImageView imageView = null;
 			loadBitmap(imageResIds[position], imageView);
@@ -98,7 +97,7 @@ public class ImageGridFragment extends Fragment implements
 			} else {
 				imageView = (ImageView) convertView;
 			}
-			// 请注意下面的代码
+			// 璇锋敞鎰忎笅闈㈢殑浠ｇ爜
 			imageView.setImageResource(imageResIds[position]); // Load image
 																// into
 																// ImageView

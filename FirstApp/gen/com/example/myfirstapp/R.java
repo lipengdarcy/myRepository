@@ -29,22 +29,26 @@ public final class R {
         public static final int sd_yinmu=0x7f02000f;
     }
     public static final class id {
-        public static final int action_search=0x7f080006;
-        public static final int action_settings=0x7f080007;
-        public static final int action_share=0x7f080008;
-        public static final int article_fragment=0x7f080005;
-        public static final int edit_message=0x7f080003;
-        public static final int gridView=0x7f080002;
-        public static final int headlines_fragment=0x7f080004;
-        public static final int imageView=0x7f080000;
-        public static final int pager=0x7f080001;
+        public static final int action_search=0x7f080008;
+        public static final int action_settings=0x7f080009;
+        public static final int action_share=0x7f08000a;
+        public static final int article_fragment=0x7f080006;
+        public static final int edit_message=0x7f080004;
+        public static final int gestureview=0x7f080000;
+        public static final int gridView=0x7f080003;
+        public static final int headlines_fragment=0x7f080005;
+        public static final int imageView=0x7f080001;
+        public static final int pager=0x7f080002;
+        public static final int showview=0x7f080007;
     }
     public static final class layout {
-        public static final int image_detail_fragment=0x7f030000;
-        public static final int image_detail_pager=0x7f030001;
-        public static final int image_grid_fragment=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int news_articles=0x7f030004;
+        public static final int gesture=0x7f030000;
+        public static final int image_detail_fragment=0x7f030001;
+        public static final int image_detail_pager=0x7f030002;
+        public static final int image_grid_fragment=0x7f030003;
+        public static final int main=0x7f030004;
+        public static final int news_articles=0x7f030005;
+        public static final int show=0x7f030006;
     }
     public static final class menu {
         public static final int main_activity_actions=0x7f070000;
@@ -54,6 +58,7 @@ public final class R {
         public static final int action_search=0x7f050008;
         public static final int action_settings=0x7f050007;
         public static final int activity_FileSelector=0x7f050010;
+        public static final int activity_Gesture=0x7f050013;
         public static final int activity_ImageDetail=0x7f050011;
         public static final int activity_OpenGLES20=0x7f050012;
         public static final int activity_displayMessage=0x7f05000f;

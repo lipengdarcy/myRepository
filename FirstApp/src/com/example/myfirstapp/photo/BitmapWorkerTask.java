@@ -9,7 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
-//非UI线程处理Bitmap
+//闈濽I绾跨▼澶勭悊Bitmap
 public class BitmapWorkerTask extends AsyncTask {
 
 	 public static class AsyncDrawable extends BitmapDrawable {
@@ -67,7 +67,7 @@ public class BitmapWorkerTask extends AsyncTask {
 		return BitmapFactory.decodeResource(res, resId, options);
 	}
 
-	// 根据目标图片大小来计算Sample图片大小
+	// 鏍规嵁鐩爣鍥剧墖澶у皬鏉ヨ绠桽ample鍥剧墖澶у皬
 	public static int calculateInSampleSize(BitmapFactory.Options options,
 			int reqWidth, int reqHeight) {
 		// Raw height and width of image

@@ -66,13 +66,13 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	public String mCurrentPhotoPath;
 
-	public static final int REQUEST_PICK_CONTACT = 1; // Ñ¡ÔñÁªÏµÈË
+	public static final int REQUEST_PICK_CONTACT = 1; // é€‰æ‹©è”ç³»äºº
 
-	public static final int REQUEST_IMAGE_CAPTURE = 2;// ÅÄÕÕ×¥È¡ËõÂÔÍ¼
+	public static final int REQUEST_IMAGE_CAPTURE = 2;// æ‹ç…§æŠ“å–ç¼©ç•¥å›¾
 
-	public static final int REQUEST_TAKE_PHOTO = 3;// ÅÄÕÕ
+	public static final int REQUEST_TAKE_PHOTO = 3;// æ‹ç…§
 
-	public static final int REQUEST_VIDEO_CAPTURE = 4;// Â¼ÊÓÆµ
+	public static final int REQUEST_VIDEO_CAPTURE = 4;// å½•è§†é¢‘
 
 	// private CameraDevice mCamera;
 	private Camera mCamera;
@@ -87,7 +87,7 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	private LruCache<String, Bitmap> mMemoryCache;
 
-	// Set the Share Intent(ÉèÖÃ·ÖÏíµÄintent)
+	// Set the Share Intent(è®¾ç½®åˆ†äº«çš„intent)
 	private ShareActionProvider mShareActionProvider;
 
 	NfcAdapter mNfcAdapter;
@@ -102,7 +102,7 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	private BroadcastReceiver receiver = null;
 
-	public void setIsWifiP2pEnabled(boolean isWifiP2pEnabled) { // ÉèÖÃÒ»¸ö±ê¼ÇÊÇ·ñÆôÓÃWiFiÖ±Á¬
+	public void setIsWifiP2pEnabled(boolean isWifiP2pEnabled) { // è®¾ç½®ä¸€ä¸ªæ ‡è®°æ˜¯å¦å¯ç”¨WiFiç›´è¿
 		this.isWifiP2pEnabled = isWifiP2pEnabled;
 	}
 
@@ -130,13 +130,13 @@ public class MainActivity extends Activity implements ChannelListener {
 		mChannel = mManager.initialize(this, getMainLooper(), null);
 
 		// getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		// Èç¹ûÄãµÄminSdkVersionÊôĞÔÊÇ11»î¸ü¸ß, Ó¦¸ÃÕâÃ´ÓÃ:
+		// å¦‚æœä½ çš„minSdkVersionå±æ€§æ˜¯11æ´»æ›´é«˜, åº”è¯¥è¿™ä¹ˆç”¨:
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		// NFC isn't available on the device
-		// Èç¹ûÄãÉèÖÃÁËandroid:required="false"£¬Äã±ØĞëÒªÔÚ´úÂëÖĞ²âÊÔNFCºÍAndroid BeamÎÄ¼ş´«ÊäÊÇ·ñ±»Ö§³Ö¡£
+		// å¦‚æœä½ è®¾ç½®äº†android:required="false"ï¼Œä½ å¿…é¡»è¦åœ¨ä»£ç ä¸­æµ‹è¯•NFCå’ŒAndroid Beamæ–‡ä»¶ä¼ è¾“æ˜¯å¦è¢«æ”¯æŒã€‚
 
-		PackageManager pm = this.getPackageManager(); // »ñµÃPackageManager¶ÔÏó
+		PackageManager pm = this.getPackageManager(); // è·å¾—PackageManagerå¯¹è±¡
 
 		if (!pm.hasSystemFeature(PackageManager.FEATURE_NFC)) {
 			/*
@@ -177,7 +177,7 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	}
 
-	// ´´½¨Ò»¸öĞÂµÄBroadcastReceiverÀàÕìÌıÏµÍ³ÖĞWi-Fi P2PµÄ×´Ì¬±ä»¯¡£
+	// åˆ›å»ºä¸€ä¸ªæ–°çš„BroadcastReceiverç±»ä¾¦å¬ç³»ç»Ÿä¸­Wi-Fi P2Pçš„çŠ¶æ€å˜åŒ–ã€‚
 	// @Override
 	public void onReceive(Context context, Intent intent) {
 		String action = intent.getAction();
@@ -220,22 +220,22 @@ public class MainActivity extends Activity implements ChannelListener {
 		}
 	}
 
-	/** µ±ÓÃ»§µã»÷°´Å¥Ê±»á±»µ÷ÓÃ */
+	/** å½“ç”¨æˆ·ç‚¹å‡»æŒ‰é’®æ—¶ä¼šè¢«è°ƒç”¨ */
 	public void sendMessage(View view) {
-		// ÏìÓ¦°´Å¥µÄÊÂ¼ş´¦ÀíÂß¼­
-		// Intent ¿ÉÒÔĞ¯´ø¸÷ÖÖÊı¾İÀàĞÍµÄ¼¯ºÏµÄkey-value¸½¼Ó¶Ô£¬³Æ×÷extras¡£
-		// putExtra()·½·¨°Ñ¼üÃû×÷ÎªµÚÒ»¸ö²ÎÊı£¬°ÑÖµ×÷ÎªµÚ¶ş¸ö²ÎÊı¡£
+		// å“åº”æŒ‰é’®çš„äº‹ä»¶å¤„ç†é€»è¾‘
+		// Intent å¯ä»¥æºå¸¦å„ç§æ•°æ®ç±»å‹çš„é›†åˆçš„key-valueé™„åŠ å¯¹ï¼Œç§°ä½œextrasã€‚
+		// putExtra()æ–¹æ³•æŠŠé”®åä½œä¸ºç¬¬ä¸€ä¸ªå‚æ•°ï¼ŒæŠŠå€¼ä½œä¸ºç¬¬äºŒä¸ªå‚æ•°ã€‚
 		Intent intent = new Intent(this, DisplayMessageActivity.class);
 		EditText editText = (EditText) findViewById(R.id.edit_message);
 		String message = editText.getText().toString();
 		intent.putExtra(EXTRA_MESSAGE, message);
-		// Æô¶¯µÚ¶ş¸öactivity
+		// å¯åŠ¨ç¬¬äºŒä¸ªactivity
 		startActivity(intent);
 	}
 
-	/** µ±ÓÃ»§µã»÷ ²é¿´µØÍ¼ °´Å¥Ê±»á±»µ÷ÓÃ */
+	/** å½“ç”¨æˆ·ç‚¹å‡» æŸ¥çœ‹åœ°å›¾ æŒ‰é’®æ—¶ä¼šè¢«è°ƒç”¨ */
 	public void openMap(View view) {
-		// Implicit intents²¢²»»áÉùÃ÷ĞèÒªÆô¶¯µÄ×é¼şµÄÀàÃû£¬ËüÊ¹ÓÃµÄÊÇÉùÃ÷Ò»¸öĞèÒªÖ´ĞĞµÄ¶¯×÷¡£Õâ¸öactionÖ¸¶¨ÁËÄãÏë×öµÄÊÂÇé
+		// Implicit intentså¹¶ä¸ä¼šå£°æ˜éœ€è¦å¯åŠ¨çš„ç»„ä»¶çš„ç±»åï¼Œå®ƒä½¿ç”¨çš„æ˜¯å£°æ˜ä¸€ä¸ªéœ€è¦æ‰§è¡Œçš„åŠ¨ä½œã€‚è¿™ä¸ªactionæŒ‡å®šäº†ä½ æƒ³åšçš„äº‹æƒ…
 		// Map point based on address
 		Uri location = Uri
 				.parse("geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+California");
@@ -244,7 +244,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		// is zoom level
 		Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
 
-		// µ±ÓĞ¶à¸öÓ¦ÓÃÊ±£¬ÈÃÓÃ»§×Ô¼ºÑ¡Ôñ´ò¿ª·½Ê½
+		// å½“æœ‰å¤šä¸ªåº”ç”¨æ—¶ï¼Œè®©ç”¨æˆ·è‡ªå·±é€‰æ‹©æ‰“å¼€æ–¹å¼
 		// Always use string resources for UI text. This says something like
 		// "Share this photo with"
 		String title = (String) getResources().getText(R.string.chooser_title);
@@ -252,7 +252,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		Intent chooser = Intent.createChooser(mapIntent, title);
 		startActivity(chooser);
 
-		// Èç¹ûÄã´¥·¢ÁËÒ»¸öintent£¬¶øÇÒÃ»ÓĞÈÎºÎÒ»¸öapp»áÈ¥½ÓÊÕÕâ¸öintent£¬ÄÇÃ´ÄãµÄapp»ácrash¡£
+		// å¦‚æœä½ è§¦å‘äº†ä¸€ä¸ªintentï¼Œè€Œä¸”æ²¡æœ‰ä»»ä½•ä¸€ä¸ªappä¼šå»æ¥æ”¶è¿™ä¸ªintentï¼Œé‚£ä¹ˆä½ çš„appä¼šcrashã€‚
 		PackageManager packageManager = getPackageManager();
 		List<ResolveInfo> activities = packageManager.queryIntentActivities(
 				mapIntent, 0);
@@ -262,16 +262,16 @@ public class MainActivity extends Activity implements ChannelListener {
 			startActivity(mapIntent);
 		}
 
-		// ´òµç»°
+		// æ‰“ç”µè¯
 		Uri number = Uri.parse("tel:5551234");
 		Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
 		// startActivity(callIntent);
 
-		// ²é¿´ÍøÒ³
+		// æŸ¥çœ‹ç½‘é¡µ
 		Uri webpage = Uri.parse("http://www.android.com");
 		Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
 
-		// ·¢ËÍÓÊ¼ş
+		// å‘é€é‚®ä»¶
 		Intent emailIntent = new Intent(Intent.ACTION_SEND);
 		// The intent does not have a URI, so declare the "text/plain" MIME type
 		emailIntent.setType(HTTP.PLAIN_TEXT_TYPE);
@@ -285,7 +285,7 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	}
 
-	/** ²é¿´Í¼Æ¬ */
+	/** æŸ¥çœ‹å›¾ç‰‡ */
 	public void openPic(View view) {
 		Intent intent = new Intent(this, ImageDetailActivity.class);
 		startActivity(intent);
@@ -297,8 +297,8 @@ public class MainActivity extends Activity implements ChannelListener {
 		startActivity(intent);
 	}
 
-	// Æô¶¯ÁíÍâÒ»¸öactivity²¢²»Ò»¶¨ÊÇµ¥ÏòµÄ¡£ÄãÒ²¿ÉÒÔÆô¶¯ÁíÍâÒ»¸öactivityÈ»ºó½ÓÊÜÒ»¸öresult»ØÀ´¡£
-	// ÎªÁË½ÓÊÜÕâ¸öresult£¬ÄãĞèÒªÊ¹ÓÃstartActivityForResult() £¬¶ø²»ÊÇstartActivity()¡£
+	// å¯åŠ¨å¦å¤–ä¸€ä¸ªactivityå¹¶ä¸ä¸€å®šæ˜¯å•å‘çš„ã€‚ä½ ä¹Ÿå¯ä»¥å¯åŠ¨å¦å¤–ä¸€ä¸ªactivityç„¶åæ¥å—ä¸€ä¸ªresultå›æ¥ã€‚
+	// ä¸ºäº†æ¥å—è¿™ä¸ªresultï¼Œä½ éœ€è¦ä½¿ç”¨startActivityForResult() ï¼Œè€Œä¸æ˜¯startActivity()ã€‚
 	private void pickContact() {
 		Intent pickContactIntent = new Intent(Intent.ACTION_PICK,
 				Uri.parse("content://contacts"));
@@ -320,14 +320,14 @@ public class MainActivity extends Activity implements ChannelListener {
 				// Do something with the contact here (bigger example below)
 			}
 		}
-		// ²é¿´ËõÂÔÍ¼
+		// æŸ¥çœ‹ç¼©ç•¥å›¾
 		if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 			Bundle extras = data.getExtras();
 			Bitmap imageBitmap = (Bitmap) extras.get("data");
 			mImageView.setImageBitmap(imageBitmap);
 		}
 
-		// ²¥·ÅÊÓÆµ
+		// æ’­æ”¾è§†é¢‘
 		if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
 			Uri videoUri = data.getData();
 			mVideoView.setVideoURI(videoUri);
@@ -335,12 +335,12 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	}
 
-	// Îª action bar ²¼¾Ö²Ëµ¥ÌõÄ¿£¬ÊÇÍ¨¹ıÔÚ activity ÖĞÊµÏÖ onCreateOptionsMenu() »Øµ÷·½·¨À´ inflate
-	// ²Ëµ¥×ÊÔ´´Ó¶ø»ñÈ¡ Menu ¶ÔÏó¡£
+	// ä¸º action bar å¸ƒå±€èœå•æ¡ç›®ï¼Œæ˜¯é€šè¿‡åœ¨ activity ä¸­å®ç° onCreateOptionsMenu() å›è°ƒæ–¹æ³•æ¥ inflate
+	// èœå•èµ„æºä»è€Œè·å– Menu å¯¹è±¡ã€‚
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// ÎªActionBarÀ©Õ¹²Ëµ¥Ïî
+		// ä¸ºActionBaræ‰©å±•èœå•é¡¹
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main_activity_actions, menu);
 
@@ -353,13 +353,13 @@ public class MainActivity extends Activity implements ChannelListener {
 	}
 
 	/**
-	 * µ±ÓÃ»§°´ÏÂÄ³Ò»¸ö²Ù×÷°´Å¥»òÕß action overflow ÖĞµÄÆäËûÌõÄ¿£¬ÏµÍ³½«µ÷ÓÃ activity
-	 * ÖĞonOptionsItemSelected()»Øµ÷·½·¨¡£ ÔÚ¸Ã·½·¨µÄÊµÏÖÀïÃæµ÷ÓÃMenuItemµÄgetItemId()À´ÅĞ¶ÏÄÄ¸öÌõÄ¿±»°´ÏÂ -
-	 * ·µ»ØµÄ ID »áÆ¥ÅäÄãÉùÃ÷¶ÔÓ¦µÄ <item> ÔªËØÖĞ <android:id> ÊôĞÔµÄÖµ¡£
+	 * å½“ç”¨æˆ·æŒ‰ä¸‹æŸä¸€ä¸ªæ“ä½œæŒ‰é’®æˆ–è€… action overflow ä¸­çš„å…¶ä»–æ¡ç›®ï¼Œç³»ç»Ÿå°†è°ƒç”¨ activity
+	 * ä¸­onOptionsItemSelected()å›è°ƒæ–¹æ³•ã€‚ åœ¨è¯¥æ–¹æ³•çš„å®ç°é‡Œé¢è°ƒç”¨MenuItemçš„getItemId()æ¥åˆ¤æ–­å“ªä¸ªæ¡ç›®è¢«æŒ‰ä¸‹ -
+	 * è¿”å›çš„ ID ä¼šåŒ¹é…ä½ å£°æ˜å¯¹åº”çš„ <item> å…ƒç´ ä¸­ <android:id> å±æ€§çš„å€¼ã€‚
 	 * */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// ´¦Àí¶¯×÷°´Å¥µÄµã»÷ÊÂ¼ş
+		// å¤„ç†åŠ¨ä½œæŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
 		switch (item.getItemId()) {
 		case R.id.action_search:
 			// openSearch();
@@ -397,19 +397,19 @@ public class MainActivity extends Activity implements ChannelListener {
 	}
 
 	public void do_SharedPreferences() {
-		// Èç¹ûÄãÓĞÒ»¸öÏà¶Ô½ÏĞ¡µÄkey-value¼¯ºÏĞèÒª±£´æ£¬ÄãÓ¦¸ÃÊ¹ÓÃSharedPreferences APIs
-		// »ñÈ¡SharedPreference
+		// å¦‚æœä½ æœ‰ä¸€ä¸ªç›¸å¯¹è¾ƒå°çš„key-valueé›†åˆéœ€è¦ä¿å­˜ï¼Œä½ åº”è¯¥ä½¿ç”¨SharedPreferences APIs
+		// è·å–SharedPreference
 		Context context = this.getApplication().getApplicationContext();
 		SharedPreferences sharedPref = context.getSharedPreferences(
 				getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-		// Ğ´Shared Preference
+		// å†™Shared Preference
 		SharedPreferences.Editor editor = sharedPref.edit();
 		editor.putString(getString(R.string.preference_file_key),
-				"SharedPreferences ²âÊÔÖµ");
+				"SharedPreferences æµ‹è¯•å€¼");
 		editor.commit();
 
-		// ¶ÁShared Preference
+		// è¯»Shared Preference
 		String value = sharedPref.getString(
 				getString(R.string.preference_file_key), "");
 
@@ -417,7 +417,7 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	public void do_InternalStorage() {
 		Context context = this.getApplication().getApplicationContext();
-		// ±£´æµ½Internal Storage
+		// ä¿å­˜åˆ°Internal Storage
 		String filename = "myfile";
 		File file = new File(context.getFilesDir(), filename);
 		String string = "Hello world!";
@@ -431,7 +431,7 @@ public class MainActivity extends Activity implements ChannelListener {
 			e.printStackTrace();
 		}
 
-		// Èç¹û£¬ÄãĞèÒª»º´æÒ»Ğ©ÎÄ¼ş£¬Äã¿ÉÒÔÊ¹ÓÃcreateTempFile()¡£Àı
+		// å¦‚æœï¼Œä½ éœ€è¦ç¼“å­˜ä¸€äº›æ–‡ä»¶ï¼Œä½ å¯ä»¥ä½¿ç”¨createTempFile()ã€‚ä¾‹
 		File file2;
 		String url = "anotherfile";
 		try {
@@ -442,7 +442,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		}
 	}
 
-	// ±£´æÎÄ¼şµ½External Storage
+	// ä¿å­˜æ–‡ä»¶åˆ°External Storage
 	public void do_ExternalStorage() {
 		if (!isExternalStorageReadable())
 			return;
@@ -464,7 +464,7 @@ public class MainActivity extends Activity implements ChannelListener {
 			e.printStackTrace();
 		}
 
-		// Èç¹û£¬ÄãĞèÒª»º´æÒ»Ğ©ÎÄ¼ş£¬Äã¿ÉÒÔÊ¹ÓÃcreateTempFile()¡£Àı
+		// å¦‚æœï¼Œä½ éœ€è¦ç¼“å­˜ä¸€äº›æ–‡ä»¶ï¼Œä½ å¯ä»¥ä½¿ç”¨createTempFile()ã€‚ä¾‹
 		File file2;
 		String url = "anotherfile";
 		try {
@@ -477,7 +477,7 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	public void do_DataBase() {
 		Context context = this.getApplication().getApplicationContext();
-		// Ìí¼ÓĞÅÏ¢µ½DB
+		// æ·»åŠ ä¿¡æ¯åˆ°DB
 		// Gets the data repository in write mode
 		FeedReaderDbHelper mDbHelper = new FeedReaderDbHelper(context);
 		SQLiteDatabase db = mDbHelper.getWritableDatabase();
@@ -493,7 +493,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		newRowId = db.insert(FeedReaderContract.FeedEntry.TABLE_NAME,
 				FeedReaderContract.FeedEntry.COLUMN_NAME_NULLABLE, values);
 
-		// ´ÓDBÖĞ¶ÁÈ¡ĞÅÏ¢
+		// ä»DBä¸­è¯»å–ä¿¡æ¯
 		db = mDbHelper.getReadableDatabase();
 
 		// Define a projection that specifies which columns from the database
@@ -521,7 +521,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		long itemId = cursor.getLong(cursor
 				.getColumnIndexOrThrow(FeedReaderContract.FeedEntry._ID));
 
-		// É¾³ıDBÖĞµÄĞÅÏ¢
+		// åˆ é™¤DBä¸­çš„ä¿¡æ¯
 		String table_name = "mytable";
 		// Define 'where' part of query.
 		selection = FeedReaderContract.FeedEntry.COLUMN_NAME_ENTRY_ID
@@ -531,7 +531,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		// Issue SQL statement.
 		db.delete(table_name, selection, selectionArgs);
 
-		// ¸üĞÂÊı¾İ
+		// æ›´æ–°æ•°æ®
 		db = mDbHelper.getReadableDatabase();
 
 		// New value for one column
@@ -546,8 +546,8 @@ public class MainActivity extends Activity implements ChannelListener {
 		int count = db.update(table_name, values, selection, selectionArgs);
 	}
 
-	// AndroidÖĞ½«¶¯×÷Î¯ÍĞ¸øÆäËûÓ¦ÓÃµÄ·½·¨ÊÇ£ºÆô¶¯Ò»¸öIntentÀ´Íê³ÉÄãÏëÒªµÄ¶¯×÷¡£Õâ¸ö²½Öè°üº¬Èı²¿·Ö£º
-	// Intent ±¾Éí£¬Æô¶¯µÄÍâ²¿ Activity, ÓëÒ»Ğ©´¦Àí·µ»ØÕÕÆ¬µÄ´úÂë¡£
+	// Androidä¸­å°†åŠ¨ä½œå§”æ‰˜ç»™å…¶ä»–åº”ç”¨çš„æ–¹æ³•æ˜¯ï¼šå¯åŠ¨ä¸€ä¸ªIntentæ¥å®Œæˆä½ æƒ³è¦çš„åŠ¨ä½œã€‚è¿™ä¸ªæ­¥éª¤åŒ…å«ä¸‰éƒ¨åˆ†ï¼š
+	// Intent æœ¬èº«ï¼Œå¯åŠ¨çš„å¤–éƒ¨ Activity, ä¸ä¸€äº›å¤„ç†è¿”å›ç…§ç‰‡çš„ä»£ç ã€‚
 	private void dispatchTakePictureIntent(int actionCode) {
 		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -572,7 +572,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		}
 	}
 
-	// Ê¹ÓÃÏà»ú³ÌĞòÀ´Â¼ÖÆÊÓÆµ(Record a Video with a Camera App)
+	// ä½¿ç”¨ç›¸æœºç¨‹åºæ¥å½•åˆ¶è§†é¢‘(Record a Video with a Camera App)
 	private void dispatchTakeVideoIntent() {
 		Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
 		if (takeVideoIntent.resolveActivity(getPackageManager()) != null) {
@@ -580,7 +580,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		}
 	}
 
-	// Ìí¼ÓÕÕÆ¬µ½Ïà²á(Add the Photo to a Gallery)
+	// æ·»åŠ ç…§ç‰‡åˆ°ç›¸å†Œ(Add the Photo to a Gallery)
 	private void galleryAddPic() {
 		Intent mediaScanIntent = new Intent(
 				Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
@@ -590,7 +590,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		this.sendBroadcast(mediaScanIntent);
 	}
 
-	// ½âÂëËõ·ÅÍ¼Æ¬(Decode a Scaled Image)
+	// è§£ç ç¼©æ”¾å›¾ç‰‡(Decode a Scaled Image)
 	private void zoomPic() {
 		// Get the dimensions of the View
 		int targetW = mImageView.getWidth();
@@ -615,7 +615,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		mImageView.setImageBitmap(bitmap);
 	}
 
-	// ´ò¿ªÏà»ú¶ÔÏó(Open the Camera Object)
+	// æ‰“å¼€ç›¸æœºå¯¹è±¡(Open the Camera Object)
 	private boolean safeCameraOpen(int id) {
 		boolean qOpened = false;
 
@@ -639,7 +639,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		}
 	}
 
-	// ´òÓ¡Ò»·ùÍ¼Æ¬
+	// æ‰“å°ä¸€å¹…å›¾ç‰‡
 	private void doPhotoPrint(Context c) {
 		PrintHelper photoPrinter = new PrintHelper(c);
 		photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
@@ -650,7 +650,7 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	private WebView mWebView;
 
-	// ´òÓ¡HTMLÎÄµµ
+	// æ‰“å°HTMLæ–‡æ¡£
 	private void doWebViewPrint(final Context c) {
 		// Create a WebView object specifically for printing
 		WebView webView = new WebView(c);
@@ -682,7 +682,7 @@ public class MainActivity extends Activity implements ChannelListener {
 
 	private List<PrintJob> mPrintJobs;
 
-	// ´´½¨Ò»¸ö´òÓ¡ÈÎÎñ
+	// åˆ›å»ºä¸€ä¸ªæ‰“å°ä»»åŠ¡
 	private void createWebPrintJob(WebView webView, Context c) {
 
 		// Get a PrintManager instance
@@ -702,7 +702,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		mPrintJobs.add(printJob);
 	}
 
-	// ¿ªÊ¼Òì²½¼ÓÔØÎ»Í¼£¬Ö»ĞèÒª´´½¨Ò»¸öĞÂµÄÈÎÎñ²¢Ö´ĞĞËü¼´¿É:
+	// å¼€å§‹å¼‚æ­¥åŠ è½½ä½å›¾ï¼Œåªéœ€è¦åˆ›å»ºä¸€ä¸ªæ–°çš„ä»»åŠ¡å¹¶æ‰§è¡Œå®ƒå³å¯:
 	public void loadBitmap(int resId, ImageView imageView) {
 
 		if (cancelPotentialWork(resId, imageView)) {
@@ -724,7 +724,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		return mMemoryCache.get(key);
 	}
 
-	// È¡»º´æµÄÍ¼Æ¬
+	// å–ç¼“å­˜çš„å›¾ç‰‡
 	public void loadBitmap(int resId) {
 		final String imageKey = String.valueOf(resId);
 
@@ -767,7 +767,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		return null;
 	}
 
-	@Override
+	//@Override
 	public void onChannelDisconnected() {
 		// TODO Auto-generated method stub
 

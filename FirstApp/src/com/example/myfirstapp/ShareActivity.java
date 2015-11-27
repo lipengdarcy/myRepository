@@ -39,8 +39,8 @@ public class ShareActivity extends Activity {
 		}
 
 		// Create intent to deliver some kind of result data
-		//Èç¹ûÄãÏë·µ»ØÒ»¸öresult¸øÆô¶¯ÄãµÄÄÇ¸öactivity£¬½ö½öĞèÒªÖ´ĞĞsetResult()£¬Í¨¹ıÖ¸¶¨Ò»¸öresult codeÓëresult intent¡£
-		//µ±ÄãµÄ²Ù×÷³É¹¦Ö®ºó£¬ÓÃ»§ĞèÒª·µ»Øµ½Ô­À´µÄactivity£¬Í¨¹ıÖ´ĞĞfinish() À´¹Ø±Õ±»½ĞÆğµÄactivity¡£
+		//å¦‚æœä½ æƒ³è¿”å›ä¸€ä¸ªresultç»™å¯åŠ¨ä½ çš„é‚£ä¸ªactivityï¼Œä»…ä»…éœ€è¦æ‰§è¡ŒsetResult()ï¼Œé€šè¿‡æŒ‡å®šä¸€ä¸ªresult codeä¸result intentã€‚
+		//å½“ä½ çš„æ“ä½œæˆåŠŸä¹‹åï¼Œç”¨æˆ·éœ€è¦è¿”å›åˆ°åŸæ¥çš„activityï¼Œé€šè¿‡æ‰§è¡Œfinish() æ¥å…³é—­è¢«å«èµ·çš„activityã€‚
 		Intent result = new Intent("com.example.RESULT_ACTION",
 				Uri.parse("content://result_uri"));
 		setResult(Activity.RESULT_OK, result);

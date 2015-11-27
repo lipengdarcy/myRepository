@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 import com.example.myfirstapp.R;
 
-//ÊµÏÖ¼ÓÔØÍ¼Æ¬µ½ViewPager(Load Bitmaps into a ViewPager Implementation)
+//å®ç°åŠ è½½å›¾ç‰‡åˆ°ViewPager(Load Bitmaps into a ViewPager Implementation)
 public class ImageDetailActivity extends FragmentActivity {
     public static final String EXTRA_IMAGE = "extra_image";
 
@@ -55,7 +55,7 @@ public class ImageDetailActivity extends FragmentActivity {
         }
     }
 
-    //Í¼Æ¬ÊÊÅäÆ÷
+    //å›¾ç‰‡é€‚é…å™¨
     public static class ImagePagerAdapter extends FragmentStatePagerAdapter {
         private final int mSize;
 

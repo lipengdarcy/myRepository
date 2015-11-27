@@ -11,7 +11,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
-//创建相机预览界面(Create the Camera Preview)
+//鍒涘缓鐩告満棰勮鐣岄潰(Create the Camera Preview)
 
 public class Preview extends ViewGroup implements SurfaceHolder.Callback {
 
@@ -60,7 +60,7 @@ public class Preview extends ViewGroup implements SurfaceHolder.Callback {
 		}
 	}
 
-	@Override
+	//@Override
 	public void surfaceCreated(SurfaceHolder holder) {
 		// TODO Auto-generated method stub
 
@@ -68,8 +68,8 @@ public class Preview extends ViewGroup implements SurfaceHolder.Callback {
 	
 
 
-	//修改相机设置(Modify Camera Settings)
-	@Override
+	//淇敼鐩告満璁剧疆(Modify Camera Settings)
+	//@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width,
 			int height) {
 		// Now that the size is known, set up the camera parameters and begin
@@ -85,7 +85,7 @@ public class Preview extends ViewGroup implements SurfaceHolder.Callback {
 
 	}
 
-	@Override
+	//@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		// TODO Auto-generated method stub
 
@@ -113,6 +113,6 @@ public class Preview extends ViewGroup implements SurfaceHolder.Callback {
 	    }
 	}
 	
-	//设置预览方向(Set the Preview Orientation)  setCameraDisplayOrientation()) 
+	//璁剧疆棰勮鏂瑰悜(Set the Preview Orientation)  setCameraDisplayOrientation()) 
 
 }
