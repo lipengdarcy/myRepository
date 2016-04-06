@@ -95,7 +95,7 @@ public class BitmapWorkerTask extends AsyncTask {
 	// Decode image in background.
 	@Override
 	protected Object doInBackground(Object... params) {
-		data = (int) params[0];
+		data = (Integer) params[0];
 		Resources res = new Resources(null, null, null); // getResources()
 		return decodeSampledBitmapFromResource(res, data, 100, 100);
 
