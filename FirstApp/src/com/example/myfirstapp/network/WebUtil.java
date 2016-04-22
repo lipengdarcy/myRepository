@@ -1,4 +1,4 @@
-package com.example.myfirstapp.network;
+ï»¿package com.example.myfirstapp.network;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -57,7 +57,7 @@ public class WebUtil {
 
 	public static String getContentFromServer() throws Exception {
 		String r = "";
-		// ´ò¿ªÒ»¸öHttpURLConnectionÁ¬½Ó
+		// æ‰“å¼€ä¸€ä¸ªHttpURLConnectionè¿æ¥
 		URL url = new URL("");
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.connect();
@@ -69,7 +69,7 @@ public class WebUtil {
 	public static InputStream getHttpClientInputStream(Context context,
 			String requestUrl, Map<String, String> param) throws Exception {
 		HttpClient client = new DefaultHttpClient();
-		if (getAPNType(context) == NetWorkUtil.CMWAP) // µ±ÇëÇóµÄÍøÂçÎªwapµÄÊ±ºò£¬¾ÍĞèÒªÌí¼ÓÖĞ¹úÒÆ¶¯´úÀí
+		if (getAPNType(context) == NetWorkUtil.CMWAP) // å½“è¯·æ±‚çš„ç½‘ç»œä¸ºwapçš„æ—¶å€™ï¼Œå°±éœ€è¦æ·»åŠ ä¸­å›½ç§»åŠ¨ä»£ç†
 		{
 			HttpHost proxy = new HttpHost("10.0.0.172", 80);
 			client.getParams().setParameter("DEFAULT_PROXY", proxy);

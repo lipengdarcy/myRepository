@@ -5,6 +5,7 @@
     <string name="edit_message">Enter a message</string>
     <string name="another_message">我的宽度很宽</string>
     <string name="button_send">发送信息</string>
+    <string name="button_hupu">虎扑首页</string>
     <string name="button_openmap">打开地图</string>
     <string name="button_openpic">查看图片</string>
     <string name="button_opengl">OpenGL</string>

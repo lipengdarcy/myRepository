@@ -28,8 +28,7 @@ public class MainApplication extends Application {
 
 	/*
 	 * 第一步、写一个全局的单例模式的MyApplication继承自Application
-	 * 覆盖onCreate，在这个方法里面实例化Application 
-	 * 第二步、配置全局的Context <application
+	 * 覆盖onCreate，在这个方法里面实例化Application 第二步、配置全局的Context <application
 	 * android:name="com.example.utils.myapplication" android:allowBackup="true"
 	 * android:icon="@drawable/ic_launcher" android:label="@string/app_name"
 	 * android:theme="@style/AppTheme" > </application>
@@ -81,6 +80,7 @@ public class MainApplication extends Application {
 
 		super.onCreate();
 		// 初始化全局变量
+		mContext = this.getApplicationContext();
 		try {
 			/**
 			 * 添加网络权限，安卓4.03必须
@@ -91,9 +91,6 @@ public class MainApplication extends Application {
 			StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 					.detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
 					.penaltyLog().penaltyDeath().build());
-			/**
-			 * 添加网络权限，安卓4.03必须
-			 */
 
 		} catch (Exception e) {
 			e.printStackTrace();

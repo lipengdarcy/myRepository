@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 
 
-//1.为OpenGL ES图形创建一个activity
+//1.涓篛penGL ES鍥惧舰鍒涘缓涓�涓猘ctivity
 
 
 public class OpenGLES20Activity extends Activity {

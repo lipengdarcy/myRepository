@@ -18,7 +18,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 	private Square mSquare;
 	
 
-	//µ÷ÓÃÒ»´Î£¬ÓÃÀ´ÅäÖÃÊÓÍ¼µÄOpenGL ES»·¾³¡£
+	//è°ƒç”¨ä¸€æ¬¡ï¼Œç”¨æ¥é…ç½®è§†å›¾çš„OpenGL ESç¯å¢ƒã€‚
 	//@Override
     public void onSurfaceCreated(GL10 unused, EGLConfig config) {
         // Set the background frame color
@@ -30,12 +30,12 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         mSquare = new Square();
     }
 
-	//Ã¿´ÎÖØ»­ÊÓÍ¼Ê±±»µ÷ÓÃ¡£
+	//æ¯æ¬¡é‡ç”»è§†å›¾æ—¶è¢«è°ƒç”¨ã€‚
     public void onDrawFrame(GL10 unused) {
         // Redraw background color
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         
-        //»­Ò»¸öÈı½ÇĞÎ
+        //ç”»ä¸€ä¸ªä¸‰è§’å½¢
      // Set the camera position (View matrix)
         //Matrix.setLookAtM(mViewMatrix, 0, 0, 0, -3, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
 
@@ -47,7 +47,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         mTriangle.draw();
     }
 
-    //Èç¹ûÊÓÍ¼µÄ¼¸ºÎĞÎÌ¬·¢Éú±ä»¯Ê±»á±»µ÷ÓÃ£¬ÀıÈçµ±Éè±¸µÄÆÁÄ»·½Ïò·¢Éú¸Ä±äÊ±¡£
+    //å¦‚æœè§†å›¾çš„å‡ ä½•å½¢æ€å‘ç”Ÿå˜åŒ–æ—¶ä¼šè¢«è°ƒç”¨ï¼Œä¾‹å¦‚å½“è®¾å¤‡çš„å±å¹•æ–¹å‘å‘ç”Ÿæ”¹å˜æ—¶ã€‚
     public void onSurfaceChanged(GL10 unused, int width, int height) {
         GLES20.glViewport(0, 0, width, height);
     }

@@ -18,7 +18,7 @@
         <EditText
             android:id="@+id/edit_message"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:hint="@string/edit_message" />
         <!--
@@ -49,6 +49,12 @@
             android:layout_height="wrap_content"
             android:onClick="sendMessage"
             android:text="@string/button_send" />
+        
+         <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="gotoHupu"
+            android:text="@string/button_hupu" />
 
         <Button
             android:layout_width="wrap_content"

@@ -13,13 +13,13 @@ public class a {
 	String mServiceName;
 	
 	
-	//ע��NSD����
+	//注册NSD服务
 	/**
-	 * ��δ��뽫���ṩ�ķ�������Ϊ��NsdChat���������ƽ������о��������е��豸�ɼ��� ��Ҫע����ǣ��������ڸ����Ʊ����Ƕ�һ�޶��ġ�
-	 * Androidϵͳ���Զ�������ͻ�ķ������ơ����ͬʱ��������Ϊ��NsdChat����Ӧ�ã� ����һ���ᱻ�Զ�ת��Ϊ��NsdChat(1)����
+	 * 这段代码将所提供的服务命名为“NsdChat”。该名称将对所有局域网络中的设备可见。 需要注意的是，在网络内该名称必须是独一无二的。
+	 * Android系统会自动处理冲突的服务名称。如果同时有两个名为“NsdChat”的应用， 其中一个会被自动转换为“NsdChat(1)”。
 
-�ڶ������������˷������ͣ�����ʹ�õ�ͨ��Э��ʹ����Э�飬 �﷨�ǡ�_< protocol >._< transportlayer >���� ������Ĵ����У�
-����ʹ����TCPЭ���ϵ�HTTPЭ�顣 ���Ӧ����Ҫ�ṩ��ӡ�������磬һ̨�����ӡ����Ӧ�ý��������������Ϊ ��_ipp._tcp����
+第二个参数设置了服务类型，即，使用的通信协议和传输层协议， 语法是“_< protocol >._< transportlayer >”。 在上面的代码中，
+服务使用了TCP协议上的HTTP协议。 如果应用想要提供打印服务（例如，一台网络打印机）应该将服务的类型设置为 “_ipp._tcp”。
 	 * */
 	public void registerService(int port) {
 	    // Create the NsdServiceInfo object, and populate it.

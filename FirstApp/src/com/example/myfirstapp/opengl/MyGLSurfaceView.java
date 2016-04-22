@@ -2,7 +2,7 @@ package com.example.myfirstapp.opengl;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
-//2.一个GLSurfaceView是一个特定的View，在View中你可以绘制OpenGL ES图形
+//2.涓�涓狦LSurfaceView鏄竴涓壒瀹氱殑View锛屽湪View涓綘鍙互缁樺埗OpenGL ES鍥惧舰
 public class MyGLSurfaceView extends GLSurfaceView {
 
     public MyGLSurfaceView(Context context){

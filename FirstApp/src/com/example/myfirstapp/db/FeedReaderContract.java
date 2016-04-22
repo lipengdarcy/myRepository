@@ -2,7 +2,7 @@ package com.example.myfirstapp.db;
 
 import android.provider.BaseColumns;
 
-//使用SQL Helper创建DB
+//浣跨敤SQL Helper鍒涘缓DB
 public final class FeedReaderContract {
     // To prevent someone from accidentally instantiating the contract class,
     // give it an empty constructor.

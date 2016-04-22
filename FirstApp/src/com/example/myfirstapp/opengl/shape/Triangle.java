@@ -42,12 +42,12 @@ public class Triangle {
 
 	/**
 	 * 
-	 ¶¥µã×ÅÉ«Æ÷£¨Vertex Shader£©£ºOpenGL ES´úÂëÓÃÀ´äÖÈ¾ÐÎ×´µÄ¶¥µã¡£ Æ¬¶Î×ÅÉ«Æ÷£¨Fragment Shader£©£ºOpenGL
-	 * ES´úÂëÓÃÀ´äÖÈ¾ÐÎ×´µÄ±íÃæ£¬Ê¹ÓÃÑÕÉ«»òÎÆÀí¡£ ³ÌÊ½£¨Program£©£ºÒ»¸öOpenGL
-	 * ES¶ÔÏó£¬°üº¬ÁËÄãÏ£ÍûÓÃÀ´»æÖÆÒ»¸ö»î¸ü¶àÍ¼ÐÎËùÒªÓÃµ½µÄ×ÅÉ«Æ÷¡£
+	 é¡¶ç‚¹ç€è‰²å™¨ï¼ˆVertex Shaderï¼‰ï¼šOpenGL ESä»£ç ç”¨æ¥æ¸²æŸ“å½¢çŠ¶çš„é¡¶ç‚¹ã€‚ ç‰‡æ®µç€è‰²å™¨ï¼ˆFragment Shaderï¼‰ï¼šOpenGL
+	 * ESä»£ç ç”¨æ¥æ¸²æŸ“å½¢çŠ¶çš„è¡¨é¢ï¼Œä½¿ç”¨é¢œè‰²æˆ–çº¹ç†ã€‚ ç¨‹å¼ï¼ˆProgramï¼‰ï¼šä¸€ä¸ªOpenGL
+	 * ESå¯¹è±¡ï¼ŒåŒ…å«äº†ä½ å¸Œæœ›ç”¨æ¥ç»˜åˆ¶ä¸€ä¸ªæ´»æ›´å¤šå›¾å½¢æ‰€è¦ç”¨åˆ°çš„ç€è‰²å™¨ã€‚
 	 * 
 	 * */
-	// ÒÔÉÏÊÇÐÎ×´¶¨Òå£¬ÒÔÏÂÊÇ»æÖÆÍ¼ÐÎ
+	// ä»¥ä¸Šæ˜¯å½¢çŠ¶å®šä¹‰ï¼Œä»¥ä¸‹æ˜¯ç»˜åˆ¶å›¾å½¢
 	private final String vertexShaderCode = "attribute vec4 vPosition;"
 			+ "void main() {" + "  gl_Position = vPosition;" + "}";
 
@@ -104,8 +104,8 @@ public class Triangle {
 		// Draw the triangle
 
 		/*
-		 * µÚÒ»¸ö²ÎÊýÖ¸Ã÷ÁË»­Í¼µÄÀàÐÍ¡ª¡ªÈý½ÇÐÎ£¨android ËÆºõÖ»Ö§³Ö»­Èý½ÇÐÎ¡¢µã¡¢Ïß£¬²»Ö§³Ö»­¶à±ßÐÎ£©¡£
-		 * ºóÃæÁ½¸ö²ÎÊýÖ¸Ã÷£¬´ÓÄÄ¸ö¶¥µã¿ªÊ¼»­£¬»­¶àÉÙ¸ö¶¥µã¡£
+		 * ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡æ˜Žäº†ç”»å›¾çš„ç±»åž‹â€”â€”ä¸‰è§’å½¢ï¼ˆandroid ä¼¼ä¹Žåªæ”¯æŒç”»ä¸‰è§’å½¢ã€ç‚¹ã€çº¿ï¼Œä¸æ”¯æŒç”»å¤šè¾¹å½¢ï¼‰ã€‚
+		 * åŽé¢ä¸¤ä¸ªå‚æ•°æŒ‡æ˜Žï¼Œä»Žå“ªä¸ªé¡¶ç‚¹å¼€å§‹ç”»ï¼Œç”»å¤šå°‘ä¸ªé¡¶ç‚¹ã€‚
 		 */
 		GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount);
 

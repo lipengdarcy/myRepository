@@ -4,9 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
-
 import org.apache.http.protocol.HTTP;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ContentValues;
@@ -39,6 +38,7 @@ import android.provider.MediaStore;
 import android.support.v4.print.PrintHelper;
 import android.util.Log;
 import android.util.LruCache;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -49,7 +49,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.VideoView;
-
 import com.example.myfirstapp.db.FeedReaderContract;
 import com.example.myfirstapp.db.FeedReaderDbHelper;
 import com.example.myfirstapp.opengl.OpenGLES20Activity;
@@ -58,7 +57,7 @@ import com.example.myfirstapp.photo.ImageDetailActivity;
 import com.example.myfirstapp.photo.PhotoUtils;
 import com.example.myfirstapp.photo.Preview;
 
-@SuppressWarnings("deprecation")
+@SuppressLint("SetJavaScriptEnabled")
 public class MainActivity extends Activity implements ChannelListener {
 
 	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -101,6 +100,8 @@ public class MainActivity extends Activity implements ChannelListener {
 	private boolean isWifiP2pEnabled = false;
 
 	private BroadcastReceiver receiver = null;
+
+	private WebView mWebView;
 
 	public void setIsWifiP2pEnabled(boolean isWifiP2pEnabled) { // 设置一个标记是否启用WiFi直连
 		this.isWifiP2pEnabled = isWifiP2pEnabled;
@@ -204,11 +205,11 @@ public class MainActivity extends Activity implements ChannelListener {
 		} else if (WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION
 				.equals(action)) {
 			/*
-			DeviceListFragment fragment = (DeviceListFragment) 
-					.getFragmentManager().findFragmentById(R.id.frag_list);
-			fragment.updateThisDevice((WifiP2pDevice) intent
-					.getParcelableExtra(WifiP2pManager.EXTRA_WIFI_P2P_DEVICE));
-					*/
+			 * DeviceListFragment fragment = (DeviceListFragment)
+			 * .getFragmentManager().findFragmentById(R.id.frag_list);
+			 * fragment.updateThisDevice((WifiP2pDevice) intent
+			 * .getParcelableExtra(WifiP2pManager.EXTRA_WIFI_P2P_DEVICE));
+			 */
 
 		}
 	}
@@ -231,6 +232,52 @@ public class MainActivity extends Activity implements ChannelListener {
 		intent.putExtra(EXTRA_MESSAGE, message);
 		// 启动第二个activity
 		startActivity(intent);
+	}
+
+	/**
+	 * 一、Android SDK中的WebView
+	 * 
+	 * 1.在要Activity中实例化WebView组件：WebView webView = new WebView(this);
+	 * 
+	 * 2.调用WebView的loadUrl()方法，设置WevView要显示的网页：
+	 * 
+	 * 互联网用：webView.loadUrl("http://www.***.com");
+	 * 
+	 * 本地文件用：webView.loadUrl(file:///android_asset/XX.html); 本地文件存放在：assets 文件中
+	 * 
+	 * 3.调用Activity的setContentView()方法来显示网页视图
+	 * 
+	 * 4.用WebView点链接看了很多页以后为了让WebView支持回退功能，需要覆盖覆盖Activity类的onKeyDown()方法，
+	 * 如果不做任何处理，点击系统回退剪键，整个浏览器会调用finish()而结束自身，而不是回退到上一页面
+	 */
+
+	/** 打开虎扑手机首页 */
+	public void gotoHupu(View view) {
+		String url = "http://m.hupu.com/nba/";
+
+		// 实例化WebView对象
+		mWebView = new WebView(this);
+
+		// 设置WebView属性，能够执行Javascript脚本
+		mWebView.getSettings().setJavaScriptEnabled(true);
+
+		// 加载需要显示的网页
+		mWebView.loadUrl(url);
+
+		// 设置Web视图
+		setContentView(mWebView);
+
+	}
+
+	@Override
+	// 设置回退
+	// 覆盖Activity类的onKeyDown(int keyCoder,KeyEvent event)方法
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if ((keyCode == KeyEvent.KEYCODE_BACK) && mWebView.canGoBack()) {
+			mWebView.goBack(); // goBack()表示返回WebView的上一页面
+			return true;
+		}
+		return false;
 	}
 
 	/** 当用户点击 查看地图 按钮时会被调用 */
@@ -648,8 +695,6 @@ public class MainActivity extends Activity implements ChannelListener {
 		photoPrinter.printBitmap("droids.jpg - test print", bitmap);
 	}
 
-	private WebView mWebView;
-
 	// 打印HTML文档
 	private void doWebViewPrint(final Context c) {
 		// Create a WebView object specifically for printing
@@ -767,7 +812,7 @@ public class MainActivity extends Activity implements ChannelListener {
 		return null;
 	}
 
-	//@Override
+	// @Override
 	public void onChannelDisconnected() {
 		// TODO Auto-generated method stub
 
