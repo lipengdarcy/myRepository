@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.witsafe.dao.CompanyMapper">
+  <resultMap id="BaseResultMap" type="com.witsafe.model.Company">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="plainpassword" jdbcType="VARCHAR" property="plainpassword" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="companyType" jdbcType="TINYINT" property="companytype" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="managerName" jdbcType="VARCHAR" property="managername" />
+    <result column="managerTel" jdbcType="VARCHAR" property="managertel" />
+    <result column="addressPost" jdbcType="VARCHAR" property="addresspost" />
+    <result column="taxNo" jdbcType="VARCHAR" property="taxno" />
+    <result column="taxtype" jdbcType="INTEGER" property="taxtype" />
+    <result column="taxbank" jdbcType="VARCHAR" property="taxbank" />
+    <result column="taxbankno" jdbcType="VARCHAR" property="taxbankno" />
+    <result column="taxaddress" jdbcType="VARCHAR" property="taxaddress" />
+    <result column="taxtel" jdbcType="VARCHAR" property="taxtel" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="isEvaluated" jdbcType="TINYINT" property="isevaluated" />
+    <result column="isAccepted" jdbcType="TINYINT" property="isaccepted" />
+    <result column="addressId" jdbcType="INTEGER" property="addressid" />
+    <result column="radioactiveType" jdbcType="VARCHAR" property="radioactivetype" />
+    <result column="registerTime" jdbcType="DATE" property="registertime" />
+    <result column="registerType" jdbcType="TINYINT" property="registertype" />
+    <result column="isValid" jdbcType="TINYINT" property="isvalid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, username, plainpassword, password, salt, name, companyType, department, tel, 
+    email, fax, managerName, managerTel, addressPost, taxNo, taxtype, taxbank, taxbankno, 
+    taxaddress, taxtel, address, isEvaluated, isAccepted, addressId, radioactiveType, 
+    registerTime, registerType, isValid
+  </sql>
+  <select id="selectByExample" parameterType="com.witsafe.model.CompanyExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from company
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from company
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from company
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.witsafe.model.CompanyExample">
+    delete from company
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.witsafe.model.Company">
+    insert into company (ID, username, plainpassword, 
+      password, salt, name, 
+      companyType, department, tel, 
+      email, fax, managerName, 
+      managerTel, addressPost, taxNo, 
+      taxtype, taxbank, taxbankno, 
+      taxaddress, taxtel, address, 
+      isEvaluated, isAccepted, addressId, 
+      radioactiveType, registerTime, registerType, 
+      isValid)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{plainpassword,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{companytype,jdbcType=TINYINT}, #{department,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, #{managername,jdbcType=VARCHAR}, 
+      #{managertel,jdbcType=VARCHAR}, #{addresspost,jdbcType=VARCHAR}, #{taxno,jdbcType=VARCHAR}, 
+      #{taxtype,jdbcType=INTEGER}, #{taxbank,jdbcType=VARCHAR}, #{taxbankno,jdbcType=VARCHAR}, 
+      #{taxaddress,jdbcType=VARCHAR}, #{taxtel,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{isevaluated,jdbcType=TINYINT}, #{isaccepted,jdbcType=TINYINT}, #{addressid,jdbcType=INTEGER}, 
+      #{radioactivetype,jdbcType=VARCHAR}, #{registertime,jdbcType=DATE}, #{registertype,jdbcType=TINYINT}, 
+      #{isvalid,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.witsafe.model.Company">
+    insert into company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="plainpassword != null">
+        plainpassword,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="salt != null">
+        salt,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="companytype != null">
+        companyType,
+      </if>
+      <if test="department != null">
+        department,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="fax != null">
+        fax,
+      </if>
+      <if test="managername != null">
+        managerName,
+      </if>
+      <if test="managertel != null">
+        managerTel,
+      </if>
+      <if test="addresspost != null">
+        addressPost,
+      </if>
+      <if test="taxno != null">
+        taxNo,
+      </if>
+      <if test="taxtype != null">
+        taxtype,
+      </if>
+      <if test="taxbank != null">
+        taxbank,
+      </if>
+      <if test="taxbankno != null">
+        taxbankno,
+      </if>
+      <if test="taxaddress != null">
+        taxaddress,
+      </if>
+      <if test="taxtel != null">
+        taxtel,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="isevaluated != null">
+        isEvaluated,
+      </if>
+      <if test="isaccepted != null">
+        isAccepted,
+      </if>
+      <if test="addressid != null">
+        addressId,
+      </if>
+      <if test="radioactivetype != null">
+        radioactiveType,
+      </if>
+      <if test="registertime != null">
+        registerTime,
+      </if>
+      <if test="registertype != null">
+        registerType,
+      </if>
+      <if test="isvalid != null">
+        isValid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="plainpassword != null">
+        #{plainpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="companytype != null">
+        #{companytype,jdbcType=TINYINT},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="managername != null">
+        #{managername,jdbcType=VARCHAR},
+      </if>
+      <if test="managertel != null">
+        #{managertel,jdbcType=VARCHAR},
+      </if>
+      <if test="addresspost != null">
+        #{addresspost,jdbcType=VARCHAR},
+      </if>
+      <if test="taxno != null">
+        #{taxno,jdbcType=VARCHAR},
+      </if>
+      <if test="taxtype != null">
+        #{taxtype,jdbcType=INTEGER},
+      </if>
+      <if test="taxbank != null">
+        #{taxbank,jdbcType=VARCHAR},
+      </if>
+      <if test="taxbankno != null">
+        #{taxbankno,jdbcType=VARCHAR},
+      </if>
+      <if test="taxaddress != null">
+        #{taxaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="taxtel != null">
+        #{taxtel,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="isevaluated != null">
+        #{isevaluated,jdbcType=TINYINT},
+      </if>
+      <if test="isaccepted != null">
+        #{isaccepted,jdbcType=TINYINT},
+      </if>
+      <if test="addressid != null">
+        #{addressid,jdbcType=INTEGER},
+      </if>
+      <if test="radioactivetype != null">
+        #{radioactivetype,jdbcType=VARCHAR},
+      </if>
+      <if test="registertime != null">
+        #{registertime,jdbcType=DATE},
+      </if>
+      <if test="registertype != null">
+        #{registertype,jdbcType=TINYINT},
+      </if>
+      <if test="isvalid != null">
+        #{isvalid,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.witsafe.model.CompanyExample" resultType="java.lang.Integer">
+    select count(*) from company
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update company
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null">
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.plainpassword != null">
+        plainpassword = #{record.plainpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salt != null">
+        salt = #{record.salt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companytype != null">
+        companyType = #{record.companytype,jdbcType=TINYINT},
+      </if>
+      <if test="record.department != null">
+        department = #{record.department,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel != null">
+        tel = #{record.tel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fax != null">
+        fax = #{record.fax,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managername != null">
+        managerName = #{record.managername,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managertel != null">
+        managerTel = #{record.managertel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addresspost != null">
+        addressPost = #{record.addresspost,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxno != null">
+        taxNo = #{record.taxno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxtype != null">
+        taxtype = #{record.taxtype,jdbcType=INTEGER},
+      </if>
+      <if test="record.taxbank != null">
+        taxbank = #{record.taxbank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxbankno != null">
+        taxbankno = #{record.taxbankno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxaddress != null">
+        taxaddress = #{record.taxaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxtel != null">
+        taxtel = #{record.taxtel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isevaluated != null">
+        isEvaluated = #{record.isevaluated,jdbcType=TINYINT},
+      </if>
+      <if test="record.isaccepted != null">
+        isAccepted = #{record.isaccepted,jdbcType=TINYINT},
+      </if>
+      <if test="record.addressid != null">
+        addressId = #{record.addressid,jdbcType=INTEGER},
+      </if>
+      <if test="record.radioactivetype != null">
+        radioactiveType = #{record.radioactivetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registertime != null">
+        registerTime = #{record.registertime,jdbcType=DATE},
+      </if>
+      <if test="record.registertype != null">
+        registerType = #{record.registertype,jdbcType=TINYINT},
+      </if>
+      <if test="record.isvalid != null">
+        isValid = #{record.isvalid,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update company
+    set ID = #{record.id,jdbcType=INTEGER},
+      username = #{record.username,jdbcType=VARCHAR},
+      plainpassword = #{record.plainpassword,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      salt = #{record.salt,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      companyType = #{record.companytype,jdbcType=TINYINT},
+      department = #{record.department,jdbcType=VARCHAR},
+      tel = #{record.tel,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      fax = #{record.fax,jdbcType=VARCHAR},
+      managerName = #{record.managername,jdbcType=VARCHAR},
+      managerTel = #{record.managertel,jdbcType=VARCHAR},
+      addressPost = #{record.addresspost,jdbcType=VARCHAR},
+      taxNo = #{record.taxno,jdbcType=VARCHAR},
+      taxtype = #{record.taxtype,jdbcType=INTEGER},
+      taxbank = #{record.taxbank,jdbcType=VARCHAR},
+      taxbankno = #{record.taxbankno,jdbcType=VARCHAR},
+      taxaddress = #{record.taxaddress,jdbcType=VARCHAR},
+      taxtel = #{record.taxtel,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      isEvaluated = #{record.isevaluated,jdbcType=TINYINT},
+      isAccepted = #{record.isaccepted,jdbcType=TINYINT},
+      addressId = #{record.addressid,jdbcType=INTEGER},
+      radioactiveType = #{record.radioactivetype,jdbcType=VARCHAR},
+      registerTime = #{record.registertime,jdbcType=DATE},
+      registerType = #{record.registertype,jdbcType=TINYINT},
+      isValid = #{record.isvalid,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.witsafe.model.Company">
+    update company
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="plainpassword != null">
+        plainpassword = #{plainpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="companytype != null">
+        companyType = #{companytype,jdbcType=TINYINT},
+      </if>
+      <if test="department != null">
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="managername != null">
+        managerName = #{managername,jdbcType=VARCHAR},
+      </if>
+      <if test="managertel != null">
+        managerTel = #{managertel,jdbcType=VARCHAR},
+      </if>
+      <if test="addresspost != null">
+        addressPost = #{addresspost,jdbcType=VARCHAR},
+      </if>
+      <if test="taxno != null">
+        taxNo = #{taxno,jdbcType=VARCHAR},
+      </if>
+      <if test="taxtype != null">
+        taxtype = #{taxtype,jdbcType=INTEGER},
+      </if>
+      <if test="taxbank != null">
+        taxbank = #{taxbank,jdbcType=VARCHAR},
+      </if>
+      <if test="taxbankno != null">
+        taxbankno = #{taxbankno,jdbcType=VARCHAR},
+      </if>
+      <if test="taxaddress != null">
+        taxaddress = #{taxaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="taxtel != null">
+        taxtel = #{taxtel,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="isevaluated != null">
+        isEvaluated = #{isevaluated,jdbcType=TINYINT},
+      </if>
+      <if test="isaccepted != null">
+        isAccepted = #{isaccepted,jdbcType=TINYINT},
+      </if>
+      <if test="addressid != null">
+        addressId = #{addressid,jdbcType=INTEGER},
+      </if>
+      <if test="radioactivetype != null">
+        radioactiveType = #{radioactivetype,jdbcType=VARCHAR},
+      </if>
+      <if test="registertime != null">
+        registerTime = #{registertime,jdbcType=DATE},
+      </if>
+      <if test="registertype != null">
+        registerType = #{registertype,jdbcType=TINYINT},
+      </if>
+      <if test="isvalid != null">
+        isValid = #{isvalid,jdbcType=TINYINT},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.witsafe.model.Company">
+    update company
+    set username = #{username,jdbcType=VARCHAR},
+      plainpassword = #{plainpassword,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      companyType = #{companytype,jdbcType=TINYINT},
+      department = #{department,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      managerName = #{managername,jdbcType=VARCHAR},
+      managerTel = #{managertel,jdbcType=VARCHAR},
+      addressPost = #{addresspost,jdbcType=VARCHAR},
+      taxNo = #{taxno,jdbcType=VARCHAR},
+      taxtype = #{taxtype,jdbcType=INTEGER},
+      taxbank = #{taxbank,jdbcType=VARCHAR},
+      taxbankno = #{taxbankno,jdbcType=VARCHAR},
+      taxaddress = #{taxaddress,jdbcType=VARCHAR},
+      taxtel = #{taxtel,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      isEvaluated = #{isevaluated,jdbcType=TINYINT},
+      isAccepted = #{isaccepted,jdbcType=TINYINT},
+      addressId = #{addressid,jdbcType=INTEGER},
+      radioactiveType = #{radioactivetype,jdbcType=VARCHAR},
+      registerTime = #{registertime,jdbcType=DATE},
+      registerType = #{registertype,jdbcType=TINYINT},
+      isValid = #{isvalid,jdbcType=TINYINT}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+ 
+</mapper>
