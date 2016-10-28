@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<product>
+
+	<apps>
+		<app id="base" version="2.2.0"></app>
+	</apps>
+	 
+	<site>
+		<field name="sitename" value="Javashop示例商城" />
+		<field name="title" value="Javashop示例商城" />
+		<field name="keywords" value="最好的Java网店系统,Java多用户商城,Java商城定制开发" />
+        <field name="descript" value="Javashop提供优质的电子商务解决方案，提供最好的Java网店系统、Java多用户商城、Java商城定制开发。" />
+        <field name="logofile" value="fs://images/logo.gif" />
+	</site>
+	
+	<menus>
+	<menu text="设置" type="app" url="/core/admin/setting!edit_input.do" icon="/adminthemes/new/images/menu_06.gif">
+			<menu text="网店设置">
+				<menu text="系统设置" url="/core/admin/setting/edit-input.do" />
+				<menu text="smtp设置" url="/core/admin/smtp/list.do" />	
+			</menu>
+		 	 <menu text="权限管理">
+	            <menu text="管理员管理" url="/core/admin/userAdmin/list.do" />
+	            <menu text="角色管理" url="/core/admin/role/list.do" />
+	        </menu> 
+		</menu>
+		
+
+		<menu text="页面" type="app" url="/core/admin/user/siteTheme.do" icon="/adminthemes/new/images/menu_05.gif">
+			<menu text="广告管理">
+				<menu text="广告位" url="/core/admin/adColumn/list.do" />
+				<menu text="广告列表" url="/core/admin/adv/list.do" />		
+			</menu>
+			 
+		</menu>
+		 
+
+		<menu text="开发者" type="app" url="/admin/setting/setting!edit_input.do" icon="/adminthemes/new/images/menu_07.gif">
+			<menu text="工具">
+				<menu text="URL映射" url="/core/admin/themeUri/list.do" />
+				<menu text="菜单管理" url="/core/admin/menu/tree.do" />		
+				<menu text="数据导出" url="/core/admin/data-export.do" />		
+						
+			</menu>
+			<menu text="主题管理" >
+				<menu text="站点前台主题" url="/core/admin/user/siteTheme.do" />
+				<menu text="站点后台主题" url="/core/admin/user/siteAdminTheme.do" />
+			</menu>		
+			 
+			<menu text="网店设置">
+				<menu text="系统设置" url="/core/admin/setting/edit-input.do"  />
+				<menu text="smtp设置" url="/core/admin/smtp/list.do" />
+				<menu text="组件管理" url="/core/admin/component/list.do" />
+			</menu>
+	        <menu text="权限管理">
+	            <menu text="管理员管理" url="/core/admin/userAdmin/list.do" />
+	            <menu text="角色管理" url="/core/admin/role/list.do" />
+	        </menu>
+		</menu>
+	</menus>
+
+	<urls>
+        <url from="/index.jsp" to="/index.html" name="首页" point="0" sitemaptype="0" cache="1"/>
+        <url from="/index.html" to="/index.html" name="首页" point="0" sitemaptype="1" cache="1"/>
+  
+	</urls>
+
+	<components>		
+		
+	</components>
+  
+	<themes>
+		<theme id="default" name="默认模板" ></theme>
+	</themes>
+	
+    <indexitems>
+    	<item>
+    		<title>站点统计信息</title>
+    		<url>/core/admin/indexItem/base.do</url>
+    	</item>     
+ 
+    </indexitems> 
+</product>
