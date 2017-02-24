@@ -12,13 +12,14 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.darcy.service.resource.IAppManager;
+import org.darcy.service.resource.model.EopApp;
+
 import com.enation.eop.processor.back.BackendProcessor;
 import com.enation.eop.processor.core.freemarker.FreeMarkerPaser;
 import com.enation.eop.processor.facade.FacadeProcessor;
 import com.enation.eop.processor.facade.InstallProcessor;
 import com.enation.eop.processor.facade.ResourceProcessor;
-import com.enation.eop.resource.IAppManager;
-import com.enation.eop.resource.model.EopApp;
 import com.enation.eop.sdk.context.EopContext;
 import com.enation.eop.sdk.context.EopContextIniter;
 import com.enation.eop.sdk.context.EopSetting;

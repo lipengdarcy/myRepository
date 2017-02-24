@@ -5,7 +5,7 @@ package com.enation.app.base.core.model;
 
 import java.math.BigDecimal;
 
-import com.enation.app.base.core.service.ProgressContainer;
+import org.darcy.service.ProgressContainer;
 
 
 /**

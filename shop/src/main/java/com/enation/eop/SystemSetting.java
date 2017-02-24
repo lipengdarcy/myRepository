@@ -4,7 +4,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.enation.app.base.core.service.ISettingService;
+import org.darcy.service.ISettingService;
+
 import com.enation.framework.context.spring.SpringContextHolder;
 import com.enation.framework.context.webcontext.ThreadContextHolder;
 import com.enation.framework.util.RequestUtil;

@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.darcy.service.auth.IPermissionManager;
+import org.darcy.service.auth.impl.PermissionConfig;
 
-import com.enation.app.base.core.service.auth.IPermissionManager;
-import com.enation.app.base.core.service.auth.impl.PermissionConfig;
 import com.enation.framework.context.spring.SpringContextHolder;
 
 import freemarker.core.Environment;

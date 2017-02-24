@@ -3,7 +3,8 @@ package com.enation.framework.jms;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.enation.eop.resource.model.EopSite;
+import org.darcy.service.resource.model.EopSite;
+
 import com.enation.eop.sdk.context.EopContext;
 import com.enation.framework.database.NotDbField;
 import com.enation.framework.database.PrimaryKeyField;

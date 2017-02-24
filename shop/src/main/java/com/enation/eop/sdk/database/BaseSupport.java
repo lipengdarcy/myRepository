@@ -1,8 +1,8 @@
 package com.enation.eop.sdk.database;
 
 import org.apache.log4j.Logger;
+import org.darcy.service.resource.model.EopSite;
 
-import com.enation.eop.resource.model.EopSite;
 import com.enation.eop.sdk.context.EopContext;
 import com.enation.eop.sdk.context.EopSetting;
 import com.enation.framework.database.IDBRouter;

@@ -3,8 +3,9 @@ package com.enation.framework.directive;
 import java.io.IOException;
 import java.util.Map;
 
+import org.darcy.service.resource.model.EopSite;
+
 import com.enation.eop.SystemSetting;
-import com.enation.eop.resource.model.EopSite;
 import com.enation.eop.sdk.context.EopContext;
 import com.enation.eop.sdk.context.EopSetting;
 import com.enation.eop.sdk.utils.UploadUtil;

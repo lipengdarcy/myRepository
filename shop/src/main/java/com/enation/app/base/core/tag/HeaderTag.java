@@ -3,10 +3,10 @@ package com.enation.app.base.core.tag;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.darcy.service.resource.model.EopSite;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import com.enation.eop.resource.model.EopSite;
 import com.enation.eop.sdk.HeaderConstants;
 import com.enation.eop.sdk.context.EopContext;
 import com.enation.framework.context.webcontext.ThreadContextHolder;

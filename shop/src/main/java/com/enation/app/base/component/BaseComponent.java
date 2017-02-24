@@ -1,8 +1,7 @@
 package com.enation.app.base.component;
 
+import org.darcy.service.framework.component.IComponent;
 import org.springframework.stereotype.Component;
-
-import com.enation.framework.component.IComponent;
 
 /**
  * base应用基础组件

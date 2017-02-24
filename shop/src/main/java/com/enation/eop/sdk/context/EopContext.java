@@ -2,8 +2,9 @@ package com.enation.eop.sdk.context;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.darcy.service.resource.model.EopSite;
+
 import com.enation.app.base.core.model.MultiSite;
-import com.enation.eop.resource.model.EopSite;
 import com.enation.framework.context.webcontext.ThreadContextHolder;
 
 public class EopContext {
