@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<#assign headerTag = newTag("headerTag") />
+<#assign header = headerTag() />
+<#if title??>
+	<title>${title}-${header.title}</title>
+	<#else>
+	<title>${header.title}</title>
+</#if>
+<#if keywords??>
+	<meta name="keywords" content="${keywords!''}">
+	<#else>
+	<meta name="keywords" content="${header.keywords!''}">
+</#if>
+<#if description??>
+	<meta name="description" content="${description!''}">
+	<#else>
+	<meta name="description" content="${header.description!''}">
+</#if>
+ 
+<link href="${ctx}/favicon.ico" rel="shortcut icon" >
+ 
+ 
+</head>
+<body>
+ 
+	

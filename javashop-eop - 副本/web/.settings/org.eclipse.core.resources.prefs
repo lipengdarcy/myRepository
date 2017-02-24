@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/auth.properties=UTF-8
+encoding//src/main/webapp=UTF-8
+encoding//src/main/webapp/admin=UTF-8
+encoding//src/main/webapp/admin/ueditor.html=UTF-8
+encoding//src/main/webapp/core/admin/index.html=UTF-8
+encoding//src/main/webapp/install/step1.html=UTF-8
+encoding//src/main/webapp/install/step2.html=UTF-8
+encoding//src/main/webapp/install/step3.html=UTF-8
+encoding/<project>=UTF-8
+separateDerivedEncodings=true
