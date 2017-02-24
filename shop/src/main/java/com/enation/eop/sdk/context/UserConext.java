@@ -1,7 +1,8 @@
 package com.enation.eop.sdk.context;
 
+import org.darcy.service.resource.model.AdminUser;
+
 import com.enation.app.base.core.model.Member;
-import com.enation.eop.resource.model.AdminUser;
 import com.enation.framework.context.webcontext.ThreadContextHolder;
 import com.enation.framework.context.webcontext.WebSessionContext;
 

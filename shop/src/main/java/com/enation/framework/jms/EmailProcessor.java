@@ -6,6 +6,7 @@ import java.io.Writer;
 
 import javax.mail.internet.MimeMessage;
 
+import org.darcy.service.ISmtpManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -15,15 +16,16 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.enation.app.base.core.model.Smtp;
-import com.enation.app.base.core.service.ISmtpManager;
 import com.enation.eop.sdk.database.BaseSupport;
 import com.enation.eop.sdk.utils.FreeMarkerUtil;
 import com.enation.framework.util.DateUtil;
 import com.enation.framework.util.StringUtil;
 
 
+
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+
 import com.sun.xml.messaging.saaj.util.ByteOutputStream;
 
 /**

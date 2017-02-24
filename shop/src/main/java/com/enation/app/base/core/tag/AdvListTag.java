@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.darcy.service.IAdColumnManager;
+import org.darcy.service.IAdvManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.enation.app.base.core.model.AdColumn;
 import com.enation.app.base.core.model.Adv;
-import com.enation.app.base.core.service.IAdColumnManager;
-import com.enation.app.base.core.service.IAdvManager;
 import com.enation.framework.taglib.BaseFreeMarkerTag;
 
 import freemarker.template.TemplateModelException;

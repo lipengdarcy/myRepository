@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.darcy.service.dbsolution.DBSolutionFactory;
+import org.darcy.service.resource.model.EopSite;
 
-import com.enation.app.base.core.service.dbsolution.DBSolutionFactory;
-import com.enation.eop.resource.model.EopSite;
 import com.enation.eop.sdk.context.EopContext;
 
 /**

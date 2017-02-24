@@ -6,10 +6,10 @@ import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 import org.apache.log4j.Logger;
+import org.darcy.service.resource.IAppManager;
+import org.darcy.service.resource.model.EopApp;
+import org.darcy.service.resource.model.EopSite;
 
-import com.enation.eop.resource.IAppManager;
-import com.enation.eop.resource.model.EopApp;
-import com.enation.eop.resource.model.EopSite;
 import com.enation.eop.sdk.IApp;
 import com.enation.eop.sdk.context.EopSetting;
 import com.enation.framework.context.spring.SpringContextHolder;

@@ -3,10 +3,10 @@ package com.enation.app.base.core.plugin.user;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.darcy.service.resource.model.AdminUser;
 import org.springframework.stereotype.Service;
 
 import com.enation.eop.processor.core.freemarker.FreeMarkerPaser;
-import com.enation.eop.resource.model.AdminUser;
 import com.enation.framework.plugin.AutoRegisterPluginsBundle;
 import com.enation.framework.plugin.IPlugin;
 

@@ -7,11 +7,11 @@ import java.util.Map;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.config.Ini;
+import org.darcy.service.resource.IMenuManager;
+import org.darcy.service.resource.model.Menu;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.enation.eop.resource.IMenuManager;
-import com.enation.eop.resource.model.Menu;
 import com.enation.eop.sdk.context.EopSetting;
 
 public class ShiroFilterChain implements FactoryBean<Ini.Section> {

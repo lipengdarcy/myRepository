@@ -2,10 +2,10 @@ package com.enation.app.base.core.tag;
 
 import java.util.Map;
 
+import org.darcy.service.framework.component.ComponentView;
+import org.darcy.service.framework.component.IComponentManager;
 import org.springframework.stereotype.Component;
 
-import com.enation.framework.component.ComponentView;
-import com.enation.framework.component.IComponentManager;
 import com.enation.framework.taglib.BaseFreeMarkerTag;
 
 import freemarker.template.TemplateModelException;

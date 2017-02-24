@@ -3,9 +3,9 @@ package com.enation.app.base.core.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.darcy.service.resource.model.EopProduct;
 import org.springframework.jdbc.core.RowMapper;
 
-import com.enation.eop.resource.model.EopProduct;
 import com.enation.eop.sdk.utils.UploadUtil;
 
 /**

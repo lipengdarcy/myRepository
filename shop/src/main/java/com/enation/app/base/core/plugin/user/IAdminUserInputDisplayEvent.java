@@ -1,6 +1,6 @@
 package com.enation.app.base.core.plugin.user;
 
-import com.enation.eop.resource.model.AdminUser;
+import org.darcy.service.resource.model.AdminUser;
 
 /**
  * 管理员页面展示事件

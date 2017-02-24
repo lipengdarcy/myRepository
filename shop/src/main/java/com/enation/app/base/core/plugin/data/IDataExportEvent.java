@@ -1,6 +1,6 @@
 package com.enation.app.base.core.plugin.data;
 
-import com.enation.app.base.core.service.dbsolution.DBSolutionFactory;
+import org.darcy.service.dbsolution.DBSolutionFactory;
 
 
 /**

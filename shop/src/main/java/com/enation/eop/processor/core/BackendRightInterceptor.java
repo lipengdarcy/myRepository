@@ -1,7 +1,8 @@
 package com.enation.eop.processor.core;
 
-import com.enation.app.base.core.service.auth.IAdminUserManager;
-import com.enation.eop.resource.model.AdminUser;
+import org.darcy.service.auth.IAdminUserManager;
+import org.darcy.service.resource.model.AdminUser;
+
 import com.enation.eop.sdk.context.UserConext;
 import com.enation.framework.context.spring.SpringContextHolder;
 import com.opensymphony.xwork2.ActionInvocation;
