@@ -49,7 +49,7 @@ public class EopSetting {
 	public static void init(  ) throws Exception{
 
 		String path  = StringUtil.getRootPath();
-		path=path+"/config/eop.properties";
+		path=path+"/WEB-INF/classes/db/eop.properties";
 		
  //		InputStream in  =  FileUtil.getResourceAsStream("../../config/eop.properties"); 
 		InputStream in  = new FileInputStream( new File(path));
