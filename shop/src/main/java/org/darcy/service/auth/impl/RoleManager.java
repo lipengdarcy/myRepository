@@ -2,6 +2,8 @@ package org.darcy.service.auth.impl;
 
 import java.util.List;
 
+import org.darcy.framework.database.IDaoSupport;
+import org.darcy.framework.util.StringUtil;
 import org.darcy.service.auth.IRoleManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,8 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.enation.app.base.core.model.AuthAction;
 import com.enation.app.base.core.model.Role;
-import com.enation.framework.database.IDaoSupport;
-import com.enation.framework.util.StringUtil;
 
 /**
  * 角色管理

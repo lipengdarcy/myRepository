@@ -1,7 +1,7 @@
 package com.enation.app.base.core.model;
 
-import com.enation.framework.database.NotDbField;
-import com.enation.framework.database.PrimaryKeyField;
+import org.darcy.framework.database.NotDbField;
+import org.darcy.framework.database.PrimaryKeyField;
 
 /**
  * 角色实体

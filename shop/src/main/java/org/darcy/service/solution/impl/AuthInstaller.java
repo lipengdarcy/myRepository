@@ -1,12 +1,12 @@
 package org.darcy.service.solution.impl;
 
+import org.darcy.framework.util.StringUtil;
 import org.darcy.service.dbsolution.DBSolutionFactory;
 import org.darcy.service.solution.IInstaller;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Node;
 
 import com.enation.eop.sdk.context.EopSetting;
-import com.enation.framework.util.StringUtil;
 
 /**
  * 权限安装器

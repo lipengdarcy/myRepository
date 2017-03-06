@@ -12,6 +12,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.darcy.framework.context.spring.SpringContextHolder;
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
 import org.darcy.service.resource.IAppManager;
 import org.darcy.service.resource.model.EopApp;
 
@@ -23,8 +25,6 @@ import com.enation.eop.processor.facade.ResourceProcessor;
 import com.enation.eop.sdk.context.EopContext;
 import com.enation.eop.sdk.context.EopContextIniter;
 import com.enation.eop.sdk.context.EopSetting;
-import com.enation.framework.context.spring.SpringContextHolder;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
 
 /**
  * Eop filter<br>

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.web.filter.AccessControlFilter;
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
 import org.darcy.service.resource.IMenuManager;
 import org.darcy.service.resource.model.AdminUser;
 import org.darcy.service.resource.model.Menu;
@@ -23,7 +24,6 @@ import com.enation.app.base.core.model.AuthAction;
 import com.enation.eop.processor.core.HttpHeaderConstants;
 import com.enation.eop.sdk.context.EopSetting;
 import com.enation.eop.sdk.context.UserConext;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
 
 /**
  * 自定义权限拦截器:拦截菜单表中定义的所有url并且没有授权给当前用户的

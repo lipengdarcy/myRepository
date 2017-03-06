@@ -10,6 +10,11 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
+import org.darcy.framework.action.GridController;
+import org.darcy.framework.action.GridJsonResult;
+import org.darcy.framework.action.JsonResult;
+import org.darcy.framework.action.WWAction;
+import org.darcy.framework.util.JsonResultUtil;
 import org.darcy.service.framework.component.ComponentView;
 import org.darcy.service.framework.component.IComponentManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +27,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import net.sf.json.JSONArray;
 
 import com.enation.eop.sdk.context.EopSetting;
-import com.enation.framework.action.GridController;
-import com.enation.framework.action.GridJsonResult;
-import com.enation.framework.action.JsonResult;
-import com.enation.framework.action.WWAction;
-import com.enation.framework.util.JsonResultUtil;
 
 /**
  * 组件管理Action

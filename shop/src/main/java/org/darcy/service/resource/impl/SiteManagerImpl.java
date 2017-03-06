@@ -2,13 +2,12 @@ package org.darcy.service.resource.impl;
 
 import java.util.Map;
 
+import org.darcy.framework.util.ReflectionUtil;
 import org.darcy.service.ISettingService;
 import org.darcy.service.resource.ISiteManager;
 import org.darcy.service.resource.model.EopSite;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.enation.framework.util.ReflectionUtil;
 
 /**
  * 站点管理

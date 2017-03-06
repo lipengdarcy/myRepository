@@ -1,8 +1,7 @@
 package com.enation.app.base.core.plugin.sms;
 
+import org.darcy.framework.plugin.AutoRegisterPluginsBundle;
 import org.springframework.stereotype.Service;
-
-import com.enation.framework.plugin.AutoRegisterPluginsBundle;
 
 @Service
 public class SmsPluginBundle extends AutoRegisterPluginsBundle {

@@ -2,12 +2,12 @@ package org.darcy.service.resource.impl.cache;
 
 import java.util.List;
 
+import org.darcy.framework.cache.AbstractCacheProxy;
+import org.darcy.framework.cache.CacheFactory;
 import org.darcy.service.resource.IAppManager;
 import org.darcy.service.resource.model.EopApp;
 
 import com.enation.eop.processor.core.EopException;
-import com.enation.framework.cache.AbstractCacheProxy;
-import com.enation.framework.cache.CacheFactory;
 
 /**
  * App Manager的缓存代理

@@ -2,14 +2,13 @@ package org.darcy.service.solution.impl;
 
 import java.io.File;
 
+import org.darcy.framework.util.FileUtil;
+import org.darcy.framework.util.StringUtil;
 import org.darcy.service.solution.ISetupLoader;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
 import org.springframework.stereotype.Service;
-
-import com.enation.framework.util.FileUtil;
-import com.enation.framework.util.StringUtil;
 
 @Service("setupLoader")
 public class SetupLoaderImpl implements ISetupLoader {

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.enation.framework.database.NotDbField;
-import com.enation.framework.database.PrimaryKeyField;
-import com.enation.framework.util.DateUtil;
+import org.darcy.framework.database.NotDbField;
+import org.darcy.framework.database.PrimaryKeyField;
+import org.darcy.framework.util.DateUtil;
 
 /**
  * 留言板实体对象

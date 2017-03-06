@@ -1,7 +1,7 @@
 package org.darcy.service.resource.model;
 
-import com.enation.framework.database.NotDbField;
-import com.enation.framework.database.PrimaryKeyField;
+import org.darcy.framework.database.NotDbField;
+import org.darcy.framework.database.PrimaryKeyField;
 
 /**
  * 资源实体抽象类,所有的资源都有id和对应的站点id

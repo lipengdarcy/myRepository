@@ -13,8 +13,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
+
 import com.enation.eop.SystemSetting;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
 
 /**
  * 静态页解析器

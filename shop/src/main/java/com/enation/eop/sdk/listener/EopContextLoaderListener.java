@@ -3,13 +3,13 @@ package com.enation.eop.sdk.listener;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import org.darcy.framework.context.spring.SpringContextHolder;
 import org.darcy.service.framework.component.IComponentManager;
 import org.darcy.service.resource.ISiteManager;
 import org.darcy.service.resource.model.EopSite;
 
 import com.enation.eop.SystemSetting;
 import com.enation.eop.sdk.context.EopSetting;
-import com.enation.framework.context.spring.SpringContextHolder;
 
 /**
  * EopLinstener 负责初始化站点缓存

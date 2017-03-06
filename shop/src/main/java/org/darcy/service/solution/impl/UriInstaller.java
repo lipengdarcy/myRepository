@@ -3,6 +3,8 @@ package org.darcy.service.solution.impl;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
+import org.darcy.framework.util.StringUtil;
 import org.darcy.service.ISitemapManager;
 import org.darcy.service.resource.IThemeUriManager;
 import org.darcy.service.resource.model.ThemeUri;
@@ -15,8 +17,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import com.enation.app.base.core.model.SiteMapUrl;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
-import com.enation.framework.util.StringUtil;
 
 /**
  * Uri安装器

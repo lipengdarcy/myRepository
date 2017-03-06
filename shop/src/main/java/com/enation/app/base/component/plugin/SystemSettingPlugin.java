@@ -1,11 +1,11 @@
 package com.enation.app.base.component.plugin;
 
+import org.darcy.framework.plugin.AutoRegisterPlugin;
 import org.springframework.stereotype.Component;
 
 import com.enation.app.base.core.plugin.setting.IOnSettingInputShow;
 import com.enation.app.base.core.plugin.setting.IOnSettingSaveEnvent;
 import com.enation.eop.SystemSetting;
-import com.enation.framework.plugin.AutoRegisterPlugin;
 
 /**
  * 系统设置插件

@@ -2,9 +2,9 @@ package com.enation.app.base.core.model;
 
 import java.util.List;
 
-import com.enation.framework.database.NotDbField;
-import com.enation.framework.database.PrimaryKeyField;
-import com.enation.framework.model.Image;
+import org.darcy.framework.database.NotDbField;
+import org.darcy.framework.database.PrimaryKeyField;
+import org.darcy.framework.model.Image;
 
 /**
  * 数据日志实体

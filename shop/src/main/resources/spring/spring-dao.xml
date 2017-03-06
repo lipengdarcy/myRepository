@@ -56,9 +56,9 @@
 		</constructor-arg>
 	</bean>
 	<bean id="jdbcTemplate"
-		class="com.enation.framework.database.impl.LowerCaseJdbcTemplate"></bean>
+		class="org.darcy.framework.database.impl.LowerCaseJdbcTemplate"></bean>
 	<bean id="sqlFileExecutor"
-		class="com.enation.framework.database.impl.DefaultSqlFileExecutor"></bean>
+		class="org.darcy.framework.database.impl.DefaultSqlFileExecutor"></bean>
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource">
@@ -66,12 +66,12 @@
 		</property>
 	</bean>
 	<bean id="springContextHolder"
-		class="com.enation.framework.context.spring.SpringContextHolder"
+		class="org.darcy.framework.context.spring.SpringContextHolder"
 		lazy-init="false" />
 	
 	<bean class="org.darcy.service.framework.component.ComponentLoader"></bean>
 	
-	<bean id="daoSupport" class="com.enation.framework.database.impl.JdbcDaoSupport"></bean>
+	<bean id="daoSupport" class="org.darcy.framework.database.impl.JdbcDaoSupport"></bean>
 
 	<bean id="baseDBRouter" class="com.enation.eop.sdk.database.DBRouter">
 		<property name="prefix">

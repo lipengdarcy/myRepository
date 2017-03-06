@@ -1,12 +1,12 @@
 package com.enation.app.base;
 
+import org.darcy.framework.cache.CacheFactory;
 import org.darcy.service.impl.cache.SiteMenuCacheProxy;
 import org.darcy.service.resource.impl.cache.ThemeUriCacheProxy;
 import org.darcy.service.resource.model.EopSite;
 import org.springframework.stereotype.Service;
 
 import com.enation.eop.sdk.App;
-import com.enation.framework.cache.CacheFactory;
 
 /**
  * base应用

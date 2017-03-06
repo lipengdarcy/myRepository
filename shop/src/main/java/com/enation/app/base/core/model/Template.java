@@ -1,6 +1,6 @@
 package com.enation.app.base.core.model;
 
-import com.enation.framework.database.PrimaryKeyField;
+import org.darcy.framework.database.PrimaryKeyField;
 
 
 

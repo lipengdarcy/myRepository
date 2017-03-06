@@ -94,7 +94,7 @@
 	
 
 	<!-- 系统设置的缓存 -->
-	<bean id="settingCache" class="com.enation.framework.cache.EhCacheImpl"  >
+	<bean id="settingCache" class="org.darcy.framework.cache.EhCacheImpl"  >
 		<constructor-arg><value>settings</value></constructor-arg>
 	</bean>
 

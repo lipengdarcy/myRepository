@@ -5,9 +5,10 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.darcy.framework.image.ThumbnailCreatorFactory;
+import org.darcy.framework.util.StringUtil;
+
 import com.enation.eop.processor.facade.SsoProcessor;
-import com.enation.framework.image.ThumbnailCreatorFactory;
-import com.enation.framework.util.StringUtil;
 
 public class EopSetting {
 	

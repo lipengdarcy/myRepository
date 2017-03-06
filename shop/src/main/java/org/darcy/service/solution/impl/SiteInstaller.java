@@ -6,6 +6,7 @@ package org.darcy.service.solution.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.darcy.framework.database.IDaoSupport;
 import org.darcy.service.ISettingService;
 import org.darcy.service.resource.model.EopSite;
 import org.darcy.service.solution.IInstaller;
@@ -16,8 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import com.enation.framework.database.IDaoSupport;
 
 /**
  * 站点安装器

@@ -1,8 +1,7 @@
 package com.enation.app.base.core.plugin.express;
 
 import org.apache.log4j.Logger;
-
-import com.enation.framework.plugin.AutoRegisterPlugin;
+import org.darcy.framework.plugin.AutoRegisterPlugin;
 
 public abstract class AbstractExpressPlugin extends AutoRegisterPlugin {
 	

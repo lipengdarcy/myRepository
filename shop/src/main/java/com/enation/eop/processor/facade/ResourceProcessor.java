@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
 
 import com.enation.eop.IEopProcessor;
 import com.enation.eop.processor.core.HttpHeaderConstants;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
 /**
  * web资源处理器，响应js,css,图片和flash
  * @author kingapex

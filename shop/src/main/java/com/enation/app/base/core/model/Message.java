@@ -2,7 +2,7 @@ package com.enation.app.base.core.model;
 
 import java.io.Serializable;
 
-import com.enation.framework.database.PrimaryKeyField;
+import org.darcy.framework.database.PrimaryKeyField;
 
 /**
  * 留言、短消息

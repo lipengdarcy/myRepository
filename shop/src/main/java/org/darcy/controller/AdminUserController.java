@@ -9,6 +9,12 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.darcy.framework.action.JsonResult;
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
+import org.darcy.framework.context.webcontext.WebSessionContext;
+import org.darcy.framework.util.HttpUtil;
+import org.darcy.framework.util.JsonResultUtil;
+import org.darcy.framework.util.StringUtil;
 import org.darcy.service.auth.IAdminUserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,12 +23,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.enation.eop.sdk.context.UserConext;
 import com.enation.eop.sdk.utils.ValidCodeServlet;
-import com.enation.framework.action.JsonResult;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
-import com.enation.framework.context.webcontext.WebSessionContext;
-import com.enation.framework.util.HttpUtil;
-import com.enation.framework.util.JsonResultUtil;
-import com.enation.framework.util.StringUtil;
 
 /**
  * 管理员Action

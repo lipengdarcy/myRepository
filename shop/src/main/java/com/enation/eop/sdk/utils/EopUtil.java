@@ -6,8 +6,9 @@ import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
+
 import com.enation.eop.sdk.HeaderConstants;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
 
 /**
  * eop工具类

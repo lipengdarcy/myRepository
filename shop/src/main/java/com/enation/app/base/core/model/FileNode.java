@@ -1,6 +1,6 @@
 package com.enation.app.base.core.model;
 
-import com.enation.framework.util.StringUtil;
+import org.darcy.framework.util.StringUtil;
 
 /**
  * 资源管理器的一个文件实体

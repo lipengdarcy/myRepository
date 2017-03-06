@@ -3,8 +3,8 @@ package org.darcy.service.framework.component;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.enation.framework.database.NotDbField;
-import com.enation.framework.database.PrimaryKeyField;
+import org.darcy.framework.database.NotDbField;
+import org.darcy.framework.database.PrimaryKeyField;
 
 public class ComponentView implements Cloneable {
 

@@ -2,12 +2,11 @@ package org.darcy.service.resource.impl;
 
 import java.util.List;
 
+import org.darcy.framework.database.IDaoSupport;
 import org.darcy.service.resource.IAppManager;
 import org.darcy.service.resource.model.EopApp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.enation.framework.database.IDaoSupport;
 
 /**
  * 应用管理

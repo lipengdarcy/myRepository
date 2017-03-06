@@ -2,10 +2,10 @@ package com.enation.eop.sdk.context;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
 import org.darcy.service.resource.model.EopSite;
 
 import com.enation.app.base.core.model.MultiSite;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
 
 public class EopContext {
 	private static ThreadLocal<EopContext> EopContextHolder = new ThreadLocal<EopContext>();

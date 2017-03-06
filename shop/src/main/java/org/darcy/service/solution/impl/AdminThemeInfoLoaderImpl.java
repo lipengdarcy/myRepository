@@ -3,12 +3,12 @@ package org.darcy.service.solution.impl;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.darcy.framework.util.StringUtil;
 import org.darcy.service.solution.IAdminThemeInfoFileLoader;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 
 import com.enation.eop.sdk.context.EopSetting;
-import com.enation.framework.util.StringUtil;
 
 @Service("adminThemeInfoLoader")
 public class AdminThemeInfoLoaderImpl implements IAdminThemeInfoFileLoader {

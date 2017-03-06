@@ -2,13 +2,13 @@ package org.darcy.service.impl;
 
 import java.util.Map;
 
+import org.darcy.framework.cache.ICache;
 import org.darcy.service.ISettingService;
 import org.darcy.service.SettingRuntimeException;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.enation.app.base.core.plugin.setting.SettingPluginBundle;
-import com.enation.framework.cache.ICache;
 
 /**
  * 设置缓存代理类。

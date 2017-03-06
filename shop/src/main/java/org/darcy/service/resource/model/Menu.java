@@ -2,8 +2,8 @@ package org.darcy.service.resource.model;
 
 import java.util.List;
 
-import com.enation.framework.database.NotDbField;
-import com.enation.framework.database.PrimaryKeyField;
+import org.darcy.framework.database.NotDbField;
+import org.darcy.framework.database.PrimaryKeyField;
 
 /**
  * @author lzf

@@ -1,6 +1,9 @@
 package org.darcy.service.solution.impl;
 
 import org.apache.log4j.Logger;
+import org.darcy.framework.context.spring.SpringContextHolder;
+import org.darcy.framework.database.IDaoSupport;
+import org.darcy.framework.util.DateUtil;
 import org.darcy.service.resource.ISiteManager;
 import org.darcy.service.resource.model.EopProduct;
 import org.darcy.service.solution.IInstaller;
@@ -12,10 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
-
-import com.enation.framework.context.spring.SpringContextHolder;
-import com.enation.framework.database.IDaoSupport;
-import com.enation.framework.util.DateUtil;
 
 /**
  * 解决方案安装器实现

@@ -8,8 +8,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import com.enation.framework.context.webcontext.ThreadContextHolder;
-import com.enation.framework.directive.DirectiveFactory;
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
+import org.darcy.framework.directive.DirectiveFactory;
+
 import com.sun.xml.messaging.saaj.util.ByteOutputStream;
 
 import freemarker.template.Configuration;

@@ -5,10 +5,9 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
+import org.darcy.framework.action.WWAction;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import com.enation.framework.action.WWAction;
 @Component
 @Scope("prototype")
 @ParentPackage("eop_default")

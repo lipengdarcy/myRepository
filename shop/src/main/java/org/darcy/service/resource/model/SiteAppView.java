@@ -1,6 +1,6 @@
 package org.darcy.service.resource.model;
 
-import com.enation.framework.database.PrimaryKeyField;
+import org.darcy.framework.database.PrimaryKeyField;
 
 /**
  * @author lzf

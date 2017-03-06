@@ -5,9 +5,8 @@ package org.darcy.controller;
 
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
-
-import com.enation.framework.action.WWAction;
-import com.enation.framework.context.spring.SpringContextHolder;
+import org.darcy.framework.action.WWAction;
+import org.darcy.framework.context.spring.SpringContextHolder;
 
 /**
  * 检测某组件Action

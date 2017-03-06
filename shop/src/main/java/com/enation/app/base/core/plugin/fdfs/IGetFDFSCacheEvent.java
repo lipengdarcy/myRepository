@@ -1,6 +1,6 @@
 package com.enation.app.base.core.plugin.fdfs;
 
-import com.enation.framework.cache.ICache;
+import org.darcy.framework.cache.ICache;
 
 /**
  * 获取fdfs专用缓存

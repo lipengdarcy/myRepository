@@ -1,8 +1,9 @@
 package com.enation.app.base.core.model;
 
+import org.darcy.framework.database.NotDbField;
+import org.darcy.framework.database.PrimaryKeyField;
+
 import com.enation.eop.sdk.utils.UploadUtil;
-import com.enation.framework.database.NotDbField;
-import com.enation.framework.database.PrimaryKeyField;
 
 /**
  * 广告

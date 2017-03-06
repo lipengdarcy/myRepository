@@ -2,7 +2,7 @@ package com.enation.eop.processor.core;
 
 import java.io.InputStream;
 
-import com.enation.framework.util.StringUtil;
+import org.darcy.framework.util.StringUtil;
 
 /**
  * @author kingapex

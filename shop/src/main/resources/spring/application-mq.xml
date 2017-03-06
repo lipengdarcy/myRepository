@@ -31,10 +31,10 @@
 	</bean>
 
 	<!--  OrderMessage converter  -->
-	<bean id="eopMessageConverter" class="com.enation.framework.jms.EopMessageConverter"/>
+	<bean id="eopMessageConverter" class="org.darcy.framework.jms.EopMessageConverter"/>
 
 	<!-- POJO which send Message uses  Spring JmsTemplate -->
-	<bean id="eopProducer" class="com.enation.framework.jms.EopProducer">
+	<bean id="eopProducer" class="org.darcy.framework.jms.EopProducer">
 		<property name="template" ref="jmsTemplate"/>
 		<property name="destination" ref="destination"/>
 	</bean>
@@ -42,7 +42,7 @@
 	<!--  Message Driven POJO (MDP) -->
 	<bean id="messageListener" class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
 		<constructor-arg>
-			<bean class="com.enation.framework.jms.EopConsumer"> 
+			<bean class="org.darcy.framework.jms.EopConsumer"> 
 			</bean>
 		</constructor-arg>
 		<!--  may be other method -->

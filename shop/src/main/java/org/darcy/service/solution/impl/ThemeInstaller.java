@@ -1,6 +1,7 @@
 package org.darcy.service.solution.impl;
 
 import org.apache.log4j.Logger;
+import org.darcy.framework.util.FileUtil;
 import org.darcy.service.resource.ISiteManager;
 import org.darcy.service.resource.IThemeManager;
 import org.darcy.service.resource.model.Theme;
@@ -16,7 +17,6 @@ import org.w3c.dom.NodeList;
 
 import com.enation.eop.sdk.context.EopContext;
 import com.enation.eop.sdk.context.EopSetting;
-import com.enation.framework.util.FileUtil;
 
 /**
  * 前台主题安装器

@@ -3,8 +3,8 @@ package com.enation.app.base.core.model;
 import java.io.Serializable;
 import java.util.List;
 
-import com.enation.framework.database.NotDbField;
-import com.enation.framework.database.PrimaryKeyField;
+import org.darcy.framework.database.NotDbField;
+import org.darcy.framework.database.PrimaryKeyField;
 
 /**
  * 站点菜单

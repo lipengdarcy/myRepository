@@ -1,6 +1,8 @@
 package org.darcy.service.solution.impl;
 
 import org.apache.log4j.Logger;
+import org.darcy.framework.context.spring.SpringContextHolder;
+import org.darcy.framework.database.IDaoSupport;
 import org.darcy.service.resource.IAppManager;
 import org.darcy.service.resource.model.EopApp;
 import org.darcy.service.solution.IInstaller;
@@ -13,8 +15,6 @@ import org.w3c.dom.NodeList;
 import com.enation.eop.sdk.IApp;
 import com.enation.eop.sdk.context.ConnectType;
 import com.enation.eop.sdk.context.EopSetting;
-import com.enation.framework.context.spring.SpringContextHolder;
-import com.enation.framework.database.IDaoSupport;
 
 /**
  * 应用安装器

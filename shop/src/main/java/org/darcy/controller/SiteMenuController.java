@@ -2,6 +2,10 @@ package org.darcy.controller;
 
 import java.util.List;
 
+import org.darcy.framework.action.GridController;
+import org.darcy.framework.action.GridJsonResult;
+import org.darcy.framework.action.JsonResult;
+import org.darcy.framework.util.JsonResultUtil;
 import org.darcy.service.ISiteMenuManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -12,10 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.enation.app.base.core.model.SiteMenu;
 import com.enation.eop.sdk.context.EopSetting;
-import com.enation.framework.action.GridController;
-import com.enation.framework.action.GridJsonResult;
-import com.enation.framework.action.JsonResult;
-import com.enation.framework.util.JsonResultUtil;
 
 /**
  * 后台导航栏管理

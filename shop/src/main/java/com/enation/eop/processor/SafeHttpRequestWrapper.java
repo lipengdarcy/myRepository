@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
-import com.enation.framework.util.FileUtil;
+import org.darcy.framework.util.FileUtil;
 
 /**
  * 安全的httprequest包装器

@@ -2,12 +2,11 @@ package org.darcy.service.framework.component;
 
 import java.util.List;
 
+import org.darcy.framework.plugin.AutoRegisterPlugin;
+import org.darcy.framework.plugin.IPluginBundle;
 import org.darcy.service.framework.component.context.ComponentContext;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-
-import com.enation.framework.plugin.AutoRegisterPlugin;
-import com.enation.framework.plugin.IPluginBundle;
 
 
 public class ComponentLoader implements BeanPostProcessor {

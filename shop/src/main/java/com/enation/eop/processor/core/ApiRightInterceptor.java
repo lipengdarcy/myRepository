@@ -2,10 +2,11 @@ package com.enation.eop.processor.core;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.darcy.framework.context.webcontext.ThreadContextHolder;
+
 import com.enation.app.base.core.model.Member;
 import com.enation.eop.sdk.context.EopSetting;
 import com.enation.eop.sdk.context.UserConext;
-import com.enation.framework.context.webcontext.ThreadContextHolder;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
 

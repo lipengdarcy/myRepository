@@ -2,10 +2,9 @@ package com.enation.app.base.core.plugin;
 
 import java.util.List;
 
+import org.darcy.framework.plugin.AutoRegisterPluginsBundle;
+import org.darcy.framework.plugin.IPlugin;
 import org.springframework.stereotype.Service;
-
-import com.enation.framework.plugin.AutoRegisterPluginsBundle;
-import com.enation.framework.plugin.IPlugin;
 /**
  * 站点地图插件桩
  * @author Kanon 2015-9-24 version 1.1 添加注释

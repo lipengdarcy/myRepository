@@ -1,9 +1,8 @@
 package org.darcy.service.solution;
 
+import org.darcy.framework.database.IDaoSupport;
+import org.darcy.framework.database.Page;
 import org.darcy.service.resource.model.EopProduct;
-
-import com.enation.framework.database.IDaoSupport;
-import com.enation.framework.database.Page;
 
 /**
  * 安装者管理

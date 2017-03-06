@@ -3,12 +3,12 @@ package com.enation.app.base.core.plugin.user;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.darcy.framework.plugin.AutoRegisterPluginsBundle;
+import org.darcy.framework.plugin.IPlugin;
 import org.darcy.service.resource.model.AdminUser;
 import org.springframework.stereotype.Service;
 
 import com.enation.eop.processor.core.freemarker.FreeMarkerPaser;
-import com.enation.framework.plugin.AutoRegisterPluginsBundle;
-import com.enation.framework.plugin.IPlugin;
 
 /**
  * 管理员插件桩

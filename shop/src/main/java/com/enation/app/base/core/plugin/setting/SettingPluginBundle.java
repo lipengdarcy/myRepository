@@ -7,12 +7,12 @@ import java.util.TreeMap;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.darcy.framework.plugin.AutoRegisterPluginsBundle;
+import org.darcy.framework.plugin.IPlugin;
 import org.springframework.stereotype.Service;
 
 import com.enation.app.base.core.model.PluginDataMapper;
 import com.enation.eop.processor.core.freemarker.FreeMarkerPaser;
-import com.enation.framework.plugin.AutoRegisterPluginsBundle;
-import com.enation.framework.plugin.IPlugin;
 
 
 

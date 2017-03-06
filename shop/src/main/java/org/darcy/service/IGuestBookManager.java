@@ -1,7 +1,8 @@
 package org.darcy.service;
 
+import org.darcy.framework.database.Page;
+
 import com.enation.app.base.core.model.GuestBook;
-import com.enation.framework.database.Page;
 
 public interface IGuestBookManager {
 	

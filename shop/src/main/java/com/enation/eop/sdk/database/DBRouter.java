@@ -1,10 +1,9 @@
 package com.enation.eop.sdk.database;
 
 import org.apache.log4j.Logger;
+import org.darcy.framework.database.IDBRouter;
+import org.darcy.framework.util.StringUtil;
 import org.springframework.jdbc.core.JdbcTemplate;
-
-import com.enation.framework.database.IDBRouter;
-import com.enation.framework.util.StringUtil;
 
 /**
  * 简单的分表方式SAAS数据路由器<br/>

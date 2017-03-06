@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import com.enation.framework.util.FileUtil;
-import com.enation.framework.util.StringUtil;
+import org.darcy.framework.util.FileUtil;
+import org.darcy.framework.util.StringUtil;
 
 public  class PermissionConfig {
 	private static Map<String,Integer> authMap= new HashMap<String,Integer>();

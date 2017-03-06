@@ -1,5 +1,7 @@
 package org.darcy.controller.api;
 
+import org.darcy.framework.util.FileUtil;
+import org.darcy.framework.util.JsonResultUtil;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -8,8 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.enation.eop.sdk.utils.UploadUtil;
-import com.enation.framework.util.FileUtil;
-import com.enation.framework.util.JsonResultUtil;
 
 /**
  * 图片上传API

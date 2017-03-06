@@ -3,7 +3,7 @@ package org.darcy.service.resource.model;
 import java.io.Serializable;
 import java.util.regex.Pattern;
 
-import com.enation.framework.database.NotDbField;
+import org.darcy.framework.database.NotDbField;
 
 /**
  * @author lzf
