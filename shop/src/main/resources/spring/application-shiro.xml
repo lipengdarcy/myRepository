@@ -7,10 +7,10 @@
         http://www.springframework.org/schema/context/spring-context.xsd"
 	default-autowire="byName" default-lazy-init="false">
 
-	<bean id="shiroRealm" class="com.enation.app.base.security.ShiroRealm"></bean>
+	<bean id="shiroRealm" class="org.darcy.framework.security.ShiroRealm"></bean>
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="sessionManager" ref="sessionManager" />
-		<property name="sessionMode" value="http" /><!-- native -->
+		<property name="sessionMode" value="http" />
 		<property name="realm" ref="shiroRealm" />
 	</bean>
 
@@ -19,7 +19,8 @@
 	</bean>
 
 
-	<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+	<bean id="sessionManager"
+		class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
 		<property name="globalSessionTimeout" value="1800000" />
 		<property name="deleteInvalidSessions" value="true" />
 		<property name="sessionValidationSchedulerEnabled" value="true" />
@@ -29,14 +30,13 @@
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
 		<property name="loginUrl" value="/admin" />
-		<property name="filters">  
-	            <map>  
-	                <entry key="sysAuth">  
-	                    <bean  
-	                        class="com.enation.app.base.security.AuthFilter" />  
-	                </entry>  
-	            </map>  
-	        </property>  
+		<property name="filters">
+			<map>
+				<entry key="sysAuth">
+					<bean class="org.darcy.framework.security.AuthFilter" />
+				</entry>
+			</map>
+		</property>
 		<property name="filterChainDefinitions">
 			<value>
 				/admin=anon

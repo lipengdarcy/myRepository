@@ -1,4 +1,4 @@
-package com.enation.eop;
+package org.darcy.framework.filter;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,6 +17,7 @@ import org.darcy.framework.context.webcontext.ThreadContextHolder;
 import org.darcy.service.resource.IAppManager;
 import org.darcy.service.resource.model.EopApp;
 
+import com.enation.eop.IEopProcessor;
 import com.enation.eop.processor.back.BackendProcessor;
 import com.enation.eop.processor.core.freemarker.FreeMarkerPaser;
 import com.enation.eop.processor.facade.FacadeProcessor;
@@ -27,7 +28,7 @@ import com.enation.eop.sdk.context.EopContextIniter;
 import com.enation.eop.sdk.context.EopSetting;
 
 /**
- * Eop filter<br>
+ * 1.过滤器<br>
  * 负责前台模板的处理，以及后台模板的解析。<br>
  * 静态资源的处理<br>
  * @author kingapex

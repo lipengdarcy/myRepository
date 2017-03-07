@@ -1,4 +1,4 @@
-package com.enation.app.base.security.domain;
+package org.darcy.framework.security.domain;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.enation.app.base.security;
+package org.darcy.framework.security;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -26,7 +26,7 @@ import com.enation.eop.sdk.context.EopSetting;
 import com.enation.eop.sdk.context.UserConext;
 
 /**
- * 自定义权限拦截器:拦截菜单表中定义的所有url并且没有授权给当前用户的
+ * 自定义权限过滤器:拦截菜单表中定义的所有url并且没有授权给当前用户的
  * 
  * @author tito
  *
