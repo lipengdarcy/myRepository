@@ -3,13 +3,12 @@ package org.darcy.framework.directive;
 import java.io.IOException;
 import java.util.Map;
 
+import org.darcy.eop.SystemSetting;
+import org.darcy.eop.sdk.context.EopContext;
+import org.darcy.eop.sdk.context.EopSetting;
+import org.darcy.eop.sdk.utils.UploadUtil;
 import org.darcy.framework.util.StringUtil;
 import org.darcy.service.resource.model.EopSite;
-
-import com.enation.eop.SystemSetting;
-import com.enation.eop.sdk.context.EopContext;
-import com.enation.eop.sdk.context.EopSetting;
-import com.enation.eop.sdk.utils.UploadUtil;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;

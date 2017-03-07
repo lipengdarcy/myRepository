@@ -14,10 +14,10 @@ import net.sf.json.JSONArray;
 import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
+import org.darcy.eop.SystemSetting;
 import org.darcy.framework.database.Page;
 import org.darcy.framework.util.StringUtil;
 
-import com.enation.eop.SystemSetting;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class WWAction extends ActionSupport implements SessionAware {

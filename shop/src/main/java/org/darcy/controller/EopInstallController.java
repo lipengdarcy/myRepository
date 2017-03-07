@@ -10,6 +10,8 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.darcy.app.base.core.model.DbInstallData;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.action.JsonResult;
 import org.darcy.framework.util.FileUtil;
 import org.darcy.framework.util.JsonResultUtil;
@@ -23,9 +25,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.enation.app.base.core.model.DbInstallData;
-import com.enation.eop.sdk.context.EopSetting;
 
 @Controller 
 @RequestMapping("/install")

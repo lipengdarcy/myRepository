@@ -6,7 +6,7 @@ package org.darcy.service;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.enation.app.base.core.model.TaskProgress;
+import org.darcy.app.base.core.model.TaskProgress;
 
 /**
  * 进度容器

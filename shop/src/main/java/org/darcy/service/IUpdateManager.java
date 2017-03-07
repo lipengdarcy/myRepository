@@ -1,6 +1,6 @@
 package org.darcy.service;
 
-import com.enation.app.base.core.model.VersionState;
+import org.darcy.app.base.core.model.VersionState;
 
 
 /**

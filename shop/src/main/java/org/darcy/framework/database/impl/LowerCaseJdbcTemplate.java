@@ -1,10 +1,9 @@
 package org.darcy.framework.database.impl;
 
+import org.darcy.eop.sdk.context.EopSetting;
 import org.springframework.jdbc.core.ColumnMapRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-
-import com.enation.eop.sdk.context.EopSetting;
 
 
 /**

@@ -2,7 +2,7 @@ package org.darcy.service.auth;
 
 import java.util.List;
 
-import com.enation.app.base.core.model.Role;
+import org.darcy.app.base.core.model.Role;
 
 /**
  * 角色管理接口

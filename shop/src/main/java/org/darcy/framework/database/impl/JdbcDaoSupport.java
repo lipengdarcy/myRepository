@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.database.DBRuntimeException;
 import org.darcy.framework.database.IDaoSupport;
 import org.darcy.framework.database.ObjectNotFoundException;
@@ -21,8 +22,6 @@ import org.springframework.jdbc.core.simple.ParameterizedBeanPropertyRowMapper;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.util.Assert;
-
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * jdbc数据库操作支撑

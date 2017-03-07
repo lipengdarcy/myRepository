@@ -6,7 +6,9 @@ import java.util.Map;
 
 
 
+
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.utils.UploadUtil;
 import org.darcy.framework.action.JsonResult;
 import org.darcy.framework.util.JsonResultUtil;
 import org.springframework.stereotype.Controller;
@@ -14,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.enation.eop.sdk.utils.UploadUtil;
 
 /**
  * 附件上传

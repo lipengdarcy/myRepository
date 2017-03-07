@@ -4,7 +4,7 @@ import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.enation.eop.SystemSetting;
+import org.darcy.eop.SystemSetting;
 
 /**
  * 加密工具

@@ -3,11 +3,10 @@ package org.darcy.service.resource.model;
 import java.io.Serializable;
 import java.util.List;
 
+import org.darcy.app.base.core.model.AuthAction;
 import org.darcy.framework.database.DynamicField;
 import org.darcy.framework.database.NotDbField;
 import org.darcy.framework.database.PrimaryKeyField;
-
-import com.enation.app.base.core.model.AuthAction;
 
 /**
  * 用户管理员

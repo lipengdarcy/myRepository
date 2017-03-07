@@ -14,6 +14,7 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
+import org.darcy.eop.sdk.utils.UploadUtil;
 import org.darcy.framework.action.JsonResult;
 import org.darcy.framework.action.WWAction;
 import org.darcy.framework.context.webcontext.ThreadContextHolder;
@@ -25,8 +26,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.enation.eop.sdk.utils.UploadUtil;
 
 /**
  *  版权：Copyright (C) 2015  易族智汇（北京）科技有限公司.

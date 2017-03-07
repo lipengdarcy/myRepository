@@ -9,6 +9,7 @@ import java.util.Map;
 
 import net.sf.json.JSONArray;
 
+import org.darcy.app.base.core.model.Regions;
 import org.darcy.framework.database.IDaoSupport;
 import org.darcy.framework.database.IntegerMapper;
 import org.darcy.service.IRegionsManager;
@@ -17,8 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.enation.app.base.core.model.Regions;
 
 /**
  * 地区管理

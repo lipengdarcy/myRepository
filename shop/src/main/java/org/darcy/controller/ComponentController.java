@@ -10,6 +10,7 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.action.GridController;
 import org.darcy.framework.action.GridJsonResult;
 import org.darcy.framework.action.JsonResult;
@@ -25,8 +26,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.sf.json.JSONArray;
-
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * 组件管理Action

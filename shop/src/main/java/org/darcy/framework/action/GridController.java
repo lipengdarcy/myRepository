@@ -3,12 +3,11 @@ package org.darcy.framework.action;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
+import org.darcy.eop.SystemSetting;
 import org.darcy.framework.context.webcontext.ThreadContextHolder;
 import org.darcy.framework.database.Page;
 import org.darcy.framework.util.StringUtil;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.enation.eop.SystemSetting;
 
 
 /**

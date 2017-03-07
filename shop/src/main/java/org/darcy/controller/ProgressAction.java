@@ -5,12 +5,11 @@ package org.darcy.controller;
 
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
+import org.darcy.app.base.core.model.TaskProgress;
 import org.darcy.framework.action.WWAction;
 import org.darcy.framework.util.JsonMessageUtil;
 import org.darcy.framework.util.StringUtil;
 import org.darcy.service.ProgressContainer;
-
-import com.enation.app.base.core.model.TaskProgress;
 
 /**
  * 进度action

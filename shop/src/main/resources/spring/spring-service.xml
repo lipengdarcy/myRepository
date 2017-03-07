@@ -12,7 +12,7 @@
 	<bean id="eopInstallManager" class="org.darcy.service.EopInstallManager"></bean>
 	
  	<!-- Base应用 -->
- 	<bean id="base" class="com.enation.app.base.BaseApp"></bean>
+ 	<bean id="base" class="org.darcy.app.base.BaseApp"></bean>
  	
  	<!-- 帮助 -->
  	<bean id="helpManager" class="org.darcy.service.impl.HelpManager"></bean>

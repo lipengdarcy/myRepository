@@ -12,6 +12,8 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.context.EopContext;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.database.ISqlFileExecutor;
 import org.darcy.framework.util.FileUtil;
 import org.darcy.framework.util.StringUtil;
@@ -24,9 +26,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.w3c.dom.Node;
-
-import com.enation.eop.sdk.context.EopContext;
-import com.enation.eop.sdk.context.EopSetting;
 
 
 /**

@@ -2,7 +2,7 @@ package org.darcy.service;
 
 import java.util.List;
 
-import com.enation.app.base.core.model.Smtp;
+import org.darcy.app.base.core.model.Smtp;
 
 
 /**

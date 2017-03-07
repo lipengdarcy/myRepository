@@ -3,6 +3,7 @@ package org.darcy.service.solution.impl;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
+import org.darcy.app.base.core.model.SiteMapUrl;
 import org.darcy.framework.context.webcontext.ThreadContextHolder;
 import org.darcy.framework.util.StringUtil;
 import org.darcy.service.ISitemapManager;
@@ -15,8 +16,6 @@ import org.springframework.stereotype.Service;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import com.enation.app.base.core.model.SiteMapUrl;
 
 /**
  * Uri安装器

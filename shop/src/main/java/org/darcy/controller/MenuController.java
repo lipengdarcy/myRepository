@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.action.JsonResult;
 import org.darcy.framework.util.JsonResultUtil;
 import org.darcy.service.auth.IAuthActionManager;
@@ -17,8 +18,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * 菜单管理
@@ -216,7 +215,7 @@ public class MenuController  {
 		StringBuffer data  = new StringBuffer();
 		data.append("[");
 		List<Menu> menuList  = this.menuManager.getMenuTree(0);
-		com.enation.app.base.core.model.AuthAction authAction=null;
+		org.darcy.app.base.core.model.AuthAction authAction=null;
 		if(authid!=0)
 			authAction=  authActionManager.get(authid);
 		int i=0;
@@ -237,7 +236,7 @@ public class MenuController  {
 	 * @param authAction 权限点
 	 * @return
 	 */
-	private String menutoJson(Menu menu,com.enation.app.base.core.model.AuthAction authAction){
+	private String menutoJson(Menu menu,org.darcy.app.base.core.model.AuthAction authAction){
 		StringBuffer data  = new StringBuffer();
 		data.append("{\"id\":"+menu.getId()+", \"text\":\""+menu.getTitle()+"\"");	
 			if(authAction!=null){

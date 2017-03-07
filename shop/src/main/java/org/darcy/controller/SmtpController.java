@@ -2,6 +2,8 @@ package org.darcy.controller;
 
 import java.util.List;
 
+import org.darcy.app.base.core.model.Smtp;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.action.GridController;
 import org.darcy.framework.action.GridJsonResult;
 import org.darcy.framework.action.JsonResult;
@@ -13,9 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.enation.app.base.core.model.Smtp;
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * smtp管理 

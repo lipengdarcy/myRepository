@@ -92,7 +92,7 @@ public class AuthController extends GridController{
 	@RequestMapping(value="/save-edit")
 	public JsonResult saveEdit(String name,int authid,int choose,String menuids){
 		try{
-			com.enation.app.base.core.model.AuthAction act = new com.enation.app.base.core.model.AuthAction();
+			org.darcy.app.base.core.model.AuthAction act = new org.darcy.app.base.core.model.AuthAction();
 			act.setName(name);
 			act.setType("menu");
 			act.setActid(authid);
@@ -122,7 +122,7 @@ public class AuthController extends GridController{
 	@RequestMapping(value="/save-add")
 	public JsonResult saveAdd(String name,String menuids){
 		try{
-			com.enation.app.base.core.model.AuthAction act = new com.enation.app.base.core.model.AuthAction();
+			org.darcy.app.base.core.model.AuthAction act = new org.darcy.app.base.core.model.AuthAction();
 			act.setName(name);
 			act.setType("menu");
 			act.setChoose(0);
@@ -149,7 +149,7 @@ public class AuthController extends GridController{
 	@RequestMapping(value="/delete")
 	public JsonResult delete(int authid){
 		try{
-			com.enation.app.base.core.model.AuthAction authaction=this.authActionManager.get(authid);
+			org.darcy.app.base.core.model.AuthAction authaction=this.authActionManager.get(authid);
 			if(authaction.getChoose()==0){
 				this.authActionManager.delete(authid);
 				return JsonResultUtil.getSuccessJson("删除成功");

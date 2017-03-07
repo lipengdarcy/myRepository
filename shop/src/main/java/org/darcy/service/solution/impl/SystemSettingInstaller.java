@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.darcy.eop.SystemSetting;
 import org.darcy.framework.context.spring.SpringContextHolder;
 import org.darcy.framework.context.webcontext.ThreadContextHolder;
 import org.darcy.framework.database.IDaoSupport;
@@ -17,8 +18,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.w3c.dom.Node;
-
-import com.enation.eop.SystemSetting;
 
 
 /**

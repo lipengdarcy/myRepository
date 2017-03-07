@@ -2,9 +2,8 @@ package org.darcy.service;
 
 import java.util.List;
 
+import org.darcy.app.base.core.model.Adv;
 import org.darcy.framework.database.Page;
-
-import com.enation.app.base.core.model.Adv;
 
 /**
  * 广告接口

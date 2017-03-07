@@ -1,6 +1,6 @@
 package org.darcy.framework.jms;
 
-import com.enation.eop.sdk.context.EopContext;
+import org.darcy.eop.sdk.context.EopContext;
 
 
 /**

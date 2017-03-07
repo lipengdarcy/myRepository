@@ -2,10 +2,9 @@ package org.darcy.service.impl.cache;
 
 import java.util.List;
 
+import org.darcy.app.base.core.model.SiteMenu;
 import org.darcy.framework.cache.AbstractCacheProxy;
 import org.darcy.service.ISiteMenuManager;
-
-import com.enation.app.base.core.model.SiteMenu;
 
 public class SiteMenuCacheProxy extends AbstractCacheProxy<List<SiteMenu>> implements ISiteMenuManager {
 	public  static final String MENU_LIST_CACHE_KEY = "siteMenuList";

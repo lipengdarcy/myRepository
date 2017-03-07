@@ -2,8 +2,8 @@ package org.darcy.service.auth;
 
 import java.util.List;
 
-import com.enation.app.base.core.model.AuthAction;
-import com.enation.app.base.core.model.Role;
+import org.darcy.app.base.core.model.AuthAction;
+import org.darcy.app.base.core.model.Role;
 
 
 /**

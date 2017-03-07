@@ -1,10 +1,9 @@
 package org.darcy.framework.jms;
 
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.context.EopContext;
 import org.darcy.framework.context.spring.SpringContextHolder;
 import org.darcy.framework.util.StringUtil;
-
-import com.enation.eop.sdk.context.EopContext;
 
 /**
  * 

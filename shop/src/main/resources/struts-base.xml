@@ -5,7 +5,7 @@
 <struts>
 	<package name="adminUi" namespace="/admin" extends="eop_default">
 		 <interceptors>	
-			<interceptor name="backendRightInterceptor" class="com.enation.eop.processor.core.BackendRightInterceptor">	
+			<interceptor name="backendRightInterceptor" class="org.darcy.eop.processor.core.BackendRightInterceptor">	
 			</interceptor>
 			<interceptor-stack name="backendStack">
 				<interceptor-ref name="defaultStack" />

@@ -2,9 +2,8 @@ package org.darcy.controller;
 
 import java.io.File;
 
+import org.darcy.eop.sdk.utils.UploadUtil;
 import org.darcy.framework.action.WWAction;
-
-import com.enation.eop.sdk.utils.UploadUtil;
 
 /**
  * ckeditor 文件上传 

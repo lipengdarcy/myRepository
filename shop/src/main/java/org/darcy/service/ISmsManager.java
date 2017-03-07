@@ -3,7 +3,7 @@ package org.darcy.service;
 import java.util.List;
 import java.util.Map;
 
-import com.enation.app.base.core.model.SmsPlatform;
+import org.darcy.app.base.core.model.SmsPlatform;
 
 /**
  * 短信接口

@@ -10,6 +10,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.util.FileUtil;
 import org.darcy.framework.util.StringUtil;
 import org.darcy.framework.util.XMLUtil;
@@ -20,8 +21,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * 组件上下文管理

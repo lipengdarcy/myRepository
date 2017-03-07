@@ -3,11 +3,10 @@ package org.darcy.framework.jms;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.darcy.eop.sdk.context.EopContext;
 import org.darcy.framework.database.NotDbField;
 import org.darcy.framework.database.PrimaryKeyField;
 import org.darcy.service.resource.model.EopSite;
-
-import com.enation.eop.sdk.context.EopContext;
 
 public class EmailModel {
 

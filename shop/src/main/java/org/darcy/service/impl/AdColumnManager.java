@@ -2,14 +2,13 @@ package org.darcy.service.impl;
 
 import java.util.List;
 
+import org.darcy.app.base.core.model.AdColumn;
 import org.darcy.framework.database.IDaoSupport;
 import org.darcy.framework.database.Page;
 import org.darcy.framework.util.StringUtil;
 import org.darcy.service.IAdColumnManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.enation.app.base.core.model.AdColumn;
 
 /**
  * 后台广告位管理接口实现类

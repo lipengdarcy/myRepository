@@ -73,20 +73,20 @@
 	
 	<bean id="daoSupport" class="org.darcy.framework.database.impl.JdbcDaoSupport"></bean>
 
-	<bean id="baseDBRouter" class="com.enation.eop.sdk.database.DBRouter">
+	<bean id="baseDBRouter" class="org.darcy.eop.sdk.database.DBRouter">
 		<property name="prefix">
 			<value>es_</value>
 		</property>
 	</bean>
 
-	<bean id="baseDaoSupport" class="com.enation.eop.sdk.database.BaseJdbcDaoSupport">
+	<bean id="baseDaoSupport" class="org.darcy.eop.sdk.database.BaseJdbcDaoSupport">
 		<property name="dbRouter">
 			<ref bean="baseDBRouter" />
 		</property>
 	</bean>
 
 
-	<bean id="baseSupport" class="com.enation.eop.sdk.database.BaseSupport"
+	<bean id="baseSupport" class="org.darcy.eop.sdk.database.BaseSupport"
 		abstract="true">
 	</bean>
 

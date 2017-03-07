@@ -2,7 +2,7 @@ package org.darcy.service;
 
 import java.util.List;
 
-import com.enation.app.base.core.model.Regions;
+import org.darcy.app.base.core.model.Regions;
 
 /**
  * 行政区划管理接口

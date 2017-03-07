@@ -3,11 +3,10 @@ package org.darcy.service.resource.model;
 import java.io.Serializable;
 import java.util.Map;
 
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.context.spring.SpringContextHolder;
 import org.darcy.framework.util.StringUtil;
 import org.darcy.service.ISettingService;
-
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * 站点信息<br>

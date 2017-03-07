@@ -17,6 +17,7 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.action.WWAction;
 import org.darcy.framework.util.FileUtil;
 import org.darcy.framework.util.StringUtil;
@@ -29,8 +30,6 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.enation.eop.sdk.context.EopSetting;
 /**
  * 安装action
  * @author kingapex

@@ -3,10 +3,9 @@ package org.darcy.service.dbsolution;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.context.spring.SpringContextHolder;
 import org.springframework.jdbc.core.JdbcTemplate;
-
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * 数据解决方案工厂类

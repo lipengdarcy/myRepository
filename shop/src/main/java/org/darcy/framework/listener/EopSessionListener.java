@@ -6,13 +6,12 @@ import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.IApp;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.context.spring.SpringContextHolder;
 import org.darcy.service.resource.IAppManager;
 import org.darcy.service.resource.model.EopApp;
 import org.darcy.service.resource.model.EopSite;
-
-import com.enation.eop.sdk.IApp;
-import com.enation.eop.sdk.context.EopSetting;
 
 public class EopSessionListener implements HttpSessionListener {
 	

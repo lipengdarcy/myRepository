@@ -3,6 +3,7 @@ package org.darcy.controller;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.darcy.app.base.core.model.ShortMsg;
 import org.darcy.framework.action.JsonResult;
 import org.darcy.framework.util.JsonResultUtil;
 import org.darcy.service.IShortMsgManager;
@@ -10,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.enation.app.base.core.model.ShortMsg;
 
 /**
  * 短消息action

@@ -4,12 +4,11 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.util.StringUtil;
 import org.darcy.service.solution.IProfileLoader;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
-
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * 产品profile加载器

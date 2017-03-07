@@ -1,8 +1,7 @@
 package org.darcy.service.resource;
 
+import org.darcy.app.base.core.model.DataLog;
 import org.darcy.framework.database.Page;
-
-import com.enation.app.base.core.model.DataLog;
 
 /**
  * 日志管理接口

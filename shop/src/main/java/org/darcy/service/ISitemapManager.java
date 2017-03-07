@@ -1,6 +1,6 @@
 package org.darcy.service;
 
-import com.enation.app.base.core.model.SiteMapUrl;
+import org.darcy.app.base.core.model.SiteMapUrl;
 
 /**
  * Sitemap接口

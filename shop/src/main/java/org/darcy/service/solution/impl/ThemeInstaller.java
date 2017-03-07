@@ -1,6 +1,8 @@
 package org.darcy.service.solution.impl;
 
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.context.EopContext;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.util.FileUtil;
 import org.darcy.service.resource.ISiteManager;
 import org.darcy.service.resource.IThemeManager;
@@ -14,9 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import com.enation.eop.sdk.context.EopContext;
-import com.enation.eop.sdk.context.EopSetting;
 
 /**
  * 前台主题安装器

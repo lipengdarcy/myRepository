@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.database.DBRuntimeException;
 import org.darcy.framework.database.ISqlFileExecutor;
 import org.darcy.framework.util.FileUtil;
@@ -12,8 +13,6 @@ import org.darcy.framework.util.StringUtil;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.enation.eop.sdk.context.EopSetting;
 /**
  * 默认sql文件执行器
  * @author kingapex

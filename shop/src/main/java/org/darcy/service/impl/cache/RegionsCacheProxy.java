@@ -5,12 +5,11 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.darcy.app.base.core.model.Regions;
+import org.darcy.eop.sdk.database.BaseSupport;
 import org.darcy.framework.cache.CacheFactory;
 import org.darcy.framework.cache.ICache;
 import org.darcy.service.IRegionsManager;
-
-import com.enation.app.base.core.model.Regions;
-import com.enation.eop.sdk.database.BaseSupport;
 
 public class RegionsCacheProxy extends BaseSupport<Regions> implements IRegionsManager {
 	
