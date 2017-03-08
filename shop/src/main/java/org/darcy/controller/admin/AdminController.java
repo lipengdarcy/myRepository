@@ -1,6 +1,5 @@
-package org.darcy.controller;
+package org.darcy.controller.admin;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.darcy.eop.sdk.context.UserConext;
@@ -20,15 +19,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * 后台界面控制器
- * @author kingapex
- * @version v2.0 改为spring mvc
- * 2016年2月10日下午6:05:47
- * @since v6.0
+ * 管理界面登录
+ * @author lipeng
  */
 @Controller 
 @RequestMapping("/admin/")
-public class BackendUiController {
+public class AdminController {
 	
  
 	

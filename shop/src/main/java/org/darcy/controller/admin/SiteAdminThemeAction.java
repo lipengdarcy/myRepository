@@ -1,4 +1,4 @@
-package org.darcy.controller;
+package org.darcy.controller.admin;
 
 import java.util.List;
 
@@ -13,11 +13,6 @@ import org.darcy.service.resource.model.EopSite;
 /**
  * 站点主题管理
  * 
- * @author lzf
- *         <p>
- *         2009-12-30 上午11:01:08
- *         </p>
- * @version 1.0
  */
 public class SiteAdminThemeAction extends WWAction {
 

@@ -211,7 +211,7 @@ public class EopInstallController {
 		
 		//获取根目录创建eop 配置文件
 		String webroot = StringUtil.getRootPath();
-		String path = StringUtil.getRootPath("/config/eop.properties");
+		String path = StringUtil.getRootPath("/WEB-INF/classes/db/eop.properties");
 		
 		Properties props = new Properties();
 		try {
@@ -292,7 +292,7 @@ public class EopInstallController {
 	 */
 	private void saveProperties(Properties props){
 		try {
- 			String path = StringUtil.getRootPath("/config/jdbc.properties");
+			String path = StringUtil.getRootPath("/WEB-INF/classes/db/jdbc.properties");			
 			File file  = new File(path);
     		props.store(new FileOutputStream(file), "jdbc.properties");
 		} catch (FileNotFoundException e) {
@@ -362,7 +362,7 @@ public class EopInstallController {
  
 		
 		//获取根目录创建eop 配置文件
-		String path = StringUtil.getRootPath("/config/eop.properties");
+		String path = StringUtil.getRootPath("/WEB-INF/classes/db/eop.properties");
 		
 		Properties props = new Properties();
 		try {

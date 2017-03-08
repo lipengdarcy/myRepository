@@ -29,7 +29,7 @@ public class DirectiveFactory {
 			/**
 			 * 日期格式化指令
 			 */
-			TemplateDirectiveModel dateformate = new DateformateDirective();
+			TemplateDirectiveModel dateformate = new DateformatDirective();
 			directiveMap.put("dateformat", dateformate);
 			
 			

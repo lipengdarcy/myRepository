@@ -12,8 +12,10 @@ import freemarker.template.TemplateDirectiveBody;
 import freemarker.template.TemplateDirectiveModel;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateModel;
-
-public class DateformateDirective implements TemplateDirectiveModel {
+/**
+ * freemark 日期转换
+ * */
+public class DateformatDirective implements TemplateDirectiveModel {
 
 	@Override
 	public void execute(Environment env, Map params, TemplateModel[] loopVars,

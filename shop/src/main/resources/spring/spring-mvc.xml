@@ -56,12 +56,6 @@
         <property name="maxUploadSize" value="4096000"/>
         <!-- <property name="uploadTempDir" value="upload/temp"/> -->
     </bean>
- 
-   
-       
-<!-- 	<mvc:interceptors>
-		<bean class="com.enation.app.linkgoods.core.controller.TestInterceptor"></bean>
-	</mvc:interceptors> -->
 
     <context:annotation-config />  
     <mvc:annotation-driven />

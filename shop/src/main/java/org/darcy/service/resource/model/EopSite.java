@@ -30,7 +30,7 @@ public class EopSite implements Serializable {
 	
 	
 	//在设置表中的group(key),
-	public static final String SITE_SETTING_KEY="site_seting";
+	public static final String SITE_SETTING_KEY="site_setting";
 	
 	// SEO   
 	private  String sitename;

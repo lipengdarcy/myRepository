@@ -1,18 +1,12 @@
-package org.darcy.controller;
+package org.darcy.controller.admin.setting;
 
 import java.util.List;
 
-import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.Namespace;
-import org.apache.struts2.convention.annotation.ParentPackage;
-import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.convention.annotation.Results;
 import org.darcy.app.base.core.plugin.user.AdminUserPluginBundle;
 import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.action.GridController;
 import org.darcy.framework.action.GridJsonResult;
 import org.darcy.framework.action.JsonResult;
-import org.darcy.framework.action.WWAction;
 import org.darcy.framework.util.JsonResultUtil;
 import org.darcy.service.auth.IAdminUserManager;
 import org.darcy.service.auth.IPermissionManager;
@@ -20,16 +14,13 @@ import org.darcy.service.auth.IRoleManager;
 import org.darcy.service.resource.model.AdminUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * 站点管理员管理
- * @author kingapex
- * @version 2.0  wangxin 2016-2-23 version2 6.0升级改造
+ * 3.站点管理员管理
  */
 @Controller 
 @Scope("prototype")

@@ -1,4 +1,4 @@
-package org.darcy.controller;
+package org.darcy.controller.admin;
 
 import org.darcy.service.resource.IIndexItemManager;
 import org.springframework.beans.factory.annotation.Autowired;

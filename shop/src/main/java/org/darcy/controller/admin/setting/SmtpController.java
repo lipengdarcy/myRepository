@@ -1,4 +1,4 @@
-package org.darcy.controller;
+package org.darcy.controller.admin.setting;
 
 import java.util.List;
 
@@ -17,13 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * smtp管理 
- * @author kingapex
- * @date 2011-11-1 下午12:27:51 
- * @version V1.0
- * @author LiFenLong 2014-4-1;4.0版本改造
- * @author Kanon 2015-11-16 version 1.1 添加注释
- * @author xulipeng 2016年02月20日 改为spring mvc
+ * 2.smtp设置
  */
 
 @Controller 

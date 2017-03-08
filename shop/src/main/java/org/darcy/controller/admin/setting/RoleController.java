@@ -1,34 +1,24 @@
-package org.darcy.controller;
+package org.darcy.controller.admin.setting;
 
 import java.util.List;
 
-import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.Namespace;
-import org.apache.struts2.convention.annotation.ParentPackage;
-import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.convention.annotation.Results;
 import org.darcy.app.base.core.model.Role;
 import org.darcy.eop.sdk.context.EopSetting;
 import org.darcy.framework.action.GridController;
 import org.darcy.framework.action.GridJsonResult;
 import org.darcy.framework.action.JsonResult;
-import org.darcy.framework.action.WWAction;
 import org.darcy.framework.util.JsonResultUtil;
 import org.darcy.service.auth.IAuthActionManager;
 import org.darcy.service.auth.IRoleManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * 角色管理
- * @author kingapex
- * 2010-11-4下午05:25:48
- * @version 2.0  wangxin 2016-2-23 6.0版本升级改造
+ * 4.角色管理
  */
 @Controller 
 @Scope("prototype")

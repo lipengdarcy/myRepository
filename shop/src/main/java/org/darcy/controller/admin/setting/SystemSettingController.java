@@ -1,4 +1,4 @@
-package org.darcy.controller;
+package org.darcy.controller.admin.setting;
 
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -25,15 +25,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author apexking
- * @author Kanon 2015-10-14 version 1.1 添加注释
- * @author xulipeng 2016年02月24日	修改spring mvc
+ * 1.系统设置
  */
 
 @Scope("prototype")
 @Controller 
 @RequestMapping("/core/admin/setting")
-public class SettingController {
+public class SystemSettingController {
 	
 	@Autowired
 	private ISettingService settingService;

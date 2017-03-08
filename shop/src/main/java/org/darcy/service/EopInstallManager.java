@@ -1,6 +1,7 @@
 package org.darcy.service;
 
 import org.darcy.framework.util.DateUtil;
+import org.darcy.framework.util.StringUtil;
 import org.darcy.service.auth.IAdminUserManager;
 import org.darcy.service.dbsolution.DBSolutionFactory;
 import org.darcy.service.resource.model.AdminUser;
@@ -34,7 +35,8 @@ public class EopInstallManager {
 		
 		long s= DateUtil.getDateline();
 	    long start  = this.log("开始安装");
-		DBSolutionFactory.dbImport("file:com/enation/app/base/init.xml","");		
+	    String path = StringUtil.getRootPath("/WEB-INF/classes/db/init.xml");
+		DBSolutionFactory.dbImport(path,"");		
 		long end =this.logEnd("init xml安装完成",start);		
 		 
 		//安装
