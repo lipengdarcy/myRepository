@@ -14,9 +14,9 @@ width:350px;
 </style>
 <div class="main" style="background-color: white;">
 <#-- 修改点击“设置”-“系统设置”后台菜单后挂件错误 by tito-->
-<#-- <input type="hidden" name="site_seting.themeid" value="${site_seting.themeid}" />
-<input type="hidden" name="site_seting.themepath" value="${site_seting.themepath}" />
-<input type="hidden" name="site_seting.adminthemeid" value="${site_seting.adminthemeid}" />
+<#-- <input type="hidden" name="site_setting.themeid" value="${site_setting.themeid}" />
+<input type="hidden" name="site_setting.themepath" value="${site_setting.themepath}" />
+<input type="hidden" name="site_setting.adminthemeid" value="${site_setting.adminthemeid}" />
 -->
 	<table class="form-table">
 		<tr>
@@ -24,7 +24,7 @@ width:350px;
 				网站名称：
 			</th>
 			<td>
-				<input type="text" class="input_text combo" name="site_seting.sitename" style="width:300px" value="${site_seting.sitename!'' }"/>
+				<input type="text" class="input_text combo" name="site_setting.sitename" style="width:300px" value="${site_setting.sitename!'' }"/>
 			</td>
 		</tr>
 
@@ -33,7 +33,7 @@ width:350px;
 				网站标题：
 			</th>
 			<td>
-				<input type="text" class="input_text combo" name="site_seting.title" style="width:300px" value="${site_seting.title!'' }"/>
+				<input type="text" class="input_text combo" name="site_setting.title" style="width:300px" value="${site_setting.title!'' }"/>
 			</td>
 		</tr>
 		<tr>
@@ -41,7 +41,7 @@ width:350px;
 				关键字：
 			</th>
 			<td>
-				<input type="text" class="input_text combo" name="site_seting.keywords" style="width:300px" value="${site_seting.keywords!'' }"/>
+				<input type="text" class="input_text combo" name="site_setting.keywords" style="width:300px" value="${site_setting.keywords!'' }"/>
 			</td>
 		</tr>	
 		<tr>
@@ -49,7 +49,7 @@ width:350px;
 				描述：
 			</th>
 			<td>
-				 <textarea style="width:300px;height:100px" name="site_seting.descript">${site_seting.descript!''}</textarea>
+				 <textarea style="width:300px;height:100px" name="site_setting.descript">${site_setting.descript!''}</textarea>
 			</td>
 		</tr>		
 
@@ -59,8 +59,8 @@ width:350px;
 				Logo：
 			</th>
 			<td>
-				<@image src="${site_seting.logofile!'' }" id="logofile" style='width:100px' /><br/>
-				<input type="hidden" id="logofile_url" name="site_seting.logofile" value="${site_seting.logofile!'' }" >
+				<@image src="${site_setting.logofile!'' }" id="logofile" style='width:100px' /><br/>
+				<input type="hidden" id="logofile_url" name="site_setting.logofile" value="${site_setting.logofile!'' }" >
 				<input type="button" id="uploadLogoBtn" value="上传" />
 			</td>
 		</tr>
@@ -70,8 +70,8 @@ width:350px;
 				关闭站点：
 			</th>
 			<td>
-				<input type="radio" name="site_seting.siteon"   value="1" <#if site_seting.siteon=="1">checked="checked"</#if> />否&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="radio" name="site_seting.siteon"   value="0"  <#if site_seting.siteon=="0">checked="checked"</#if>  />是
+				<input type="radio" name="site_setting.siteon"   value="1" <#if site_setting.siteon=="1">checked="checked"</#if> />否&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="site_setting.siteon"   value="0"  <#if site_setting.siteon=="0">checked="checked"</#if>  />是
 			</td>
 		</tr>		
 		<tr>
@@ -79,7 +79,7 @@ width:350px;
 				关闭原因:
 			</th>
 			<td>
-				 <textarea style="width:300px;height:100px" name="site_seting.closereson">${site_seting.closereson!''}</textarea>
+				 <textarea style="width:300px;height:100px" name="site_setting.closereson">${site_setting.closereson!''}</textarea>
 			</td>
 		</tr>				
 	</table>

@@ -2,6 +2,7 @@ package org.darcy.app.base;
 
 import org.darcy.eop.sdk.App;
 import org.darcy.framework.cache.CacheFactory;
+import org.darcy.framework.util.StringUtil;
 import org.darcy.service.impl.cache.SiteMenuCacheProxy;
 import org.darcy.service.resource.impl.cache.ThemeUriCacheProxy;
 import org.darcy.service.resource.model.EopSite;
@@ -53,7 +54,8 @@ public class BaseApp extends App {
 	 * 系统初始化安装时安装base的sql脚本
 	 */
 	public void install() {
-		this.doInstall("file:com/enation/app/base/base.xml");
+		String path = StringUtil.getRootPath("/WEB-INF/classes/db/install/base.xml");
+		this.doInstall(path);
 	}
 
 	protected void cleanCache() {

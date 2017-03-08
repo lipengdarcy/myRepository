@@ -35,7 +35,7 @@ public class EopInstallManager {
 		
 		long s= DateUtil.getDateline();
 	    long start  = this.log("开始安装");
-	    String path = StringUtil.getRootPath("/WEB-INF/classes/db/init.xml");
+	    String path = StringUtil.getRootPath("/WEB-INF/classes/db/install/init.xml");
 		DBSolutionFactory.dbImport(path,"");		
 		long end =this.logEnd("init xml安装完成",start);		
 		 
