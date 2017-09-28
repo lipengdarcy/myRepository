@@ -19,5 +19,17 @@
 	<classpathentry kind="lib" path="C:/GitRepo/myRepository/javashop-eop/3rdlib/tenpay.jar"/>
 	<classpathentry kind="lib" path="C:/GitRepo/myRepository/javashop-eop/3rdlib/TrustPayClient-V2.0.12.jar"/>
 	<classpathentry kind="lib" path="C:/GitRepo/myRepository/javashop-eop/3rdlib/upacp_sdk-1.0.0-20150703140550.jar"/>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
